@@ -1,0 +1,260 @@
+import {
+    Mail,
+    MapPin,
+    Phone,
+    ArrowUp,
+} from "lucide-react";
+
+const Footer = () => {
+    const services = [
+        "General Dentistry",
+        "Root Canal Treatment",
+        "Dental Implants",
+        "Orthodontics",
+        "Teeth Whitening",
+        "Pediatric Dentistry",
+    ];
+
+    const quickLinks = [
+        {
+            name: "Home",
+            href: "#home",
+        },
+        {
+            name: "About Us",
+            href: "#about",
+        },
+        {
+            name: "Features",
+            href: "#features",
+        },
+        {
+            name: "Services",
+            href: "#services",
+        },
+        {
+            name: "Doctor",
+            href: "#doctor",
+        },
+        {
+            name: "Contact",
+            href: "#contact",
+        },
+    ];
+
+    return (
+        <footer
+            id="footer"
+            className="relative overflow-hidden bg-[#21102d] text-white"
+        >
+            {/* Decorative background */}
+            <div className="absolute -left-40 top-20 h-80 w-80 rounded-full border-[50px] border-white/[0.03]" />
+
+            <div className="absolute -right-40 bottom-[-100px] h-[450px] w-[450px] rounded-full border-[70px] border-[#3d1d52]/50" />
+
+            <div className="relative mx-auto max-w-7xl px-6 pt-16 lg:px-10 lg:pt-20">
+
+                {/* Main Footer */}
+                <div className="grid gap-12 pb-14 md:grid-cols-2 lg:grid-cols-4">
+
+                    {/* Brand */}
+                    <div>
+                        <a
+                            href="#home"
+                            className="inline-flex items-center gap-3"
+                        >
+                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#ff6b35]">
+                                <span className="text-xl font-bold text-[#ff6b35]">
+                                    D
+                                </span>
+                            </div>
+
+                            <div className="leading-none">
+                                <span className="block text-xl font-bold">
+                                    Dental
+                                </span>
+
+                                <span className="mt-1 block text-[9px] uppercase tracking-[0.25em] text-[#ff8a5c]">
+                                    Clinic Studio
+                                </span>
+                            </div>
+                        </a>
+
+                        <p className="mt-6 max-w-xs text-sm leading-7 text-white/50">
+                            Providing personalized dental care with modern
+                            technology, experienced professionals and a
+                            patient-first approach.
+                        </p>
+
+                        {/* Social Links */}
+                        <div className="mt-6 flex items-center gap-3">
+
+                            <a
+                                href="#"
+                                aria-label="Facebook"
+                                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-bold transition hover:border-[#ff6b35] hover:bg-[#ff6b35]"
+                            >
+                                f
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Instagram"
+                                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-bold transition hover:border-[#ff6b35] hover:bg-[#ff6b35]"
+                            >
+                                ig
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="LinkedIn"
+                                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-bold transition hover:border-[#ff6b35] hover:bg-[#ff6b35]"
+                            >
+                                in
+                            </a>
+
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white">
+                            Quick Links
+                        </h3>
+
+                        <div className="mt-6 space-y-3">
+                            {quickLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="block text-sm text-white/50 transition hover:translate-x-1 hover:text-[#ff8a5c]"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Services */}
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white">
+                            Our Services
+                        </h3>
+
+                        <div className="mt-6 space-y-3">
+                            {services.map((service) => (
+                                <a
+                                    key={service}
+                                    href="#services"
+                                    className="block text-sm text-white/50 transition hover:translate-x-1 hover:text-[#ff8a5c]"
+                                >
+                                    {service}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Contact */}
+                    <div>
+                        <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white">
+                            Contact Us
+                        </h3>
+
+                        <div className="mt-6 space-y-5">
+
+                            {/* Address */}
+                            <div className="flex gap-3">
+                                <MapPin
+                                    size={19}
+                                    className="mt-1 shrink-0 text-[#ff6b35]"
+                                />
+
+                                <p className="text-sm leading-6 text-white/50">
+                                    Your Dental Clinic Address,
+                                    <br />
+                                    Your City, India
+                                </p>
+                            </div>
+
+                            {/* Phone */}
+                            <a
+                                href="tel:+919999999999"
+                                className="flex items-center gap-3 text-sm text-white/50 transition hover:text-[#ff8a5c]"
+                            >
+                                <Phone
+                                    size={18}
+                                    className="shrink-0 text-[#ff6b35]"
+                                />
+
+                                +91 99999 99999
+                            </a>
+
+                            {/* Email */}
+                            <a
+                                href="mailto:info@zendentalstudio.com"
+                                className="flex items-center gap-3 break-all text-sm text-white/50 transition hover:text-[#ff8a5c]"
+                            >
+                                <Mail
+                                    size={18}
+                                    className="shrink-0 text-[#ff6b35]"
+                                />
+
+                                info@dentalclinicstudio.com
+                            </a>
+
+                        </div>
+
+                        {/* Appointment */}
+                        <a
+                            href="#appointment"
+                            className="mt-7 inline-flex rounded-md bg-[#ff6b35] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#ff8a5c]"
+                        >
+                            Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                {/* Bottom */}
+                <div className="border-t border-white/10 py-6">
+
+                    <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+
+                        <p className="text-xs text-white/40">
+                            © {new Date().getFullYear()} Dental Clinic Studio.
+                            All rights reserved.
+                        </p>
+
+                        <div className="flex items-center gap-5">
+                            <a
+                                href="#"
+                                className="text-xs text-white/40 transition hover:text-white"
+                            >
+                                Privacy Policy
+                            </a>
+
+                            <a
+                                href="#"
+                                className="text-xs text-white/40 transition hover:text-white"
+                            >
+                                Terms & Conditions
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {/* Back to top */}
+            <a
+                href="#home"
+                aria-label="Back to top"
+                className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-md bg-[#ff6b35] text-white shadow-lg transition hover:bg-[#ff8a5c]"
+            >
+                <ArrowUp size={18} />
+            </a>
+
+        </footer>
+    );
+};
+
+export default Footer;
