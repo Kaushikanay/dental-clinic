@@ -1,16 +1,64 @@
 @import "tailwindcss";
 
+/* ========================================
+   LIGHT THEME
+======================================== */
+
 :root {
   --primary: #281238;
   --primary-light: #3d1d52;
+
   --accent: #ff6b35;
   --accent-light: #ff8a5c;
+
   --dark: #21102d;
+
   --text: #33213d;
   --muted: #77717c;
+
   --white: #ffffff;
   --light: #faf8fb;
+
+  --page-bg: #ffffff;
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+
+  --border: #eadfeb;
+
+  color-scheme: light;
 }
+
+/* ========================================
+   DARK THEME
+======================================== */
+
+html.dark {
+  --primary: #170b22;
+  --primary-light: #2b123c;
+
+  --accent: #ff7043;
+  --accent-light: #ff9a78;
+
+  --dark: #0e0714;
+
+  --text: #f5edf8;
+  --muted: #aaa0b0;
+
+  --white: #ffffff;
+  --light: #1b1022;
+
+  --page-bg: #120a18;
+  --section-bg: #170d20;
+  --card-bg: #21122b;
+
+  --border: #3b2945;
+
+  color-scheme: dark;
+}
+
+/* ========================================
+   GLOBAL
+======================================== */
 
 * {
   box-sizing: border-box;
@@ -23,8 +71,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--white);
+
+  background: var(--page-bg);
   color: var(--text);
+
   font-family:
     Inter,
     system-ui,
@@ -32,6 +82,10 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 img {
@@ -58,4 +112,16 @@ a {
 ::selection {
   background: var(--accent);
   color: white;
+}
+
+/* ========================================
+   SMOOTH THEME TRANSITION
+======================================== */
+
+html,
+body {
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease;
 }

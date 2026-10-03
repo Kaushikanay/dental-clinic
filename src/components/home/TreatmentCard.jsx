@@ -2,36 +2,105 @@ import { ArrowUpRight } from "lucide-react";
 
 const TreatmentCard = ({ treatment }) => {
     return (
-        <article className="group overflow-hidden rounded-[1.5rem] bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-
-            {/* Image */}
+        <article
+            className="
+                group overflow-hidden rounded-[1.5rem]
+                border border-[var(--border)]
+                bg-[var(--card-bg)]
+                shadow-sm
+                transition-[transform,box-shadow,border-color,background-color]
+                duration-500
+                ease-[cubic-bezier(0.22,1,0.36,1)]
+                hover:-translate-y-2
+                hover:shadow-2xl
+            "
+        >
+            {/* ========================================
+                IMAGE
+            ======================================== */}
             <div className="relative h-64 overflow-hidden">
 
                 <img
                     src={treatment.image}
                     alt={treatment.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    className="
+                        h-full w-full object-cover
+                        transition-transform
+                        duration-700
+                        ease-[cubic-bezier(0.22,1,0.36,1)]
+                        group-hover:scale-105
+                    "
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#281238]/70 via-transparent to-transparent opacity-70" />
+                <div
+                    className="
+                        absolute inset-0
+                        bg-gradient-to-t
+                        from-[var(--primary)]
+                        via-transparent
+                        to-transparent
+                        opacity-70
+                        transition-opacity
+                        duration-500
+                        group-hover:opacity-80
+                    "
+                />
 
                 {/* Number */}
-                <div className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-bold text-[#281238] shadow-lg">
+                <div
+                    className="
+                        absolute left-5 top-5
+                        flex h-10 w-10
+                        items-center justify-center
+                        rounded-full
+                        border border-[var(--border)]
+                        bg-[var(--card-bg)]/95
+                        text-sm font-bold
+                        text-[var(--primary)]
+                        shadow-lg
+                        backdrop-blur-sm
+                        transition-all
+                        duration-500
+                        group-hover:scale-105
+                        group-hover:bg-[var(--accent)]
+                        group-hover:text-white
+                    "
+                >
                     {String(treatment.id).padStart(2, "0")}
                 </div>
 
             </div>
 
-            {/* Content */}
+            {/* ========================================
+                CONTENT
+            ======================================== */}
             <div className="p-6">
 
-                <h3 className="text-xl font-bold text-[#281238] transition-colors group-hover:text-[#ff6b35]">
+                {/* Title */}
+                <h3
+                    className="
+                        text-xl font-bold
+                        text-[var(--text)]
+                        transition-colors
+                        duration-500
+                        group-hover:text-[var(--accent)]
+                    "
+                >
                     {treatment.title}
                 </h3>
 
+                {/* Description */}
                 <p
-                    className="mt-3 overflow-hidden text-sm leading-7 text-gray-500"
+                    className="
+                        mt-3
+                        overflow-hidden
+                        text-sm
+                        leading-7
+                        text-[var(--muted)]
+                        transition-colors
+                        duration-500
+                    "
                     style={{
                         display: "-webkit-box",
                         WebkitLineClamp: 2,
@@ -41,14 +110,47 @@ const TreatmentCard = ({ treatment }) => {
                     {treatment.description}
                 </p>
 
+                {/* Learn More */}
                 <a
                     href={`/services/${treatment.slug}`}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#281238] transition-colors hover:text-[#ff6b35]"
+                    className="
+                        mt-5
+                        inline-flex
+                        items-center
+                        gap-2
+                        text-sm
+                        font-semibold
+                        text-[var(--text)]
+                        transition-colors
+                        duration-300
+                        hover:text-[var(--accent)]
+                    "
                 >
-                    Learn More
+                    <span>Learn More</span>
 
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f5edf8] transition-all group-hover:bg-[#ff6b35] group-hover:text-white">
-                        <ArrowUpRight size={16} />
+                    <span
+                        className="
+                            flex h-8 w-8
+                            items-center justify-center
+                            rounded-full
+                            bg-[var(--light)]
+                            text-[var(--text)]
+                            transition-all
+                            duration-500
+                            ease-[cubic-bezier(0.22,1,0.36,1)]
+                            group-hover:translate-x-1
+                            group-hover:bg-[var(--accent)]
+                            group-hover:text-white
+                        "
+                    >
+                        <ArrowUpRight
+                            size={16}
+                            className="
+                                transition-transform
+                                duration-500
+                                group-hover:rotate-6
+                            "
+                        />
                     </span>
                 </a>
 

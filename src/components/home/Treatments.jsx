@@ -56,16 +56,48 @@ const Treatments = () => {
     return (
         <section
             id="services"
-            className="relative overflow-hidden bg-[#f7f3f8] py-20 sm:py-24 lg:py-28"
+            className="
+                relative overflow-hidden
+                bg-[var(--section-bg)]
+                py-20
+                transition-colors duration-500
+                sm:py-24
+                lg:py-28
+            "
         >
-            {/* Decorative background */}
-            <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#eee1f3]" />
+            {/* ========================================
+                DECORATIVE BACKGROUND
+            ======================================== */}
 
-            <div className="absolute -right-32 bottom-0 h-72 w-72 rounded-full border-[55px] border-[#fff0e9]" />
+            <div
+                className="
+                    absolute -left-40 top-20
+                    h-80 w-80
+                    rounded-full
+                    bg-[var(--primary-light)]
+                    opacity-10
+                    transition-all duration-700
+                "
+            />
+
+            <div
+                className="
+                    absolute -right-32 bottom-0
+                    h-72 w-72
+                    rounded-full
+                    border-[55px]
+                    border-[var(--accent)]
+                    opacity-10
+                    transition-all duration-700
+                "
+            />
 
             <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
 
-                {/* Heading */}
+                {/* ========================================
+                    HEADING
+                ======================================== */}
+
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -84,27 +116,73 @@ const Treatments = () => {
                     }}
                     className="mx-auto max-w-2xl text-center"
                 >
-
+                    {/* Section Label */}
                     <div className="mb-4 flex items-center justify-center gap-3">
 
-                        <span className="h-[2px] w-8 bg-[#ff6b35]" />
+                        <span
+                            className="
+                                h-[2px] w-8
+                                bg-[var(--accent)]
+                                transition-colors duration-500
+                            "
+                        />
 
-                        <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ff6b35]">
+                        <span
+                            className="
+                                text-xs font-bold
+                                uppercase
+                                tracking-[0.25em]
+                                text-[var(--accent)]
+                                transition-colors duration-500
+                            "
+                        >
                             Our Treatments
                         </span>
 
-                        <span className="h-[2px] w-8 bg-[#ff6b35]" />
+                        <span
+                            className="
+                                h-[2px] w-8
+                                bg-[var(--accent)]
+                                transition-colors duration-500
+                            "
+                        />
 
                     </div>
 
-                    <h2 className="text-3xl font-bold leading-tight text-[#281238] sm:text-4xl lg:text-5xl">
+                    {/* Heading */}
+                    <h2
+                        className="
+                            text-3xl
+                            font-bold
+                            leading-tight
+                            text-[var(--text)]
+                            transition-colors duration-500
+                            sm:text-4xl
+                            lg:text-5xl
+                        "
+                    >
                         Major Treatments for a
-                        <span className="text-[#ff6b35]">
+                        <span
+                            className="
+                                text-[var(--accent)]
+                                transition-colors duration-500
+                            "
+                        >
                             {" "}Healthy Smile
                         </span>
                     </h2>
 
-                    <p className="mt-5 text-sm leading-7 text-gray-500 sm:text-base">
+                    {/* Description */}
+                    <p
+                        className="
+                            mt-5
+                            text-sm
+                            leading-7
+                            text-[var(--muted)]
+                            transition-colors duration-500
+                            sm:text-base
+                        "
+                    >
                         Explore our range of dental treatments designed to
                         support your oral health and help you feel confident
                         about your smile.
@@ -112,7 +190,10 @@ const Treatments = () => {
 
                 </motion.div>
 
-                {/* Treatment Grid */}
+                {/* ========================================
+                    TREATMENT GRID
+                ======================================== */}
+
                 <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                     {treatments.map((treatment, index) => (
@@ -133,6 +214,7 @@ const Treatments = () => {
                             transition={{
                                 duration: 0.6,
                                 delay: index * 0.08,
+                                ease: "easeOut",
                             }}
                         >
                             <TreatmentCard treatment={treatment} />

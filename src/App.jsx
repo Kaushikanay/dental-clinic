@@ -7,38 +7,42 @@ import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
+import { ThemeProvider } from "./context/ThemeContext";
+
 function App() {
   return (
-    <BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <div
+          className="
+                        min-h-screen
+                        bg-[var(--page-bg)]
+                        text-[var(--text)]
+                    "
+        >
+          <Navbar />
 
-      <div className="min-h-screen">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
 
-        <Navbar />
+            <Route
+              path="/about"
+              element={<AboutPage />}
+            />
 
-        <Routes>
+            <Route
+              path="/contact"
+              element={<ContactPage />}
+            />
+          </Routes>
 
-          <Route
-            path="/"
-            element={<Home />}
-          />
-
-          <Route
-            path="/about"
-            element={<AboutPage />}
-          />
-
-          <Route
-            path="/contact"
-            element={<ContactPage />}
-          />
-
-        </Routes>
-
-        <Footer />
-
-      </div>
-
-    </BrowserRouter>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

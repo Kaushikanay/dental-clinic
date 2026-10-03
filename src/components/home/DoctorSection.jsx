@@ -10,18 +10,20 @@ const DoctorSection = () => {
     return (
         <section
             id="doctor"
-            className="relative overflow-hidden bg-[#281238] py-20 sm:py-24 lg:py-28"
+            className="relative overflow-hidden bg-[var(--doctor-bg)] py-20 transition-colors duration-500 sm:py-24 lg:py-28"
         >
             {/* Decorative background */}
-            <div className="absolute -left-40 top-10 h-80 w-80 rounded-full border-[60px] border-white/5" />
 
-            <div className="absolute -right-32 bottom-[-80px] h-96 w-96 rounded-full bg-[#3d1d52]/60" />
+            <div className="absolute -left-40 top-10 h-80 w-80 rounded-full border-[60px] border-[var(--primary-light)] opacity-10" />
 
-            <div className="absolute right-[20%] top-20 hidden h-4 w-4 rotate-45 bg-[#ff6b35]/50 lg:block" />
+            <div className="absolute -right-32 bottom-[-80px] h-96 w-96 rounded-full bg-[var(--primary-light)] opacity-10" />
+
+            <div className="absolute right-[20%] top-20 hidden h-4 w-4 rotate-45 bg-[var(--accent)] opacity-50 lg:block" />
 
             <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
 
-                {/* Section heading */}
+                {/* Section Heading */}
+
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -42,34 +44,39 @@ const DoctorSection = () => {
                 >
                     <div className="mb-4 flex items-center justify-center gap-3">
 
-                        <span className="h-[2px] w-8 bg-[#ff6b35]" />
+                        <span className="h-[2px] w-8 bg-[var(--accent)]" />
 
-                        <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ff8a5c]">
+                        <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)]">
                             Meet The Doctor
                         </span>
 
-                        <span className="h-[2px] w-8 bg-[#ff6b35]" />
+                        <span className="h-[2px] w-8 bg-[var(--accent)]" />
 
                     </div>
 
-                    <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                        Dedicated to Creating
-                        <span className="text-[#ff8a5c]">
-                            {" "}Beautiful Smiles
+                    <h2 className="text-3xl font-bold leading-tight text-[var(--doctor-text)] transition-colors duration-500 sm:text-4xl lg:text-5xl">
+
+                        Dedicated to Creating{" "}
+
+                        <span className="text-[var(--accent)]">
+                            Beautiful Smiles
                         </span>
+
                     </h2>
 
-                    <p className="mt-5 text-sm leading-7 text-white/60 sm:text-base">
+                    <p className="mt-5 text-sm leading-7 text-[var(--doctor-muted)] transition-colors duration-500 sm:text-base">
                         Compassionate care, advanced dental expertise and a
                         personalized approach to help every patient achieve
                         a healthier and more confident smile.
                     </p>
                 </motion.div>
 
-                {/* Doctor content */}
+                {/* Doctor Content */}
+
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
-                    {/* Doctor image */}
+                    {/* Doctor Image */}
+
                     <motion.div
                         initial={{
                             opacity: 0,
@@ -90,10 +97,12 @@ const DoctorSection = () => {
                     >
 
                         {/* Image background */}
-                        <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-[2rem] bg-[#3d1d52]" />
+
+                        <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-[2rem] bg-[var(--primary-light)] opacity-20" />
 
                         {/* Main image */}
-                        <div className="relative z-10 overflow-hidden rounded-[2rem] border border-white/10 bg-[#3d1d52]">
+
+                        <div className="relative z-10 overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--card-bg)]">
 
                             <img
                                 src="/images/doctor.png"
@@ -103,7 +112,8 @@ const DoctorSection = () => {
 
                         </div>
 
-                        {/* Experience badge */}
+                        {/* Experience Badge */}
+
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -120,7 +130,7 @@ const DoctorSection = () => {
                                 duration: 0.6,
                                 delay: 0.3,
                             }}
-                            className="absolute bottom-7 left-[-12px] z-20 rounded-2xl bg-[#ff6b35] px-5 py-4 shadow-xl sm:left-[-20px]"
+                            className="absolute bottom-7 left-[-12px] z-20 rounded-2xl bg-[var(--accent)] px-5 py-4 shadow-xl sm:left-[-20px]"
                         >
                             <div className="flex items-center gap-3">
 
@@ -144,7 +154,8 @@ const DoctorSection = () => {
 
                     </motion.div>
 
-                    {/* Doctor details */}
+                    {/* Doctor Details */}
+
                     <motion.div
                         initial={{
                             opacity: 0,
@@ -163,87 +174,104 @@ const DoctorSection = () => {
                         }}
                     >
 
-                        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#ff8a5c]">
+                        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">
                             Dental Surgeon
                         </p>
 
-                        <h3 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+                        <h3 className="mt-3 text-3xl font-bold text-[var(--doctor-text)] transition-colors duration-500 sm:text-4xl">
                             Dr. Anay Kumar
                         </h3>
 
-                        <p className="mt-2 text-sm text-white/50">
+                        <p className="mt-2 text-sm text-[var(--doctor-muted)] transition-colors duration-500">
                             BDS, MDS — Cosmetic & Restorative Dentistry
                         </p>
 
-                        <p className="mt-6 text-sm leading-7 text-white/65 sm:text-base">
+                        <p className="mt-6 text-sm leading-7 text-[var(--doctor-muted)] transition-colors duration-500 sm:text-base">
                             With years of experience in modern dentistry, our
                             approach focuses on providing comfortable,
                             personalized and clinically effective dental care.
-                            Every treatment plan is designed around the individual
-                            needs and goals of the patient.
+                            Every treatment plan is designed around the
+                            individual needs and goals of the patient.
                         </p>
 
-                        {/* Doctor highlights */}
+                        {/* Doctor Highlights */}
+
                         <div className="mt-8 grid gap-5 sm:grid-cols-3">
 
-                            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                            {/* Qualified */}
+
+                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+
                                 <GraduationCap
                                     size={22}
-                                    className="text-[#ff8a5c]"
+                                    className="text-[var(--accent)]"
                                 />
 
-                                <p className="mt-3 text-sm font-semibold text-white">
+                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
                                     Qualified
                                 </p>
 
-                                <p className="mt-1 text-xs leading-5 text-white/45">
+                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
                                     Advanced dental education
                                 </p>
+
                             </div>
 
-                            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                            {/* Experienced */}
+
+                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+
                                 <Award
                                     size={22}
-                                    className="text-[#ff8a5c]"
+                                    className="text-[var(--accent)]"
                                 />
 
-                                <p className="mt-3 text-sm font-semibold text-white">
+                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
                                     Experienced
                                 </p>
 
-                                <p className="mt-1 text-xs leading-5 text-white/45">
+                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
                                     Years of clinical practice
                                 </p>
+
                             </div>
 
-                            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                            {/* Patient First */}
+
+                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+
                                 <HeartPulse
                                     size={22}
-                                    className="text-[#ff8a5c]"
+                                    className="text-[var(--accent)]"
                                 />
 
-                                <p className="mt-3 text-sm font-semibold text-white">
+                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
                                     Patient First
                                 </p>
 
-                                <p className="mt-1 text-xs leading-5 text-white/45">
+                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
                                     Personalized treatment
                                 </p>
+
                             </div>
 
                         </div>
 
                         {/* CTA */}
+
                         <a
-                            href="#appointment"
-                            className="group mt-9 inline-flex items-center gap-2 rounded-md bg-[#ff6b35] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#ff8a5c]"
+                            href="/contact"
+                            className="group mt-9 inline-flex items-center gap-2 rounded-md bg-[var(--primary)] px-6 py-3 text-sm font-semibold !text-white shadow-md transition-all duration-300 hover:bg-[var(--primary-light)]"
                         >
-                            Book Consultation
+                            <span className="!text-white">
+                                Book Consultation
+                            </span>
 
                             <ArrowRight
                                 size={17}
-                                className="transition-transform group-hover:translate-x-1"
+                                className="!text-white transition-transform group-hover:translate-x-1"
                             />
+
                         </a>
 
                     </motion.div>

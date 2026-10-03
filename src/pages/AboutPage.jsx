@@ -35,162 +35,701 @@ const AboutPage = () => {
     ];
 
     return (
-        <main>
+        <main
+            className="
+                min-h-screen
+                bg-[var(--page-bg)]
+                text-[var(--text)]
+                transition-colors
+                duration-500
+            "
+        >
 
-            {/* ================= HERO ================= */}
-            <section className="relative overflow-hidden bg-[#281238] py-24 sm:py-28 lg:py-32">
+            {/* =====================================================
+                HERO
+            ===================================================== */}
 
-                <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#3b1c50]" />
+            <section
+                className="
+                    relative
+                    overflow-hidden
+                    bg-[var(--section-bg)]
+                    py-24
+                    transition-[background-color]
+                    duration-500
+                    sm:py-28
+                    lg:py-32
+                "
+            >
+                {/* Decorative Circle */}
 
-                <div className="absolute -right-32 bottom-[-100px] h-96 w-96 rounded-full border-[60px] border-[#3b1c50]" />
+                <div
+                    className="
+                        absolute
+                        -left-32
+                        top-10
+                        h-72
+                        w-72
+                        rounded-full
+                        bg-[var(--primary-light)]
+                        opacity-10
+                        transition-all
+                        duration-700
+                    "
+                />
 
-                <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+                {/* Decorative Ring */}
 
+                <div
+                    className="
+                        absolute
+                        -right-32
+                        bottom-[-100px]
+                        h-96
+                        w-96
+                        rounded-full
+                        border-[60px]
+                        border-[var(--accent)]
+                        opacity-10
+                        transition-all
+                        duration-700
+                    "
+                />
+
+                {/* Small Decorative Shape */}
+
+                <div
+                    className="
+                        absolute
+                        right-[20%]
+                        top-24
+                        hidden
+                        h-5
+                        w-5
+                        rotate-45
+                        bg-[var(--accent)]
+                        opacity-20
+                        transition-all
+                        duration-500
+                        lg:block
+                    "
+                />
+
+                <div
+                    className="
+                        relative
+                        mx-auto
+                        max-w-7xl
+                        px-6
+                        lg:px-10
+                    "
+                >
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
+                        initial={{
+                            opacity: 0,
+                            y: 30,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                            ease: "easeOut",
+                        }}
                         className="max-w-3xl"
                     >
-                        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#ff6b35]">
-                            About Dental Clinic Studio
-                        </p>
+                        {/* Label */}
 
-                        <h1 className="text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
+                        <div className="mb-5 flex items-center gap-3">
+                            <span
+                                className="
+                                    h-[2px]
+                                    w-8
+                                    bg-[var(--accent)]
+                                    transition-colors
+                                    duration-500
+                                "
+                            />
+
+                            <p
+                                className="
+                                    text-xs
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.3em]
+                                    text-[var(--accent)]
+                                    transition-colors
+                                    duration-500
+                                "
+                            >
+                                About Dental Clinic Studio
+                            </p>
+                        </div>
+
+                        {/* Main Heading */}
+
+                        <h1
+                            className="
+                                text-4xl
+                                font-bold
+                                leading-[1.1]
+                                text-[var(--text)]
+                                transition-colors
+                                duration-500
+                                sm:text-5xl
+                                lg:text-6xl
+                            "
+                        >
                             Excellence in Dental
-                            <span className="block text-[#ff6b35]">
+
+                            <span
+                                className="
+                                    block
+                                    text-[var(--accent)]
+                                    transition-colors
+                                    duration-500
+                                "
+                            >
                                 Care & Compassion
                             </span>
                         </h1>
 
-                        <p className="mt-6 max-w-2xl text-sm leading-7 !text-white/70 sm:text-base">
+                        {/* Description */}
+
+                        <p
+                            className="
+                                mt-6
+                                max-w-2xl
+                                text-sm
+                                leading-7
+                                text-[var(--muted)]
+                                transition-colors
+                                duration-500
+                                sm:text-base
+                            "
+                        >
                             We are dedicated to creating healthy, confident
                             smiles through personalized dental care, modern
                             technology and a comfortable patient experience.
                         </p>
                     </motion.div>
-
                 </div>
             </section>
 
-            {/* ================= ABOUT CONTENT ================= */}
-            <section className="bg-white py-20 sm:py-24 lg:py-28">
+            {/* =====================================================
+                ABOUT CONTENT
+            ===================================================== */}
 
-                <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:px-10">
+            <section
+                className="
+                    relative
+                    overflow-hidden
+                    bg-[var(--section-bg)]
+                    py-20
+                    transition-colors
+                    duration-500
+                    sm:py-24
+                    lg:py-28
+                "
+            >
+                {/* Background Decoration */}
 
-                    {/* Image */}
+                <div
+                    className="
+                        absolute
+                        -right-32
+                        top-20
+                        h-72
+                        w-72
+                        rounded-full
+                        bg-[var(--primary-light)]
+                        opacity-10
+                        transition-all
+                        duration-700
+                    "
+                />
+
+                <div
+                    className="
+                        relative
+                        mx-auto
+                        grid
+                        max-w-7xl
+                        items-center
+                        gap-12
+                        px-6
+                        lg:grid-cols-2
+                        lg:gap-20
+                        lg:px-10
+                    "
+                >
+                    {/* =================================================
+                        IMAGE
+                    ================================================= */}
+
                     <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                        className="relative"
+                        initial={{
+                            opacity: 0,
+                            x: -40,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        viewport={{
+                            once: true,
+                            amount: 0.2,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                        }}
+                        className="relative mx-auto w-full max-w-[560px]"
                     >
-                        <div className="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-[#fff0e9]" />
+                        {/* Decorative Circle */}
 
-                        <img
-                            src="/images/about-dental.jpg"
-                            alt="Zen Dental Studio"
-                            className="relative h-[420px] w-full rounded-[2rem] object-cover shadow-xl"
+                        <div
+                            className="
+                                absolute
+                                -left-4
+                                -top-4
+                                h-24
+                                w-24
+                                rounded-full
+                                bg-[var(--accent-light)]
+                                opacity-20
+                                transition-colors
+                                duration-500
+                            "
                         />
 
-                        <div className="absolute -bottom-6 -right-4 rounded-2xl bg-[#281238] px-7 py-5 text-white shadow-xl">
-                            <p className="text-3xl font-bold text-[#ff6b35]">
+                        {/* Image */}
+
+                        <div
+                            className="
+                                relative
+                                z-10
+                                overflow-hidden
+                                rounded-[2rem]
+                                border
+                                border-[var(--border)]
+                                bg-[var(--card-bg)]
+                                shadow-xl
+                                transition-colors
+                                duration-500
+                            "
+                        >
+                            <img
+                                src="/images/about-dental.jpg"
+                                alt="Dental Clinic Studio"
+                                className="
+                                    h-[420px]
+                                    w-full
+                                    object-cover
+                                    transition-transform
+                                    duration-700
+                                    hover:scale-[1.02]
+                                    sm:h-[500px]
+                                "
+                            />
+                        </div>
+
+                        {/* Experience Badge */}
+
+                        <div
+                            className="
+                                absolute
+                                bottom-[-20px]
+                                right-[-10px]
+                                z-20
+                                rounded-2xl
+                                bg-[var(--primary)]
+                                px-7
+                                py-5
+                                shadow-xl
+                                transition-all
+                                duration-500
+                                sm:right-[-20px]
+                            "
+                        >
+                            <p
+                                className="
+                                    text-3xl
+                                    font-bold
+                                    text-[var(--accent)]
+                                "
+                            >
                                 10+
                             </p>
 
-                            <p className="mt-1 text-xs text-white/70">
+                            <p
+                                className="
+                                    mt-1
+                                    text-xs
+                                    text-white/70
+                                "
+                            >
                                 Years of Dental Care
                             </p>
                         </div>
                     </motion.div>
 
-                    {/* Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                    >
-                        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ff6b35]">
-                            Who We Are
-                        </p>
+                    {/* =================================================
+                        CONTENT
+                    ================================================= */}
 
-                        <h2 className="mt-4 text-3xl font-bold leading-tight text-[#281238] sm:text-4xl">
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            x: 40,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        viewport={{
+                            once: true,
+                            amount: 0.2,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                        }}
+                    >
+                        {/* Label */}
+
+                        <div className="flex items-center gap-3">
+                            <span
+                                className="
+                                    h-[2px]
+                                    w-8
+                                    bg-[var(--accent)]
+                                "
+                            />
+
+                            <p
+                                className="
+                                    text-xs
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[var(--accent)]
+                                "
+                            >
+                                Who We Are
+                            </p>
+                        </div>
+
+                        {/* Heading */}
+
+                        <h2
+                            className="
+                                mt-4
+                                text-3xl
+                                font-bold
+                                leading-tight
+                                text-[var(--text)]
+                                transition-colors
+                                duration-500
+                                sm:text-4xl
+                                lg:text-5xl
+                            "
+                        >
                             Your Smile Is Our
-                            <span className="text-[#ff6b35]">
+
+                            <span
+                                className="
+                                    text-[var(--accent)]
+                                "
+                            >
                                 {" "}Commitment
                             </span>
                         </h2>
 
-                        <p className="mt-6 text-sm leading-7 text-gray-500">
-                            At Zen Dental Studio, we believe dental care should
-                            be comfortable, personalized and accessible.
-                            Our goal is not only to treat dental problems but
-                            also to help every patient maintain a healthy and
-                            confident smile.
+                        {/* Paragraph */}
+
+                        <p
+                            className="
+                                mt-6
+                                text-sm
+                                leading-7
+                                text-[var(--muted)]
+                                transition-colors
+                                duration-500
+                                sm:text-base
+                            "
+                        >
+                            At Dental Clinic Studio, we believe dental care
+                            should be comfortable, personalized and
+                            accessible. Our goal is not only to treat dental
+                            problems but also to help every patient maintain a
+                            healthy and confident smile.
                         </p>
 
-                        <p className="mt-4 text-sm leading-7 text-gray-500">
+                        <p
+                            className="
+                                mt-4
+                                text-sm
+                                leading-7
+                                text-[var(--muted)]
+                                transition-colors
+                                duration-500
+                                sm:text-base
+                            "
+                        >
                             From routine dental check-ups to advanced
                             restorative and cosmetic treatments, our approach
                             combines modern dentistry with genuine care for
                             every patient.
                         </p>
 
+                        {/* Statistics */}
+
                         <div className="mt-8 grid grid-cols-2 gap-5">
 
-                            <div className="rounded-xl bg-[#f7f3f8] p-5">
-                                <p className="text-2xl font-bold text-[#281238]">
+                            {/* Patients */}
+
+                            <div
+                                className="
+                                    group
+                                    rounded-xl
+                                    border
+                                    border-[var(--border)]
+                                    bg-[var(--card-bg)]
+                                    p-5
+                                    shadow-sm
+                                    transition-all
+                                    duration-500
+                                    hover:-translate-y-1
+                                    hover:shadow-lg
+                                "
+                            >
+                                <p
+                                    className="
+                                        text-2xl
+                                        font-bold
+                                        text-[var(--text)]
+                                        transition-colors
+                                        duration-500
+                                        group-hover:text-[var(--accent)]
+                                    "
+                                >
                                     500+
                                 </p>
 
-                                <p className="mt-1 text-xs text-gray-500">
+                                <p
+                                    className="
+                                        mt-1
+                                        text-xs
+                                        text-[var(--muted)]
+                                    "
+                                >
                                     Happy Patients
                                 </p>
                             </div>
 
-                            <div className="rounded-xl bg-[#f7f3f8] p-5">
-                                <p className="text-2xl font-bold text-[#281238]">
+                            {/* Treatments */}
+
+                            <div
+                                className="
+                                    group
+                                    rounded-xl
+                                    border
+                                    border-[var(--border)]
+                                    bg-[var(--card-bg)]
+                                    p-5
+                                    shadow-sm
+                                    transition-all
+                                    duration-500
+                                    hover:-translate-y-1
+                                    hover:shadow-lg
+                                "
+                            >
+                                <p
+                                    className="
+                                        text-2xl
+                                        font-bold
+                                        text-[var(--text)]
+                                        transition-colors
+                                        duration-500
+                                        group-hover:text-[var(--accent)]
+                                    "
+                                >
                                     15+
                                 </p>
 
-                                <p className="mt-1 text-xs text-gray-500">
+                                <p
+                                    className="
+                                        mt-1
+                                        text-xs
+                                        text-[var(--muted)]
+                                    "
+                                >
                                     Treatments
                                 </p>
                             </div>
 
                         </div>
                     </motion.div>
-
                 </div>
             </section>
 
-            {/* ================= VALUES ================= */}
-            <section className="bg-[#f7f3f8] py-20 sm:py-24">
+            {/* =====================================================
+                VALUES / WHY CHOOSE US
+            ===================================================== */}
 
-                <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <section
+                className="
+                    relative
+                    overflow-hidden
+                    bg-[var(--page-bg)]
+                    py-20
+                    transition-colors
+                    duration-500
+                    sm:py-24
+                "
+            >
+                {/* Decorative Background */}
 
-                    <div className="mx-auto max-w-2xl text-center">
+                <div
+                    className="
+                        absolute
+                        -left-32
+                        top-20
+                        h-72
+                        w-72
+                        rounded-full
+                        bg-[var(--primary-light)]
+                        opacity-10
+                    "
+                />
 
-                        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ff6b35]">
-                            Why Choose Us
-                        </p>
+                <div
+                    className="
+                        absolute
+                        -right-32
+                        bottom-[-80px]
+                        h-80
+                        w-80
+                        rounded-full
+                        border-[50px]
+                        border-[var(--accent)]
+                        opacity-10
+                    "
+                />
 
-                        <h2 className="mt-3 text-3xl font-bold text-[#281238] sm:text-4xl">
+                <div
+                    className="
+                        relative
+                        mx-auto
+                        max-w-7xl
+                        px-6
+                        lg:px-10
+                    "
+                >
+                    {/* Heading */}
+
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            y: 25,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        viewport={{
+                            once: true,
+                            amount: 0.2,
+                        }}
+                        transition={{
+                            duration: 0.7,
+                        }}
+                        className="
+                            mx-auto
+                            max-w-2xl
+                            text-center
+                        "
+                    >
+                        <div
+                            className="
+                                mb-4
+                                flex
+                                items-center
+                                justify-center
+                                gap-3
+                            "
+                        >
+                            <span
+                                className="
+                                    h-[2px]
+                                    w-8
+                                    bg-[var(--accent)]
+                                "
+                            />
+
+                            <p
+                                className="
+                                    text-xs
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[var(--accent)]
+                                "
+                            >
+                                Why Choose Us
+                            </p>
+
+                            <span
+                                className="
+                                    h-[2px]
+                                    w-8
+                                    bg-[var(--accent)]
+                                "
+                            />
+                        </div>
+
+                        <h2
+                            className="
+                                text-3xl
+                                font-bold
+                                leading-tight
+                                text-[var(--text)]
+                                transition-colors
+                                duration-500
+                                sm:text-4xl
+                            "
+                        >
                             Dental Care Built Around You
                         </h2>
 
-                        <p className="mt-4 text-sm leading-7 text-gray-500">
+                        <p
+                            className="
+                                mt-4
+                                text-sm
+                                leading-7
+                                text-[var(--muted)]
+                                transition-colors
+                                duration-500
+                                sm:text-base
+                            "
+                        >
                             Our philosophy is simple — provide quality dental
                             care while making every patient feel comfortable
                             and respected.
                         </p>
+                    </motion.div>
 
-                    </div>
+                    {/* Feature Cards */}
 
-                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
+                    <div
+                        className="
+                            mt-12
+                            grid
+                            gap-6
+                            sm:grid-cols-2
+                            lg:grid-cols-4
+                        "
+                    >
                         {features.map((feature, index) => {
                             const Icon = feature.icon;
 
@@ -205,30 +744,118 @@ const AboutPage = () => {
                                         opacity: 1,
                                         y: 0,
                                     }}
-                                    viewport={{ once: true }}
+                                    viewport={{
+                                        once: true,
+                                        amount: 0.15,
+                                    }}
                                     transition={{
-                                        duration: 0.5,
+                                        duration: 0.6,
                                         delay: index * 0.08,
                                     }}
-                                    className="rounded-2xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                    className="
+                                        group
+                                        relative
+                                        overflow-hidden
+                                        rounded-2xl
+                                        border
+                                        border-[var(--border)]
+                                        bg-[var(--card-bg)]
+                                        p-7
+                                        shadow-sm
+                                        transition-[transform,box-shadow,border-color,background-color]
+                                        duration-500
+                                        ease-[cubic-bezier(0.22,1,0.36,1)]
+                                        hover:-translate-y-2
+                                        hover:shadow-xl
+                                    "
                                 >
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#fff0e9] text-[#ff6b35]">
+                                    {/* Top Accent */}
+
+                                    <div
+                                        className="
+                                            absolute
+                                            left-0
+                                            top-0
+                                            h-1
+                                            w-0
+                                            bg-[var(--accent)]
+                                            transition-[width]
+                                            duration-500
+                                            ease-[cubic-bezier(0.22,1,0.36,1)]
+                                            group-hover:w-full
+                                        "
+                                    />
+
+                                    {/* Icon */}
+
+                                    <div
+                                        className="
+                                            flex
+                                            h-12
+                                            w-12
+                                            items-center
+                                            justify-center
+                                            rounded-xl
+                                            bg-[var(--accent-light)]
+                                            text-[var(--accent)]
+                                            transition-all
+                                            duration-500
+                                            group-hover:scale-110
+                                            group-hover:bg-[var(--accent)]
+                                            group-hover:text-white
+                                        "
+                                    >
                                         <Icon size={22} />
                                     </div>
 
-                                    <h3 className="mt-6 text-lg font-bold text-[#281238]">
+                                    {/* Title */}
+
+                                    <h3
+                                        className="
+                                            mt-6
+                                            text-lg
+                                            font-bold
+                                            text-[var(--text)]
+                                            transition-colors
+                                            duration-500
+                                            group-hover:text-[var(--accent)]
+                                        "
+                                    >
                                         {feature.title}
                                     </h3>
 
-                                    <p className="mt-3 text-sm leading-7 text-gray-500">
+                                    {/* Description */}
+
+                                    <p
+                                        className="
+                                            mt-3
+                                            text-sm
+                                            leading-7
+                                            text-[var(--muted)]
+                                            transition-colors
+                                            duration-500
+                                        "
+                                    >
                                         {feature.description}
                                     </p>
+
+                                    {/* Bottom Line */}
+
+                                    <div
+                                        className="
+                                            mt-6
+                                            h-px
+                                            w-10
+                                            bg-[var(--accent)]
+                                            transition-[width]
+                                            duration-500
+                                            group-hover:w-20
+                                        "
+                                    />
                                 </motion.div>
                             );
                         })}
-
                     </div>
-
                 </div>
             </section>
 

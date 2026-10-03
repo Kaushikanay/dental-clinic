@@ -1,8 +1,20 @@
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import {
+    Menu,
+    X,
+    Phone,
+    Sun,
+    Moon,
+} from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const {
+        theme,
+        toggleTheme,
+    } = useTheme();
 
     const navLinks = [
         {
@@ -36,118 +48,435 @@ const Navbar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-[100] w-full border-b border-white/10 bg-[#281238] shadow-lg">
+        <header
+            className="
+                sticky top-0 z-[100]
+                w-full
+                border-b border-white/10
+                bg-[var(--primary)]
+                shadow-lg
+                transition-colors duration-500
+            "
+        >
+            {/* ========================================
+                MAIN NAVBAR
+            ======================================== */}
 
-            {/* ================= NAVBAR ================= */}
-            <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-10">
+            <div
+                className="
+                    mx-auto
+                    flex
+                    h-[76px]
+                    max-w-7xl
+                    items-center
+                    justify-between
+                    px-5
+                    sm:px-6
+                    lg:px-10
+                "
+            >
+                {/* ========================================
+                    LOGO
+                ======================================== */}
 
-                {/* ================= LOGO ================= */}
                 <a
-                    href="#home"
+                    href="/"
                     onClick={handleLinkClick}
-                    className="group flex items-center gap-2.5"
+                    className="
+                        group
+                        flex
+                        items-center
+                        gap-2.5
+                    "
                 >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#ff6b35] transition duration-300 group-hover:bg-[#ff6b35]">
-                        <span className="text-lg font-bold !text-[#ff6b35] group-hover:!text-white">
+                    {/* Logo Circle */}
+
+                    <div
+                        className="
+                            flex
+                            h-10
+                            w-10
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-full
+                            border-2
+                            border-[var(--accent)]
+                            transition-all
+                            duration-300
+                            group-hover:bg-[var(--accent)]
+                        "
+                    >
+                        <span
+                            className="
+                                text-lg
+                                font-bold
+                                !text-[var(--accent)]
+                                transition-colors
+                                duration-300
+                                group-hover:!text-white
+                            "
+                        >
                             D
                         </span>
                     </div>
 
+                    {/* Logo Text */}
+
                     <div className="leading-none">
-                        <span className="block text-lg font-bold !text-white">
+                        <span
+                            className="
+                                block
+                                text-lg
+                                font-bold
+                                !text-white
+                            "
+                        >
                             Dental
                         </span>
 
-                        <span className="mt-1 block text-[8px] uppercase tracking-[0.25em] !text-[#ff8a5c]">
+                        <span
+                            className="
+                                mt-1
+                                block
+                                text-[8px]
+                                uppercase
+                                tracking-[0.25em]
+                                !text-[var(--accent-light)]
+                            "
+                        >
                             Clinic Studio
                         </span>
                     </div>
                 </a>
 
-                {/* ================= DESKTOP MENU ================= */}
-                <nav className="hidden items-center gap-6 lg:flex">
+                {/* ========================================
+                    DESKTOP NAVIGATION
+                ======================================== */}
 
+                <nav
+                    className="
+                        hidden
+                        items-center
+                        gap-6
+                        lg:flex
+                    "
+                >
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="group relative !text-white text-sm font-medium transition duration-300 hover:!text-[#ff8a5c]"
+                            className="
+                                group
+                                relative
+                                !text-white
+                                text-sm
+                                font-medium
+                                transition-colors
+                                duration-300
+                                hover:!text-[var(--accent-light)]
+                            "
                         >
                             {link.name}
 
-                            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#ff6b35] transition-all duration-300 group-hover:w-full" />
+                            {/* Underline */}
+
+                            <span
+                                className="
+                                    absolute
+                                    -bottom-2
+                                    left-0
+                                    h-[2px]
+                                    w-0
+                                    bg-[var(--accent)]
+                                    transition-all
+                                    duration-300
+                                    group-hover:w-full
+                                "
+                            />
                         </a>
                     ))}
-
                 </nav>
 
-                {/* ================= DESKTOP BUTTON ================= */}
-                <a
-                    href="#appointment"
-                    className="hidden items-center gap-2 rounded-md bg-[#ff6b35] px-5 py-3 text-xs font-semibold !text-white shadow-lg transition duration-300 hover:bg-[#ff8a5c] lg:inline-flex"
+                {/* ========================================
+                    DESKTOP ACTIONS
+                ======================================== */}
+
+                <div
+                    className="
+                        hidden
+                        items-center
+                        gap-3
+                        lg:flex
+                    "
                 >
-                    <Phone size={15} />
+                    {/* Theme Toggle */}
 
-                    Make an Appointment
-                </a>
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={
+                            theme === "light"
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
+                        }
+                        title={
+                            theme === "light"
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
+                        }
+                        className="
+                            relative
+                            flex
+                            h-10
+                            w-10
+                            items-center
+                            justify-center
+                            overflow-hidden
+                            rounded-full
+                            border
+                            border-white/20
+                            bg-white/10
+                            !text-white
+                            transition-all
+                            duration-300
+                            hover:border-[var(--accent)]
+                            hover:bg-[var(--accent)]
+                        "
+                    >
+                        {/* Moon */}
 
-                {/* ================= MOBILE BUTTON ================= */}
-                <button
-                    type="button"
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/5 !text-white transition hover:border-[#ff6b35] hover:bg-[#ff6b35] lg:hidden"
-                    aria-label="Toggle navigation"
-                    aria-expanded={isOpen}
+                        <span
+                            className={`
+                                absolute
+                                transition-all
+                                duration-300
+                                ${theme === "light"
+                                    ? "scale-100 rotate-0 opacity-100"
+                                    : "scale-0 rotate-90 opacity-0"
+                                }
+                            `}
+                        >
+                            <Moon size={18} />
+                        </span>
+
+                        {/* Sun */}
+
+                        <span
+                            className={`
+                                absolute
+                                transition-all
+                                duration-300
+                                ${theme === "dark"
+                                    ? "scale-100 rotate-0 opacity-100"
+                                    : "scale-0 -rotate-90 opacity-0"
+                                }
+                            `}
+                        >
+                            <Sun size={19} />
+                        </span>
+                    </button>
+
+                    {/* Appointment */}
+
+                    <a
+                        href="/contact"
+                        className="
+                            inline-flex
+                            items-center
+                            gap-2
+                            rounded-md
+                            bg-[var(--accent)]
+                            px-5
+                            py-3
+                            text-xs
+                            font-semibold
+                            !text-white
+                            shadow-lg
+                            transition-all
+                            duration-300
+                            hover:bg-[var(--accent-light)]
+                            hover:shadow-xl
+                        "
+                    >
+                        <Phone size={15} />
+
+                        <span className="!text-white">
+                            Make an Appointment
+                        </span>
+                    </a>
+                </div>
+
+                {/* ========================================
+                    MOBILE ACTIONS
+                ======================================== */}
+
+                <div
+                    className="
+                        flex
+                        items-center
+                        gap-2
+                        lg:hidden
+                    "
                 >
-                    {isOpen ? (
-                        <X
-                            size={22}
-                            className="!text-white"
-                        />
-                    ) : (
-                        <Menu
-                            size={22}
-                            className="!text-white"
-                        />
-                    )}
-                </button>
+                    {/* Mobile Theme Toggle */}
 
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={
+                            theme === "light"
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
+                        }
+                        className="
+                            flex
+                            h-10
+                            w-10
+                            items-center
+                            justify-center
+                            rounded-full
+                            border
+                            border-white/20
+                            bg-white/10
+                            !text-white
+                            transition-all
+                            duration-300
+                            hover:border-[var(--accent)]
+                            hover:bg-[var(--accent)]
+                        "
+                    >
+                        {theme === "light" ? (
+                            <Moon size={18} />
+                        ) : (
+                            <Sun size={19} />
+                        )}
+                    </button>
+
+                    {/* Mobile Menu */}
+
+                    <button
+                        type="button"
+                        onClick={() =>
+                            setIsOpen((prev) => !prev)
+                        }
+                        className="
+                            flex
+                            h-10
+                            w-10
+                            items-center
+                            justify-center
+                            rounded-md
+                            border
+                            border-white/20
+                            bg-white/5
+                            !text-white
+                            transition-all
+                            duration-300
+                            hover:border-[var(--accent)]
+                            hover:bg-[var(--accent)]
+                        "
+                        aria-label="Toggle navigation"
+                        aria-expanded={isOpen}
+                    >
+                        {isOpen ? (
+                            <X
+                                size={22}
+                                className="!text-white"
+                            />
+                        ) : (
+                            <Menu
+                                size={22}
+                                className="!text-white"
+                            />
+                        )}
+                    </button>
+                </div>
             </div>
 
-            {/* ================= MOBILE MENU ================= */}
-            <div
-                className={`overflow-hidden border-t border-white/10 bg-[#21102d] transition-all duration-300 lg:hidden ${isOpen
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 border-t-0 opacity-0"
-                    }`}
-            >
-                <nav className="mx-auto flex max-w-7xl flex-col px-5 py-5 sm:px-6">
+            {/* ========================================
+                MOBILE MENU
+            ======================================== */}
 
+            <div
+                className={`
+                    overflow-hidden
+                    border-t
+                    border-white/10
+                    bg-[var(--primary)]
+                    transition-all
+                    duration-300
+                    lg:hidden
+                    ${isOpen
+                        ? "max-h-[600px] opacity-100"
+                        : "max-h-0 border-t-0 opacity-0"
+                    }
+                `}
+            >
+                <nav
+                    className="
+                        mx-auto
+                        flex
+                        max-w-7xl
+                        flex-col
+                        px-5
+                        py-5
+                        sm:px-6
+                    "
+                >
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
                             onClick={handleLinkClick}
-                            className="rounded-lg px-4 py-3.5 !text-white text-sm font-medium transition duration-200 hover:bg-white/10 hover:!text-[#ff8a5c]"
+                            className="
+                                rounded-lg
+                                px-4
+                                py-3.5
+                                !text-white
+                                text-sm
+                                font-medium
+                                transition-all
+                                duration-300
+                                hover:bg-white/10
+                                hover:!text-[var(--accent-light)]
+                            "
                         >
                             {link.name}
                         </a>
                     ))}
 
                     {/* Mobile Appointment */}
+
                     <a
-                        href="#appointment"
+                        href="/contact"
                         onClick={handleLinkClick}
-                        className="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-[#ff6b35] px-5 py-3.5 !text-white text-sm font-semibold transition hover:bg-[#ff8a5c]"
+                        className="
+                            mt-4
+                            inline-flex
+                            items-center
+                            justify-center
+                            gap-2
+                            rounded-md
+                            bg-[var(--accent)]
+                            px-5
+                            py-3.5
+                            !text-white
+                            text-sm
+                            font-semibold
+                            transition-all
+                            duration-300
+                            hover:bg-[var(--accent-light)]
+                        "
                     >
                         <Phone size={17} />
 
-                        Make an Appointment
+                        <span className="!text-white">
+                            Make an Appointment
+                        </span>
                     </a>
-
                 </nav>
             </div>
-
         </header>
     );
 };

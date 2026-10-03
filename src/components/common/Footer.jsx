@@ -206,7 +206,7 @@ const Footer = () => {
 
                         {/* Appointment */}
                         <a
-                            href="#appointment"
+                            href="/contact"
                             className="mt-7 inline-flex rounded-md bg-[#ff6b35] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#ff8a5c]"
                         >
                             Book Appointment
