@@ -788,24 +788,14 @@ const AboutPage = () => {
 
                                     {/* Icon */}
 
-                                    <div
-                                        className="
-                                            flex
-                                            h-12
-                                            w-12
-                                            items-center
-                                            justify-center
-                                            rounded-xl
-                                            bg-[var(--accent-light)]
-                                            text-[var(--accent)]
-                                            transition-all
-                                            duration-500
-                                            group-hover:scale-110
-                                            group-hover:bg-[var(--accent)]
-                                            group-hover:text-white
-                                        "
-                                    >
-                                        <Icon size={22} />
+                                    {/* Icon */}
+
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--primary-light)] opacity-90 transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:bg-[var(--primary)]">
+                                        <Icon
+                                            size={27}
+                                            strokeWidth={1.7}
+                                            className="text-[var(--accent)] transition-[color,transform] duration-500 ease-out group-hover:scale-110 group-hover:text-[var(--accent-light)]"
+                                        />
                                     </div>
 
                                     {/* Title */}

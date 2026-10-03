@@ -668,22 +668,12 @@ const ContactPage = () => {
                                 hover:shadow-lg
                             "
                         >
-                            <div
-                                className="
-                                    flex
-                                    h-12
-                                    w-12
-                                    shrink-0
-                                    items-center
-                                    justify-center
-                                    rounded-xl
-                                    bg-[var(--accent-light)]
-                                    text-[var(--accent)]
-                                    transition-all
-                                    duration-500
-                                "
-                            >
-                                <Clock3 size={22} />
+                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--primary-light)] opacity-90 transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 hover:bg-[var(--primary)]">
+                                <Clock3
+                                    size={27}
+                                    strokeWidth={1.7}
+                                    className="text-[var(--accent)] transition-[color,transform] duration-500 ease-out"
+                                />
                             </div>
 
                             <div>
@@ -1313,24 +1303,12 @@ const ContactCard = ({
         >
             {/* Icon */}
 
-            <div
-                className="
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-[var(--accent-light)]
-                    text-[var(--accent)]
-                    transition-all
-                    duration-500
-                    group-hover:scale-110
-                    group-hover:bg-[var(--accent)]
-                    group-hover:text-white
-                "
-            >
-                <Icon size={22} />
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--primary-light)] opacity-90 transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:bg-[var(--primary)]">
+                <Icon
+                    size={27}
+                    strokeWidth={1.7}
+                    className="text-[var(--accent)] transition-[color,transform] duration-500 ease-out group-hover:scale-110 group-hover:text-[var(--accent-light)]"
+                />
             </div>
 
             {/* Title */}
