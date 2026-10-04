@@ -63,6 +63,7 @@ import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TreatmentDetails from "./pages/TreatmentDetails";
+import DocumentationPage from "./pages/DocumentationPage";
 
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -105,6 +106,12 @@ function App() {
             <Route
               path="/services/:slug"
               element={<TreatmentDetails />}
+            />
+
+            {/* Project Documentation */}
+            <Route
+              path="/documentation"
+              element={<DocumentationPage />}
             />
           </Routes>
 
