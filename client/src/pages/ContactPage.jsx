@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
     Clock3,
     Mail,
@@ -9,23 +9,13 @@ import {
     CheckCircle2,
     AlertCircle,
     Loader2,
+    X,
 } from "lucide-react";
 
 /*
 |--------------------------------------------------------------------------
 | API CONFIGURATION
 |--------------------------------------------------------------------------
-|
-| Create:
-|
-| client/.env
-|
-| VITE_API_URL=http://localhost:5000
-|
-| Production example:
-|
-| VITE_API_URL=https://your-backend-domain.com
-|
 */
 
 const API_URL =
@@ -61,6 +51,8 @@ const ContactPage = () => {
         message: "",
     });
 
+    const [showSubmitPopup, setShowSubmitPopup] = useState(false);
+
     /*
     |--------------------------------------------------------------------------
     | INPUT CHANGE
@@ -75,7 +67,7 @@ const ContactPage = () => {
             [name]: value,
         }));
 
-        // Remove previous message when user starts editing again
+        // Clear old popup/status when user edits again
         if (submitStatus.message) {
             setSubmitStatus({
                 type: "",
@@ -119,11 +111,7 @@ const ContactPage = () => {
             return "Please enter your email address.";
         }
 
-        if (
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-                email
-            )
-        ) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             return "Please enter a valid email address.";
         }
 
@@ -144,6 +132,16 @@ const ContactPage = () => {
         }
 
         return null;
+    };
+
+    /*
+    |--------------------------------------------------------------------------
+    | CLOSE POPUP
+    |--------------------------------------------------------------------------
+    */
+
+    const closeSubmitPopup = () => {
+        setShowSubmitPopup(false);
     };
 
     /*
@@ -177,6 +175,8 @@ const ContactPage = () => {
                 type: "error",
                 message: validationError,
             });
+
+            setShowSubmitPopup(true);
 
             return;
         }
@@ -243,6 +243,8 @@ const ContactPage = () => {
                     "Thank you! Your message has been submitted successfully. Our team will contact you soon.",
             });
 
+            setShowSubmitPopup(true);
+
             /*
             |--------------------------------------------------------------------------
             | RESET FORM
@@ -262,6 +264,8 @@ const ContactPage = () => {
                     error.message ||
                     "Something went wrong. Please try again later.",
             });
+
+            setShowSubmitPopup(true);
         } finally {
             setIsSubmitting(false);
         }
@@ -456,6 +460,7 @@ const ContactPage = () => {
             >
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div className="grid gap-8 lg:grid-cols-3">
+
                         {/* Address */}
 
                         <ContactCard
@@ -516,6 +521,7 @@ const ContactPage = () => {
                                 business day.
                             </p>
                         </ContactCard>
+
                     </div>
                 </div>
             </section>
@@ -668,11 +674,33 @@ const ContactPage = () => {
                                 hover:shadow-lg
                             "
                         >
-                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--primary-light)] opacity-90 transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 hover:bg-[var(--primary)]">
+                            <div
+                                className="
+                                    flex
+                                    h-14
+                                    w-14
+                                    shrink-0
+                                    items-center
+                                    justify-center
+                                    rounded-xl
+                                    bg-[var(--primary-light)]
+                                    opacity-90
+                                    transition-[background-color,transform]
+                                    duration-500
+                                    ease-[cubic-bezier(0.22,1,0.36,1)]
+                                    hover:scale-105
+                                    hover:bg-[var(--primary)]
+                                "
+                            >
                                 <Clock3
                                     size={27}
                                     strokeWidth={1.7}
-                                    className="text-[var(--accent)] transition-[color,transform] duration-500 ease-out"
+                                    className="
+                                        text-[var(--accent)]
+                                        transition-[color,transform]
+                                        duration-500
+                                        ease-out
+                                    "
                                 />
                             </div>
 
@@ -794,52 +822,10 @@ const ContactPage = () => {
                             sm:p-9
                         "
                     >
-                        {/* =================================================
-                            STATUS MESSAGE
-                        ================================================= */}
-
-                        {submitStatus.message && (
-                            <div
-                                className={`
-                                    mb-6
-                                    flex
-                                    items-start
-                                    gap-3
-                                    rounded-xl
-                                    border
-                                    px-4
-                                    py-4
-                                    text-sm
-                                    leading-6
-                                    ${submitStatus.type ===
-                                        "success"
-                                        ? "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400"
-                                        : "border-red-500/30 bg-red-500/10 text-red-600 dark:text-red-400"
-                                    }
-                                `}
-                            >
-                                {submitStatus.type ===
-                                    "success" ? (
-                                    <CheckCircle2
-                                        size={20}
-                                        className="mt-0.5 shrink-0"
-                                    />
-                                ) : (
-                                    <AlertCircle
-                                        size={20}
-                                        className="mt-0.5 shrink-0"
-                                    />
-                                )}
-
-                                <span>
-                                    {submitStatus.message}
-                                </span>
-                            </div>
-                        )}
-
                         {/* Name + Phone */}
 
                         <div className="grid gap-5 sm:grid-cols-2">
+
                             {/* Name */}
 
                             <div>
@@ -1078,7 +1064,14 @@ const ContactPage = () => {
                                 "
                             />
 
-                            <div className="mt-2 text-right text-xs text-[var(--muted)]">
+                            <div
+                                className="
+                                    mt-2
+                                    text-right
+                                    text-xs
+                                    text-[var(--muted)]
+                                "
+                            >
                                 {formData.message.length}/2000
                             </div>
                         </div>
@@ -1119,6 +1112,7 @@ const ContactPage = () => {
                                         size={18}
                                         className="animate-spin"
                                     />
+
                                     <span className="!text-white">
                                         Sending...
                                     </span>
@@ -1126,6 +1120,7 @@ const ContactPage = () => {
                             ) : (
                                 <>
                                     <Send size={17} />
+
                                     <span className="!text-white">
                                         Send Message
                                     </span>
@@ -1219,9 +1214,6 @@ const ContactPage = () => {
                                     here.
                                 </p>
 
-                                {/* Replace address with actual clinic
-                                    address when available */}
-
                                 <a
                                     href="https://www.google.com/maps/search/?api=1&query=Dental+Clinic+Studio+India"
                                     target="_blank"
@@ -1245,6 +1237,7 @@ const ContactPage = () => {
                                     "
                                 >
                                     <MapPin size={17} />
+
                                     <span className="!text-white">
                                         Get Directions
                                     </span>
@@ -1254,6 +1247,287 @@ const ContactPage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* =====================================================
+                SUBMISSION POPUP
+            ===================================================== */}
+
+            <AnimatePresence>
+                {showSubmitPopup && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        onClick={closeSubmitPopup}
+                        className="
+                            fixed
+                            inset-0
+                            z-[9999]
+                            flex
+                            items-center
+                            justify-center
+                            bg-black/55
+                            px-4
+                            py-6
+                            backdrop-blur-md
+                        "
+                    >
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                scale: 0.88,
+                                y: 30,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.92,
+                                y: 20,
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
+                            onClick={(event) =>
+                                event.stopPropagation()
+                            }
+                            className="
+                                relative
+                                w-full
+                                max-w-md
+                                overflow-hidden
+                                rounded-[2rem]
+                                border
+                                border-[var(--border)]
+                                bg-[var(--card-bg)]
+                                p-7
+                                text-center
+                                shadow-2xl
+                                sm:p-9
+                            "
+                        >
+                            {/* Accent Top Line */}
+
+                            <div
+                                className="
+                                    absolute
+                                    left-0
+                                    right-0
+                                    top-0
+                                    h-1
+                                    bg-[var(--accent)]
+                                "
+                            />
+
+                            {/* Close Icon */}
+
+                            <button
+                                type="button"
+                                onClick={closeSubmitPopup}
+                                aria-label="Close popup"
+                                className="
+                                    absolute
+                                    right-4
+                                    top-4
+                                    flex
+                                    h-9
+                                    w-9
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    text-[var(--muted)]
+                                    transition-all
+                                    duration-300
+                                    hover:bg-[var(--page-bg)]
+                                    hover:text-[var(--text)]
+                                "
+                            >
+                                <X size={18} />
+                            </button>
+
+                            {/* Status Icon */}
+
+                            <motion.div
+                                initial={{ scale: 0, rotate: -15 }}
+                                animate={{ scale: 1, rotate: 0 }}
+                                transition={{
+                                    delay: 0.12,
+                                    duration: 0.5,
+                                    type: "spring",
+                                    stiffness: 180,
+                                    damping: 12,
+                                }}
+                                className={`
+                                    mx-auto
+                                    mt-3
+                                    flex
+                                    h-20
+                                    w-20
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    ${submitStatus.type ===
+                                        "success"
+                                        ? "bg-green-500/10 text-green-500"
+                                        : "bg-red-500/10 text-red-500"
+                                    }
+                                `}
+                            >
+                                {submitStatus.type === "success" ? (
+                                    <CheckCircle2
+                                        size={44}
+                                        strokeWidth={1.8}
+                                    />
+                                ) : (
+                                    <AlertCircle
+                                        size={44}
+                                        strokeWidth={1.8}
+                                    />
+                                )}
+                            </motion.div>
+
+                            {/* Heading */}
+
+                            <motion.h3
+                                initial={{
+                                    opacity: 0,
+                                    y: 12,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                transition={{
+                                    delay: 0.2,
+                                    duration: 0.35,
+                                }}
+                                className="
+                                    mt-6
+                                    text-2xl
+                                    font-bold
+                                    text-[var(--text)]
+                                    sm:text-3xl
+                                "
+                            >
+                                {submitStatus.type === "success"
+                                    ? "Message Sent!"
+                                    : "Submission Failed"}
+                            </motion.h3>
+
+                            {/* Message */}
+
+                            <motion.p
+                                initial={{
+                                    opacity: 0,
+                                    y: 12,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                transition={{
+                                    delay: 0.26,
+                                    duration: 0.35,
+                                }}
+                                className="
+                                    mx-auto
+                                    mt-3
+                                    max-w-sm
+                                    text-sm
+                                    leading-7
+                                    text-[var(--muted)]
+                                "
+                            >
+                                {submitStatus.message}
+                            </motion.p>
+
+                            {/* Success Information */}
+
+                            {submitStatus.type === "success" && (
+                                <motion.div
+                                    initial={{
+                                        opacity: 0,
+                                        y: 10,
+                                    }}
+                                    animate={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+                                    transition={{
+                                        delay: 0.32,
+                                        duration: 0.35,
+                                    }}
+                                    className="
+                                        mt-5
+                                        rounded-xl
+                                        border
+                                        border-[var(--border)]
+                                        bg-[var(--page-bg)]
+                                        px-4
+                                        py-3
+                                        text-xs
+                                        leading-5
+                                        text-[var(--muted)]
+                                    "
+                                >
+                                    Thank you for contacting us.
+                                    Our team will review your
+                                    enquiry and get back to you
+                                    shortly.
+                                </motion.div>
+                            )}
+
+                            {/* Button */}
+
+                            <motion.button
+                                initial={{
+                                    opacity: 0,
+                                    y: 10,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                transition={{
+                                    delay: 0.38,
+                                    duration: 0.35,
+                                }}
+                                type="button"
+                                onClick={closeSubmitPopup}
+                                className="
+                                    mt-7
+                                    inline-flex
+                                    w-full
+                                    items-center
+                                    justify-center
+                                    rounded-xl
+                                    bg-[var(--accent)]
+                                    px-6
+                                    py-3.5
+                                    text-sm
+                                    font-semibold
+                                    !text-white
+                                    shadow-lg
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:bg-[var(--accent-light)]
+                                    hover:shadow-xl
+                                "
+                            >
+                                {submitStatus.type === "success"
+                                    ? "Done"
+                                    : "Try Again"}
+                            </motion.button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </main>
     );
 };
@@ -1303,11 +1577,34 @@ const ContactCard = ({
         >
             {/* Icon */}
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--primary-light)] opacity-90 transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:bg-[var(--primary)]">
+            <div
+                className="
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[var(--primary-light)]
+                    opacity-90
+                    transition-[background-color,transform]
+                    duration-500
+                    ease-[cubic-bezier(0.22,1,0.36,1)]
+                    group-hover:scale-105
+                    group-hover:bg-[var(--primary)]
+                "
+            >
                 <Icon
                     size={27}
                     strokeWidth={1.7}
-                    className="text-[var(--accent)] transition-[color,transform] duration-500 ease-out group-hover:scale-110 group-hover:text-[var(--accent-light)]"
+                    className="
+                        text-[var(--accent)]
+                        transition-[color,transform]
+                        duration-500
+                        ease-out
+                        group-hover:scale-110
+                        group-hover:text-[var(--accent-light)]
+                    "
                 />
             </div>
 

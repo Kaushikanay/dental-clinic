@@ -1,0 +1,20 @@
+{
+  "name": "dental-clinic-server",
+  "version": "1.0.0",
+  "description": "Backend API for Dental Clinic Studio",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "mern",
+    "express",
+    "mongodb"
+  ],
+  "author": "Anay Kumar",
+  "license": "ISC"
+}
