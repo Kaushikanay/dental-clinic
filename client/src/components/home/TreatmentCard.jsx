@@ -148,33 +148,33 @@ const TreatmentCard = ({ treatment }) => {
 
                     <span
                         className="
-        flex
-        h-8
-        w-8
-        items-center
-        justify-center
-        rounded-full
-        bg-[var(--primary-light)]
-        text-[var(--accent)]
-        transition-all
-        duration-500
-        ease-[cubic-bezier(0.22,1,0.36,1)]
-        group-hover:translate-x-1
-        group-hover:bg-[var(--accent)]
-        group-hover:text-white
-    "
+                            flex
+                            h-8
+                            w-8
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-[var(--primary-light)]
+                            text-[var(--accent)]
+                            transition-all
+                            duration-500
+                            ease-[cubic-bezier(0.22,1,0.36,1)]
+                            group-hover:translate-x-1
+                            group-hover:bg-[var(--accent)]
+                            group-hover:text-white
+                        "
                     >
                         <ArrowUpRight
                             size={16}
                             strokeWidth={2}
                             className="
-            text-[var(--accent)]
-            transition-transform
-            duration-500
-            ease-out
-            group-hover:rotate-6
-            group-hover:text-white
-        "
+                                text-[var(--accent)]
+                                transition-transform
+                                duration-500
+                                ease-out
+                                group-hover:rotate-6
+                                group-hover:text-white
+                            "
                         />
                     </span>
                 </Link>

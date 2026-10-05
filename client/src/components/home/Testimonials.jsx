@@ -1,85 +1,159 @@
-import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 
 const testimonials = [
     {
         name: "Priya Sharma",
         role: "Dental Care Patient",
+        title: "Best Service",
         review:
             "The entire treatment experience was comfortable and professional. The doctor explained everything clearly and made me feel completely at ease.",
+        image: "/images/testimonial-1",
     },
     {
         name: "Rahul Verma",
         role: "Dental Treatment Patient",
+        title: "Excellent Experience",
         review:
             "I really appreciated the friendly environment and attention to detail. The treatment was smooth, and the overall experience was excellent.",
+        image: "/images/testimonial-1",
     },
     {
         name: "Neha Singh",
         role: "Smile Care Patient",
+        title: "Highly Recommended",
         review:
             "The clinic has a very welcoming atmosphere. The team was supportive throughout the treatment and helped me feel confident about my smile.",
+        image: "/images/testimonial-1",
     },
 ];
 
+const imageExtensions = [".jpg", ".jpeg", ".png"];
+
 const Testimonials = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [direction, setDirection] = useState(1);
+
+    const [imageIndex, setImageIndex] = useState(0);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const nextTestimonial = () => {
+        setDirection(1);
+
+        setActiveIndex((current) =>
+            current === testimonials.length - 1 ? 0 : current + 1,
+        );
+    };
+
+    const previousTestimonial = () => {
+        setDirection(-1);
+
+        setActiveIndex((current) =>
+            current === 0 ? testimonials.length - 1 : current - 1,
+        );
+    };
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            nextTestimonial();
+        }, 6000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    /*
+     * Reset image state whenever testimonial changes
+     */
+    useEffect(() => {
+        setImageIndex(0);
+        setImageLoaded(false);
+    }, [activeIndex]);
+
+    const testimonial = testimonials[activeIndex];
+
+    const currentImage =
+        `${testimonial.image}${imageExtensions[imageIndex]}`;
+
+    const handleImageError = () => {
+        if (imageIndex < imageExtensions.length - 1) {
+            setImageIndex((current) => current + 1);
+        } else {
+            setImageLoaded(false);
+        }
+    };
+
     return (
         <section
             id="testimonials"
             className="
-                relative
-                overflow-hidden
-                bg-[var(--page-bg)]
-                py-20
-                sm:py-24
-                lg:py-28
-            "
+        relative
+        overflow-hidden
+        bg-[var(--page-bg)]
+        py-20
+        transition-colors
+        duration-500
+        sm:py-24
+        lg:py-28
+      "
         >
-            {/* Background Decoration */}
+            {/* =========================================
+          BACKGROUND DECORATION
+      ========================================== */}
+
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 <div
                     className="
-                        absolute
-                        -left-32
-                        top-20
-                        h-72
-                        w-72
-                        rounded-full
-                        bg-[var(--accent)]
-                        opacity-[0.035]
-                        blur-3xl
-                    "
+            absolute
+            -left-32
+            top-20
+            h-72
+            w-72
+            rounded-full
+            bg-[var(--accent)]
+            opacity-[0.025]
+            blur-3xl
+          "
                 />
 
                 <div
                     className="
-                        absolute
-                        -right-32
-                        bottom-10
-                        h-80
-                        w-80
-                        rounded-full
-                        bg-[var(--primary-light)]
-                        opacity-[0.05]
-                        blur-3xl
-                    "
+            absolute
+            -right-32
+            bottom-10
+            h-80
+            w-80
+            rounded-full
+            bg-[var(--primary-light)]
+            opacity-[0.04]
+            blur-3xl
+          "
                 />
             </div>
 
             <div
                 className="
-                    relative
-                    mx-auto
-                    max-w-7xl
-                    px-5
-                    sm:px-6
-                    lg:px-8
-                "
+          relative
+          mx-auto
+          max-w-7xl
+          px-5
+          sm:px-6
+          lg:px-8
+        "
             >
-                {/* Section Heading */}
+                {/* =========================================
+            SECTION HEADING
+        ========================================== */}
+
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
                     viewport={{
                         once: true,
                         amount: 0.2,
@@ -89,283 +163,432 @@ const Testimonials = () => {
                         ease: "easeOut",
                     }}
                     className="
-                        mx-auto
-                        mb-14
-                        max-w-3xl
-                        text-center
-                    "
+            mx-auto
+            mb-10
+            max-w-3xl
+            text-center
+            sm:mb-12
+          "
                 >
-                    {/* Section Label */}
                     <div
                         className="
-                            mb-4
-                            flex
-                            items-center
-                            justify-center
-                            gap-3
-                        "
+              mb-4
+              flex
+              items-center
+              justify-center
+              gap-3
+            "
                     >
                         <span
                             className="
-                                h-px
-                                w-7
-                                bg-[var(--accent)]
-                            "
+                h-px
+                w-7
+                bg-[var(--accent)]
+              "
                         />
 
                         <span
                             className="
-                                text-xs
-                                font-bold
-                                uppercase
-                                tracking-[0.25em]
-                                text-[var(--accent)]
-                                transition-colors
-                                duration-500
-                            "
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.25em]
+                text-[var(--accent)]
+              "
                         >
-                            Testimonials
+                            Testimonial
                         </span>
 
                         <span
                             className="
-                                h-px
-                                w-7
-                                bg-[var(--accent)]
-                            "
+                h-px
+                w-7
+                bg-[var(--accent)]
+              "
                         />
                     </div>
 
-                    {/* Heading */}
                     <h2
                         className="
-                            text-3xl
-                            font-bold
-                            leading-tight
-                            text-[var(--doctor-text)]
-                            sm:text-4xl
-                            lg:text-5xl
-                        "
+              text-4xl
+              font-bold
+              leading-tight
+              text-[var(--doctor-text)]
+              sm:text-5xl
+              lg:text-6xl
+            "
                     >
-                        What Our Patients{" "}
-                        <span className="text-[var(--accent)]">
-                            Say
-                        </span>
+                        Happy Stories
                     </h2>
-
-                    {/* Description */}
-                    <p
-                        className="
-                            mx-auto
-                            mt-5
-                            max-w-2xl
-                            text-sm
-                            leading-7
-                            text-[var(--doctor-muted)]
-                            sm:text-base
-                        "
-                    >
-                        A comfortable experience and quality dental care are
-                        at the heart of everything we do.
-                    </p>
                 </motion.div>
 
-                {/* Testimonials */}
+                {/* =========================================
+            TESTIMONIAL CAROUSEL
+        ========================================== */}
+
                 <div
                     className="
-                        grid
-                        gap-6
-                        md:grid-cols-3
-                    "
+            relative
+            mx-auto
+            max-w-5xl
+          "
                 >
-                    {testimonials.map((testimonial, index) => (
-                        <motion.article
-                            key={testimonial.name}
-                            initial={{
-                                opacity: 0,
-                                y: 35,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                                amount: 0.2,
-                            }}
-                            transition={{
-                                duration: 0.6,
-                                delay: index * 0.12,
-                                ease: [
-                                    0.22,
-                                    1,
-                                    0.36,
-                                    1,
-                                ],
-                            }}
-                            className="
-                                group
-                                relative
-                                overflow-hidden
-                                rounded-2xl
-                                border
-                                border-[var(--border)]
-                                bg-[var(--doctor-card)]
-                                p-7
-                                shadow-sm
-                                transition-all
-                                duration-500
-                                ease-[cubic-bezier(0.22,1,0.36,1)]
-                                hover:-translate-y-2
-                                hover:border-[var(--accent)]
-                                hover:shadow-xl
-                            "
+                    {/* LEFT ARROW */}
+
+                    <button
+                        type="button"
+                        onClick={previousTestimonial}
+                        aria-label="Previous testimonial"
+                        className="
+              absolute
+              left-0
+              top-1/2
+              z-20
+              hidden
+              -translate-y-1/2
+              text-[var(--doctor-muted)]
+              transition-all
+              duration-300
+              hover:-translate-x-2
+              hover:text-[var(--accent)]
+              md:block
+            "
+                    >
+                        <ArrowLeft
+                            size={40}
+                            strokeWidth={1.3}
+                        />
+                    </button>
+
+                    {/* RIGHT ARROW */}
+
+                    <button
+                        type="button"
+                        onClick={nextTestimonial}
+                        aria-label="Next testimonial"
+                        className="
+              absolute
+              right-0
+              top-1/2
+              z-20
+              hidden
+              -translate-y-1/2
+              text-[var(--doctor-muted)]
+              transition-all
+              duration-300
+              hover:translate-x-2
+              hover:text-[var(--accent)]
+              md:block
+            "
+                    >
+                        <ArrowRight
+                            size={40}
+                            strokeWidth={1.3}
+                        />
+                    </button>
+
+                    {/* CENTER CONTENT */}
+
+                    <div
+                        className="
+              mx-auto
+              max-w-2xl
+              px-6
+              text-center
+              sm:px-12
+            "
+                    >
+                        <AnimatePresence
+                            mode="wait"
+                            custom={direction}
                         >
-                            {/* Top Accent */}
-                            <div
-                                className="
-                                    absolute
-                                    left-0
-                                    right-0
-                                    top-0
-                                    h-0.5
-                                    origin-left
-                                    scale-x-0
-                                    bg-[var(--accent)]
-                                    transition-transform
-                                    duration-500
-                                    group-hover:scale-x-100
-                                "
-                            />
-
-                            {/* Quote Icon */}
-                            <div
-                                className="
-                                    flex
-                                    h-12
-                                    w-12
-                                    items-center
-                                    justify-center
-                                    rounded-xl
-                                    bg-[var(--primary-light)]
-                                    transition-all
-                                    duration-500
-                                    group-hover:scale-110
-                                    group-hover:bg-[var(--primary)]
-                                "
+                            <motion.div
+                                key={activeIndex}
+                                custom={direction}
+                                initial={{
+                                    opacity: 0,
+                                    x: direction * 35,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    x: 0,
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    x: direction * -35,
+                                }}
+                                transition={{
+                                    duration: 0.45,
+                                    ease: "easeOut",
+                                }}
                             >
-                                <Quote
-                                    size={23}
-                                    strokeWidth={1.8}
-                                    className="
-                                        text-[var(--accent)]
-                                    "
-                                />
-                            </div>
+                                {/* =================================
+                    PATIENT IMAGE
+                ================================== */}
 
-                            {/* Stars */}
-                            <div className="mt-6 flex gap-1">
-                                {[...Array(5)].map((_, starIndex) => (
-                                    <Star
-                                        key={starIndex}
-                                        size={17}
-                                        strokeWidth={1.8}
-                                        fill="currentColor"
+                                <div className="flex justify-center">
+                                    <div
                                         className="
-                                            text-[var(--accent)]
-                                        "
-                                    />
-                                ))}
-                            </div>
+                      relative
+                      h-20
+                      w-20
+                      overflow-hidden
+                      rounded-full
+                      bg-[var(--primary-light)]
+                      shadow-md
+                      ring-1
+                      ring-[var(--border)]
+                    "
+                                    >
+                                        {imageLoaded ? (
+                                            <img
+                                                src={currentImage}
+                                                alt={testimonial.name}
+                                                className="
+                          block
+                          h-full
+                          w-full
+                          object-cover
+                        "
+                                                draggable="false"
+                                                onError={handleImageError}
+                                            />
+                                        ) : (
+                                            <>
+                                                {/* Try loading image invisibly first */}
+                                                <img
+                                                    src={currentImage}
+                                                    alt=""
+                                                    className="hidden"
+                                                    onLoad={() => setImageLoaded(true)}
+                                                    onError={handleImageError}
+                                                />
 
-                            {/* Review */}
-                            <p
-                                className="
-                                    mt-5
-                                    text-sm
-                                    leading-7
-                                    text-[var(--doctor-muted)]
-                                    sm:text-base
-                                "
-                            >
-                                “{testimonial.review}”
-                            </p>
+                                                {/* Fallback only if all images fail */}
+                                                <div
+                                                    className="
+                            absolute
+                            inset-0
+                            flex
+                            items-center
+                            justify-center
+                            bg-[var(--primary-light)]
+                            text-lg
+                            font-bold
+                            text-white
+                          "
+                                                >
+                                                    {testimonial.name
+                                                        .split(" ")
+                                                        .map((word) => word[0])
+                                                        .join("")
+                                                        .slice(0, 2)}
+                                                </div>
+                                            </>
+                                        )}
 
-                            {/* Patient */}
-                            <div
-                                className="
-                                    mt-7
-                                    flex
-                                    items-center
-                                    gap-4
-                                "
-                            >
-                                {/* Initials */}
+                                        {/* Hidden loader when image is not yet loaded */}
+                                        {!imageLoaded && (
+                                            <img
+                                                src={currentImage}
+                                                alt=""
+                                                className="hidden"
+                                                onLoad={() => setImageLoaded(true)}
+                                                onError={handleImageError}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* =================================
+                    PATIENT NAME
+                ================================== */}
+
+                                <p
+                                    className="
+                    mt-3
+                    text-sm
+                    font-medium
+                    text-[var(--doctor-text)]
+                  "
+                                >
+                                    {testimonial.name}
+                                </p>
+
+                                {/* =================================
+                    QUOTE
+                ================================== */}
+
                                 <div
                                     className="
-                                        flex
-                                        h-12
-                                        w-12
-                                        shrink-0
-                                        items-center
-                                        justify-center
-                                        rounded-full
-                                        bg-[var(--primary-light)]
-                                        text-sm
-                                        font-bold
-                                        text-[var(--accent)]
-                                        transition-all
-                                        duration-500
-                                        group-hover:bg-[var(--primary)]
-                                    "
+                    mt-7
+                    flex
+                    justify-center
+                  "
                                 >
-                                    {testimonial.name
-                                        .split(" ")
-                                        .map((word) => word[0])
-                                        .join("")}
+                                    <Quote
+                                        size={42}
+                                        strokeWidth={2}
+                                        className="
+                      fill-[var(--doctor-muted)]
+                      text-[var(--doctor-muted)]
+                      opacity-20
+                    "
+                                    />
                                 </div>
 
-                                <div>
-                                    <h3
-                                        className="
-                                            text-sm
-                                            font-semibold
-                                            text-[var(--doctor-text)]
-                                            transition-colors
-                                            duration-500
-                                            group-hover:text-[var(--accent)]
-                                        "
-                                    >
-                                        {testimonial.name}
-                                    </h3>
+                                {/* =================================
+                    TITLE
+                ================================== */}
 
-                                    <p
-                                        className="
-                                            mt-1
-                                            text-xs
-                                            text-[var(--doctor-muted)]
-                                        "
-                                    >
-                                        {testimonial.role}
-                                    </p>
-                                </div>
-                            </div>
+                                <h3
+                                    className="
+                    mt-1
+                    text-2xl
+                    font-medium
+                    text-[var(--doctor-text)]
+                    sm:text-3xl
+                  "
+                                >
+                                    {testimonial.title}
+                                </h3>
 
-                            {/* Bottom Accent */}
-                            <div
-                                className="
-                                    mt-7
-                                    h-px
-                                    w-10
-                                    bg-[var(--accent)]
-                                    opacity-50
-                                    transition-all
-                                    duration-500
-                                    group-hover:w-full
-                                    group-hover:opacity-100
-                                "
+                                {/* =================================
+                    REVIEW
+                ================================== */}
+
+                                <p
+                                    className="
+                    mx-auto
+                    mt-4
+                    max-w-2xl
+                    text-sm
+                    leading-7
+                    text-[var(--doctor-muted)]
+                    sm:text-base
+                    sm:leading-8
+                  "
+                                >
+                                    {testimonial.review}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+                </div>
+
+                {/* =========================================
+            MOBILE CONTROLS
+        ========================================== */}
+
+                <div
+                    className="
+            mt-8
+            flex
+            items-center
+            justify-center
+            gap-8
+            md:hidden
+          "
+                >
+                    <button
+                        type="button"
+                        onClick={previousTestimonial}
+                        aria-label="Previous testimonial"
+                        className="
+              text-[var(--doctor-muted)]
+              transition-colors
+              duration-300
+              hover:text-[var(--accent)]
+            "
+                    >
+                        <ArrowLeft
+                            size={30}
+                            strokeWidth={1.4}
+                        />
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                type="button"
+                                onClick={() => {
+                                    setDirection(
+                                        index > activeIndex ? 1 : -1,
+                                    );
+
+                                    setActiveIndex(index);
+                                }}
+                                aria-label={`Testimonial ${index + 1}`}
+                                className={`
+                  h-1.5
+                  rounded-full
+                  transition-all
+                  duration-300
+                  ${activeIndex === index
+                                        ? "w-7 bg-[var(--accent)]"
+                                        : "w-1.5 bg-[var(--border)]"
+                                    }
+                `}
                             />
-                        </motion.article>
+                        ))}
+                    </div>
+
+                    <button
+                        type="button"
+                        onClick={nextTestimonial}
+                        aria-label="Next testimonial"
+                        className="
+              text-[var(--doctor-muted)]
+              transition-colors
+              duration-300
+              hover:text-[var(--accent)]
+            "
+                    >
+                        <ArrowRight
+                            size={30}
+                            strokeWidth={1.4}
+                        />
+                    </button>
+                </div>
+
+                {/* =========================================
+            DESKTOP DOTS
+        ========================================== */}
+
+                <div
+                    className="
+            mt-7
+            hidden
+            items-center
+            justify-center
+            gap-2
+            md:flex
+          "
+                >
+                    {testimonials.map((_, index) => (
+                        <button
+                            key={index}
+                            type="button"
+                            onClick={() => {
+                                setDirection(
+                                    index > activeIndex ? 1 : -1,
+                                );
+
+                                setActiveIndex(index);
+                            }}
+                            aria-label={`Testimonial ${index + 1}`}
+                            className={`
+                h-1.5
+                rounded-full
+                transition-all
+                duration-300
+                ${activeIndex === index
+                                    ? "w-8 bg-[var(--accent)]"
+                                    : "w-1.5 bg-[var(--border)]"
+                                }
+              `}
+                        />
                     ))}
                 </div>
             </div>
