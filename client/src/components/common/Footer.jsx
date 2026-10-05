@@ -423,13 +423,11 @@ const Footer = () => {
             />
 
             <div className="relative mx-auto max-w-7xl px-6 pt-16 lg:px-10 lg:pt-20">
-
                 {/* ====================================================
                     MAIN FOOTER
                 ===================================================== */}
 
                 <div className="grid gap-12 pb-14 md:grid-cols-2 lg:grid-cols-4">
-
                     {/* ==================================================
                         BRAND
                     =================================================== */}
@@ -505,9 +503,8 @@ const Footer = () => {
                         </Link>
 
                         <p className="mt-6 max-w-xs text-sm leading-7 text-white/50">
-                            Providing personalized dental care with modern
-                            technology, experienced professionals and a
-                            patient-first approach.
+                            Providing personalized dental care with modern technology,
+                            experienced professionals and a patient-first approach.
                         </p>
 
                         {/* ==================================================
@@ -722,7 +719,6 @@ const Footer = () => {
                         </h3>
 
                         <div className="mt-6 space-y-5">
-
                             {/* Address */}
                             <div className="group flex gap-3">
                                 <div
@@ -769,10 +765,7 @@ const Footer = () => {
 
                             {/* Phone */}
                             <a
-                                href={`tel:${clinicInfo.phone.replace(
-                                    /\s/g,
-                                    "",
-                                )}`}
+                                href={`tel:${clinicInfo.phone.replace(/\s/g, "")}`}
                                 className="
                                     group
                                     flex
@@ -893,7 +886,6 @@ const Footer = () => {
                                     group-hover:scale-110
                                 "
                             />
-
                             Book Appointment
                         </Link>
                     </div>
@@ -917,12 +909,11 @@ const Footer = () => {
                         "
                     >
                         <p className="text-xs text-white/40">
-                            © {new Date().getFullYear()} Dental Clinic Studio.
-                            All rights reserved.
+                            © {new Date().getFullYear()} Dental Clinic Studio. All rights
+                            reserved.
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-5">
-
                             {/* Documentation */}
                             <Link
                                 to="/documentation"
