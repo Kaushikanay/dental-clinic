@@ -1,59 +1,3 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import Navbar from "./components/common/Navbar";
-// import Footer from "./components/common/Footer";
-
-// import Home from "./pages/Home";
-// import AboutPage from "./pages/AboutPage";
-// import ContactPage from "./pages/ContactPage";
-
-// import { ThemeProvider } from "./context/ThemeContext";
-// import TreatmentDetails from "./pages/TreatmentDetails";
-
-// function App() {
-//   return (
-//     <ThemeProvider>
-//       <BrowserRouter>
-//         <div
-//           className="
-//                         min-h-screen
-//                         bg-[var(--page-bg)]
-//                         text-[var(--text)]
-//                     "
-//         >
-//           <Navbar />
-
-//           <Routes>
-//             <Route
-//               path="/"
-//               element={<Home />}
-//             />
-
-//             <Route
-//               path="/about"
-//               element={<AboutPage />}
-//             />
-
-//             <Route
-//               path="/contact"
-//               element={<ContactPage />}
-
-//             />
-
-//             <Route
-//               path="/treatment/:slug"
-//               element={<TreatmentDetails />}
-//             />
-//           </Routes>
-
-//           <Footer />
-//         </div>
-//       </BrowserRouter>
-//     </ThemeProvider>
-//   );
-// }
-
-// export default App;
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/common/Navbar";
@@ -64,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TreatmentDetails from "./pages/TreatmentDetails";
 import DocumentationPage from "./pages/DocumentationPage";
+import ProfessionalResults from "./components/home/ProfessionalResults";
 
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -108,6 +53,11 @@ function App() {
               element={<TreatmentDetails />}
             />
 
+            {/* Professional Details */}
+            <Route
+              path="/professionals/:slug"
+              element={<ProfessionalResults />}
+            />
             {/* Project Documentation */}
             <Route
               path="/documentation"
