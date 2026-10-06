@@ -8,7 +8,9 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TreatmentDetails from "./pages/TreatmentDetails";
 import DocumentationPage from "./pages/DocumentationPage";
-import ProfessionalResults from "./components/home/ProfessionalResults";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsConditionsPage from "./pages/TermsConditionsPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -27,6 +29,7 @@ function App() {
         >
           {/* Global Header */}
           <Navbar />
+          <ScrollToTop />
 
           <Routes>
             {/* Home */}
@@ -53,15 +56,19 @@ function App() {
               element={<TreatmentDetails />}
             />
 
-            {/* Professional Details */}
-            <Route
-              path="/professionals/:slug"
-              element={<ProfessionalResults />}
-            />
             {/* Project Documentation */}
             <Route
               path="/documentation"
               element={<DocumentationPage />}
+            />
+            <Route
+              path="/privacy-policy"
+              element={<PrivacyPolicyPage />}
+            />
+
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsConditionsPage />}
             />
           </Routes>
 

@@ -914,7 +914,7 @@ const Footer = () => {
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-5">
-                            {/* Documentation */}
+                            {/* Documentation
                             <Link
                                 to="/documentation"
                                 className="
@@ -930,11 +930,11 @@ const Footer = () => {
                             >
                                 <FileText size={13} />
                                 Documentation
-                            </Link>
+                            </Link> */}
 
                             {/* Privacy Policy - Dummy Working Link */}
                             <Link
-                                to="/documentation"
+                                to="/privacy-policy"
                                 className="
                                     text-xs
                                     text-white/40
@@ -948,7 +948,7 @@ const Footer = () => {
 
                             {/* Terms - Dummy Working Link */}
                             <Link
-                                to="/documentation"
+                                to="/terms-and-conditions"
                                 className="
                                     text-xs
                                     text-white/40
