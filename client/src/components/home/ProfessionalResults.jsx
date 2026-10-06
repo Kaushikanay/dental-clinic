@@ -53,12 +53,12 @@ const resultImages = [
 
         before: {
             type: "Before Treatment",
-            image: "/images/professional-before.png",
+            image: "/images/professional-after-1.jpg",
         },
 
         after: {
             type: "After Treatment",
-            image: "/images/professional-after.png",
+            image: "/images/professional-before-1.jpg",
         },
     },
 
@@ -67,12 +67,12 @@ const resultImages = [
 
         before: {
             type: "Before Treatment",
-            image: "/images/professional-before-2.png",
+            image: "/images/professional-before-2.jpg",
         },
 
         after: {
             type: "After Treatment",
-            image: "/images/professional-after-2.png",
+            image: "/images/professional-after-2.jpg",
         },
     },
 
@@ -81,12 +81,12 @@ const resultImages = [
 
         before: {
             type: "Before Treatment",
-            image: "/images/professional-before-3.png",
+            image: "/images/professional-before-3.jpg",
         },
 
         after: {
             type: "After Treatment",
-            image: "/images/professional-after-3.png",
+            image: "/images/professional-after-3.jpg",
         },
     },
 ];

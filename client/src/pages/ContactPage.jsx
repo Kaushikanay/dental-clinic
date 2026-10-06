@@ -468,11 +468,9 @@ const ContactPage = () => {
                             title="Visit Our Clinic"
                         >
                             <p>
-                                Dental Clinic Studio
+                                Juran Chapra Main Road
                                 <br />
-                                Your Clinic Address
-                                <br />
-                                Your City, India
+                                Above Satyanarayan Nursing Home.
                             </p>
                         </ContactCard>
 
@@ -483,14 +481,14 @@ const ContactPage = () => {
                             title="Call Us"
                         >
                             <a
-                                href="tel:+919999999999"
+                                href="tel:+919990503059"
                                 className="
                                     transition-colors
                                     duration-300
                                     hover:text-[var(--accent)]
                                 "
                             >
-                                +91 99999 99999
+                                +91 99905 03059
                             </a>
 
                             <p className="mt-2">
@@ -505,7 +503,7 @@ const ContactPage = () => {
                             title="Email Us"
                         >
                             <a
-                                href="mailto:info@dentalclinicstudio.com"
+                                href="mailto:dsmilemax@gmail.com"
                                 className="
                                     break-all
                                     transition-colors
@@ -513,7 +511,7 @@ const ContactPage = () => {
                                     hover:text-[var(--accent)]
                                 "
                             >
-                                info@dentalclinicstudio.com
+                                dsmilemax@gmail.com
                             </a>
 
                             <p className="mt-2">
@@ -735,7 +733,8 @@ const ContactPage = () => {
 
                         <div className="mt-6 flex flex-wrap gap-3">
                             <a
-                                href="tel:+919999999999"
+                                href="tel:+9199905030591
+"
                                 className="
                                     inline-flex
                                     items-center
@@ -761,7 +760,8 @@ const ContactPage = () => {
                             </a>
 
                             <a
-                                href="mailto:info@dentalclinicstudio.com"
+                                href="mailto: dsmilemax@gmail.com
+"
                                 className="
                                     inline-flex
                                     items-center
