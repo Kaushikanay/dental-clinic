@@ -691,7 +691,7 @@ const Footer = () => {
             "
                     >
                         <p className="text-xs text-white/40">
-                            © {new Date().getFullYear()} Dental Clinic Studio.
+                            © {new Date().getFullYear()} The Smile Max.
                             All rights reserved.
                         </p>
 

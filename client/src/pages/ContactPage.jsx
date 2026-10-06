@@ -1152,89 +1152,167 @@ const ContactPage = () => {
 
             <section
                 className="
-                    bg-[var(--section-bg)]
-                    py-20
-                    transition-colors
-                    duration-500
-                "
+        bg-[var(--section-bg)]
+        py-20
+        transition-colors
+        duration-500
+    "
             >
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div
                         className="
-                            overflow-hidden
-                            rounded-3xl
-                            border
-                            border-[var(--border)]
-                            bg-[var(--card-bg)]
-                            shadow-sm
-                            transition-colors
-                            duration-500
-                        "
+                overflow-hidden
+                rounded-3xl
+                border
+                border-[var(--border)]
+                bg-[var(--card-bg)]
+                shadow-sm
+                transition-all
+                duration-500
+            "
                     >
-                        <div
-                            className="
-                                flex
-                                min-h-[350px]
-                                items-center
-                                justify-center
-                                p-8
-                                text-center
-                            "
-                        >
-                            <div>
-                                <MapPin
-                                    size={42}
+                        <div className="grid lg:grid-cols-[1.4fr_0.6fr]">
+
+                            {/* =====================================================
+                    GOOGLE MAP
+                ===================================================== */}
+
+                            <div className="relative min-h-[350px] lg:min-h-[430px]">
+                                <iframe
+                                    title="The SmileMax Dentistry Location"
+                                    src="https://www.google.com/maps?q=Juran+Chapra+Main+Road,+Above+Satyanarayan+Nursing+Home,+Muzaffarpur,+Bihar&output=embed"
                                     className="
-                                        mx-auto
-                                        text-[var(--accent)]
-                                    "
+                            absolute
+                            inset-0
+                            h-full
+                            w-full
+                            border-0
+                            grayscale-[10%]
+                        "
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 />
+                            </div>
+
+                            {/* =====================================================
+                    CLINIC INFORMATION
+                ===================================================== */}
+
+                            <div
+                                className="
+                        flex
+                        flex-col
+                        justify-center
+                        bg-[var(--card-bg)]
+                        p-8
+                        transition-colors
+                        duration-500
+                        sm:p-10
+                        lg:p-12
+                    "
+                            >
+                                {/* Icon */}
+
+                                <div
+                                    className="
+                            flex
+                            h-14
+                            w-14
+                            items-center
+                            justify-center
+                            rounded-2xl
+                            bg-[var(--primary-light)]
+                            transition-all
+                            duration-300
+                            hover:scale-105
+                        "
+                                >
+                                    <MapPin
+                                        size={27}
+                                        className="text-[var(--accent)]"
+                                    />
+                                </div>
+
+                                {/* Heading */}
 
                                 <h2
                                     className="
-                                        mt-5
-                                        text-2xl
-                                        font-bold
-                                        text-[var(--text)]
-                                        transition-colors
-                                        duration-500
-                                    "
+                            mt-6
+                            text-2xl
+                            font-bold
+                            text-[var(--text)]
+                            transition-colors
+                            duration-500
+                            sm:text-3xl
+                        "
                                 >
                                     Find Our Clinic
                                 </h2>
 
+                                {/* Description */}
+
                                 <p
                                     className="
-                                        mt-3
-                                        text-sm
-                                        text-[var(--muted)]
-                                    "
+                            mt-3
+                            text-sm
+                            leading-6
+                            text-[var(--muted)]
+                        "
                                 >
-                                    Your clinic location will appear
-                                    here.
+                                    Visit The SmileMax Dentistry for professional
+                                    dental care and a comfortable treatment experience.
                                 </p>
 
+                                {/* Address */}
+
+                                <div
+                                    className="
+                            mt-6
+                            border-l-2
+                            border-[var(--accent)]
+                            pl-4
+                        "
+                                >
+                                    <p
+                                        className="
+                                text-sm
+                                font-semibold
+                                leading-6
+                                text-[var(--text)]
+                            "
+                                    >
+                                        Juran Chapra Main Road
+                                        <br />
+                                        Above Satyanarayan Nursing Home.
+                                    </p>
+                                </div>
+
+                                {/* Get Directions */}
+
                                 <a
-                                    href="https://www.google.com/maps/search/?api=1&query=Dental+Clinic+Studio+India"
+                                    href="https://www.google.com/maps/search/?api=1&query=Juran+Chapra+Main+Road,+Above+Satyanarayan+Nursing+Home,+Muzaffarpur,+Bihar"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="
-                                        mt-6
-                                        inline-flex
-                                        items-center
-                                        gap-2
-                                        rounded-lg
-                                        bg-[var(--primary)]
-                                        px-6
-                                        py-3
-                                        text-sm
-                                        font-semibold
-                                        !text-white
-                                        transition-all
-                                        duration-300
-                                        hover:-translate-y-0.5
-                                        hover:bg-[var(--accent)]
-                                    "
+                            mt-7
+                            inline-flex
+                            w-fit
+                            items-center
+                            gap-2
+                            rounded-lg
+                            bg-[var(--primary)]
+                            px-6
+                            py-3
+                            text-sm
+                            font-semibold
+                            !text-white
+                            shadow-md
+                            transition-all
+                            duration-300
+                            hover:-translate-y-0.5
+                            hover:bg-[var(--accent)]
+                            hover:shadow-lg
+                        "
                                 >
                                     <MapPin size={17} />
 
