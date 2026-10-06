@@ -64,11 +64,11 @@ const Footer = () => {
             type: "route",
             to: "/contact",
         },
-        {
-            name: "Documentation",
-            type: "route",
-            to: "/documentation",
-        },
+        // {
+        //     name: "Documentation",
+        //     type: "route",
+        //     to: "/documentation",
+        // },
     ];
 
     // ============================================================
@@ -228,7 +228,7 @@ const Footer = () => {
     "
                             >
                                 <img
-                                    src="/images/The SmileMax Dental Clinic Logo.png"
+                                    src="/images/Site Logo.png"
                                     alt="The SmileMax Dentistry"
                                     className="
         h-full
@@ -704,7 +704,7 @@ const Footer = () => {
                 gap-5
               "
                         >
-                            <Link
+                            {/* <Link
                                 to="/documentation"
                                 className="
                   text-xs
@@ -715,7 +715,7 @@ const Footer = () => {
                 "
                             >
                                 Documentation
-                            </Link>
+                            </Link> */}
 
                             <Link
                                 to="/privacy-policy"

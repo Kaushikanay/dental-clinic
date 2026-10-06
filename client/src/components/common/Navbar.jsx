@@ -109,8 +109,8 @@ const Navbar = () => {
   "
                     >
                         <img
-                            src="/images/The SmileMax Dental Clinic Logo.png"
-                            alt="Dental Clinic Studio Logo"
+                            src="/images/Site Logo.png"
+                            alt="The Smile Max Dentistry Logo"
                             className="
       h-full
       w-full

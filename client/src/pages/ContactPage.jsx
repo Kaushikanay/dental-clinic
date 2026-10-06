@@ -419,7 +419,7 @@ const ContactPage = () => {
                                     text-[var(--accent)]
                                 "
                             >
-                                Dental Clinic Studio
+                                The Smile Max Dentistry
                             </span>
                         </h1>
 
@@ -481,18 +481,20 @@ const ContactPage = () => {
                             title="Call Us"
                         >
                             <a
-                                href="tel:+919990503059"
+                                href="tel:+919905030591"
                                 className="
-                                    transition-colors
-                                    duration-300
-                                    hover:text-[var(--accent)]
-                                "
+            transition-colors
+            duration-300
+            hover:text-[var(--accent)]
+        "
                             >
-                                +91 99905 03059
+                                +91 99050 30591
                             </a>
 
                             <p className="mt-2">
-                                Mon - Sat: 9:00 AM - 7:00 PM
+                                Monday - Saturday: 10:00 AM - 7:00 PM
+                                <br />
+                                Sunday: 10:00 AM - 2:00 PM
                             </p>
                         </ContactCard>
 
@@ -705,27 +707,59 @@ const ContactPage = () => {
                             <div>
                                 <h3
                                     className="
-                                        font-bold
-                                        text-[var(--text)]
-                                        transition-colors
-                                        duration-500
-                                    "
+            font-bold
+            text-[var(--text)]
+            transition-colors
+            duration-500
+        "
                                 >
                                     Working Hours
                                 </h3>
 
-                                <p
+                                <div
                                     className="
-                                        mt-2
-                                        text-sm
-                                        leading-6
-                                        text-[var(--muted)]
-                                    "
+            mt-3
+            space-y-1.5
+            text-sm
+            leading-6
+            text-[var(--muted)]
+        "
                                 >
-                                    Monday - Saturday
-                                    <br />
-                                    9:00 AM - 7:00 PM
-                                </p>
+                                    <div className="flex justify-between gap-6">
+                                        <span>Monday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Tuesday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Wednesday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Thursday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Friday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Saturday</span>
+                                        <span>10:00 AM – 7:00 PM</span>
+                                    </div>
+
+                                    <div className="flex justify-between gap-6">
+                                        <span>Sunday</span>
+                                        <span>10:00 AM – 2:00 PM</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

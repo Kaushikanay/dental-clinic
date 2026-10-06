@@ -27,7 +27,7 @@ const sections = [
         content: (
             <>
                 <p>
-                    Welcome to Dental Clinic Studio. We respect your privacy and are
+                    Welcome to The Smile Max Dentistry. We respect your privacy and are
                     committed to handling information submitted through this website
                     responsibly.
                 </p>
@@ -278,7 +278,7 @@ const sections = [
                         href="mailto:info@dentalclinicstudio.com"
                         className="text-sm font-semibold text-[var(--text)] transition-colors duration-300 hover:text-[var(--accent)]"
                     >
-                        info@dentalclinicstudio.com
+                        dsmilemax@gmail.com
                     </a>
                 </div>
             </>
@@ -454,7 +454,7 @@ export default function PrivacyPolicyPage() {
 
                     <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[var(--muted)] md:text-base">
                         We value your privacy. Learn how information submitted through
-                        Dental Clinic Studio may be collected, used, stored, and protected.
+                        The Smile Max Dentistry may be collected, used, stored, and protected.
                     </p>
 
                     <div className="mx-auto mt-6 inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-xs font-medium text-[var(--muted)] shadow-sm">
@@ -556,7 +556,7 @@ export default function PrivacyPolicyPage() {
 
                                     <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
                                         This page provides website-level privacy information for
-                                        the Dental Clinic Studio project. Actual clinic ownership
+                                        the The Smile Max Dentistry project. Actual clinic ownership
                                         details, legal requirements, retention periods, and
                                         jurisdiction-specific provisions should be reviewed and
                                         finalized according to the clinic's actual operations and

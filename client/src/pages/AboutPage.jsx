@@ -458,7 +458,7 @@ const AboutPage = () => {
                                 sm:text-base
                             "
                         >
-                            At Dental Clinic Studio, we believe dental care
+                            At The Smile Max Dentistry, we believe dental care
                             should be comfortable, personalized and
                             accessible. Our goal is not only to treat dental
                             problems but also to help every patient maintain a

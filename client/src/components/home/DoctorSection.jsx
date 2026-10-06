@@ -4,26 +4,426 @@ import {
     Award,
     GraduationCap,
     HeartPulse,
+    Sparkles,
 } from "lucide-react";
+
+const doctors = [
+    {
+        name: "Dr. Arya",
+        gender: "Female Dental Surgeon",
+        image: "/images/Dr. Aarya.PNG",
+        qualification: "Dental Surgeon",
+        description:
+            "Dedicated to providing gentle, personalized and comfortable dental care with a patient-first approach. Every treatment is planned with attention to individual needs and long-term oral health.",
+        highlights: [
+            {
+                icon: GraduationCap,
+                title: "Qualified",
+                description: "Professional dental care",
+            },
+            {
+                icon: Award,
+                title: "Experienced",
+                description: "Focused clinical approach",
+            },
+            {
+                icon: HeartPulse,
+                title: "Patient First",
+                description: "Comfort-focused treatment",
+            },
+        ],
+    },
+    {
+        name: "Dr. Nitesh Paul",
+        gender: "Male Dental Surgeon",
+        image: "/images/Dr. Nitesh Paul.PNG",
+        qualification: "Dental Surgeon",
+        description:
+            "Committed to modern, clinically effective dentistry with a focus on accurate diagnosis, comfortable treatment and helping every patient achieve a healthier, more confident smile.",
+        highlights: [
+            {
+                icon: GraduationCap,
+                title: "Qualified",
+                description: "Professional dental care",
+            },
+            {
+                icon: Award,
+                title: "Experienced",
+                description: "Focused clinical approach",
+            },
+            {
+                icon: HeartPulse,
+                title: "Patient First",
+                description: "Personalized treatment",
+            },
+        ],
+    },
+];
+
+const DoctorCard = ({ doctor, index }) => {
+    return (
+        <motion.article
+            initial={{
+                opacity: 0,
+                y: 40,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            viewport={{
+                once: true,
+                amount: 0.15,
+            }}
+            transition={{
+                duration: 0.7,
+                delay: index * 0.15,
+            }}
+            className="
+                group
+                relative
+                overflow-hidden
+                rounded-[2rem]
+                border
+                border-[var(--border)]
+                bg-[var(--doctor-card)]
+                shadow-sm
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:shadow-2xl
+            "
+        >
+            {/* Decorative Glow */}
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -right-20
+                    -top-20
+                    h-52
+                    w-52
+                    rounded-full
+                    bg-[var(--accent)]
+                    opacity-[0.06]
+                    blur-3xl
+                    transition-all
+                    duration-700
+                    group-hover:opacity-[0.12]
+                "
+            />
+
+            {/* Doctor Image */}
+            <div className="relative p-4 sm:p-5">
+                <div
+                    className="
+                        relative
+                        overflow-hidden
+                        rounded-[1.5rem]
+                        bg-[var(--primary-light)]
+                    "
+                >
+                    <img
+                        src={doctor.image}
+                        alt={`${doctor.name} - ${doctor.gender}`}
+                        className="
+                            h-[380px]
+                            w-full
+                            object-cover
+                            object-top
+                            transition-transform
+                            duration-700
+                            ease-out
+                            group-hover:scale-[1.04]
+                            sm:h-[440px]
+                        "
+                    />
+
+                    {/* Image Overlay */}
+                    <div
+                        className="
+                            pointer-events-none
+                            absolute
+                            inset-0
+                            bg-gradient-to-t
+                            from-black/35
+                            via-transparent
+                            to-transparent
+                        "
+                    />
+
+                    {/* Doctor Number */}
+                    <div
+                        className="
+                            absolute
+                            left-5
+                            top-5
+                            flex
+                            h-11
+                            w-11
+                            items-center
+                            justify-center
+                            rounded-full
+                            border
+                            border-white/20
+                            bg-black/25
+                            text-xs
+                            font-bold
+                            text-white
+                            backdrop-blur-md
+                            transition-all
+                            duration-300
+                            group-hover:scale-105
+                            group-hover:bg-[var(--accent)]
+                        "
+                    >
+                        0{index + 1}
+                    </div>
+
+                    {/* Specialty Badge */}
+                    <div
+                        className="
+                            absolute
+                            bottom-5
+                            left-5
+                            rounded-full
+                            border
+                            border-white/20
+                            bg-black/30
+                            px-4
+                            py-2
+                            text-xs
+                            font-semibold
+                            text-white
+                            backdrop-blur-md
+                            transition-all
+                            duration-300
+                            group-hover:-translate-y-1
+                            group-hover:bg-[var(--accent)]
+                        "
+                    >
+                        {doctor.gender}
+                    </div>
+                </div>
+            </div>
+
+            {/* Doctor Details */}
+            <div className="px-6 pb-7 sm:px-7 sm:pb-8">
+                {/* Label */}
+                <p
+                    className="
+                        text-xs
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        text-[var(--accent)]
+                    "
+                >
+                    Meet Your Dentist
+                </p>
+
+                {/* Name */}
+                <h3
+                    className="
+                        mt-2
+                        text-2xl
+                        font-bold
+                        text-[var(--doctor-text)]
+                        transition-colors
+                        duration-500
+                        sm:text-3xl
+                    "
+                >
+                    {doctor.name}
+                </h3>
+
+                {/* Qualification */}
+                <p
+                    className="
+                        mt-2
+                        text-sm
+                        font-medium
+                        text-[var(--doctor-muted)]
+                    "
+                >
+                    {doctor.qualification}
+                </p>
+
+                {/* Description */}
+                <p
+                    className="
+                        mt-5
+                        text-sm
+                        leading-7
+                        text-[var(--doctor-muted)]
+                        transition-colors
+                        duration-500
+                    "
+                >
+                    {doctor.description}
+                </p>
+
+                {/* Highlights */}
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                    {doctor.highlights.map((item) => {
+                        const Icon = item.icon;
+
+                        return (
+                            <div
+                                key={item.title}
+                                className="
+                                    rounded-xl
+                                    border
+                                    border-[var(--border)]
+                                    bg-[var(--doctor-bg)]
+                                    p-3
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-1
+                                    hover:border-[var(--accent)]
+                                    hover:shadow-md
+                                "
+                            >
+                                <Icon
+                                    size={20}
+                                    className="
+                                        text-[var(--accent)]
+                                        transition-transform
+                                        duration-300
+                                        group-hover:scale-110
+                                    "
+                                />
+
+                                <p
+                                    className="
+                                        mt-2
+                                        text-xs
+                                        font-semibold
+                                        text-[var(--doctor-text)]
+                                    "
+                                >
+                                    {item.title}
+                                </p>
+
+                                <p
+                                    className="
+                                        mt-1
+                                        text-[10px]
+                                        leading-4
+                                        text-[var(--doctor-muted)]
+                                    "
+                                >
+                                    {item.description}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* CTA */}
+                <a
+                    href="/contact"
+                    className="
+                        group/cta
+                        mt-7
+                        inline-flex
+                        items-center
+                        gap-2
+                        rounded-lg
+                        bg-[var(--primary)]
+                        px-5
+                        py-3
+                        text-sm
+                        font-semibold
+                        !text-white
+                        shadow-md
+                        transition-all
+                        duration-300
+                        hover:-translate-y-0.5
+                        hover:bg-[var(--accent)]
+                        hover:shadow-lg
+                    "
+                >
+                    <span className="!text-white">
+                        Book Consultation
+                    </span>
+
+                    <ArrowRight
+                        size={17}
+                        className="
+                            !text-white
+                            transition-transform
+                            duration-300
+                            group-hover/cta:translate-x-1
+                        "
+                    />
+                </a>
+            </div>
+        </motion.article>
+    );
+};
 
 const DoctorSection = () => {
     return (
         <section
             id="doctor"
-            className="relative overflow-hidden bg-[var(--doctor-bg)] py-20 transition-colors duration-500 sm:py-24 lg:py-28"
+            className="
+                relative
+                overflow-hidden
+                bg-[var(--doctor-bg)]
+                py-20
+                transition-colors
+                duration-500
+                sm:py-24
+                lg:py-28
+            "
         >
-            {/* Decorative background */}
+            {/* Decorative Background */}
 
-            <div className="absolute -left-40 top-10 h-80 w-80 rounded-full border-[60px] border-[var(--primary-light)] opacity-10" />
+            <div
+                className="
+                    absolute
+                    -left-40
+                    top-10
+                    h-80
+                    w-80
+                    rounded-full
+                    border-[60px]
+                    border-[var(--primary-light)]
+                    opacity-10
+                "
+            />
 
-            <div className="absolute -right-32 bottom-[-80px] h-96 w-96 rounded-full bg-[var(--primary-light)] opacity-10" />
+            <div
+                className="
+                    absolute
+                    -right-32
+                    bottom-[-80px]
+                    h-96
+                    w-96
+                    rounded-full
+                    bg-[var(--primary-light)]
+                    opacity-10
+                "
+            />
 
-            <div className="absolute right-[20%] top-20 hidden h-4 w-4 rotate-45 bg-[var(--accent)] opacity-50 lg:block" />
+            <div
+                className="
+                    absolute
+                    right-[20%]
+                    top-20
+                    hidden
+                    h-4
+                    w-4
+                    rotate-45
+                    bg-[var(--accent)]
+                    opacity-50
+                    lg:block
+                "
+            />
 
             <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-
-                {/* Section Heading */}
-
+                {/* Section Header */}
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -40,244 +440,159 @@ const DoctorSection = () => {
                     transition={{
                         duration: 0.7,
                     }}
-                    className="mx-auto mb-14 max-w-2xl text-center"
+                    className="mx-auto mb-14 max-w-3xl text-center"
                 >
+                    {/* Section Label */}
                     <div className="mb-4 flex items-center justify-center gap-3">
+                        <span
+                            className="
+                                h-[2px]
+                                w-7
+                                bg-[var(--accent)]
+                                transition-colors
+                                duration-500
+                            "
+                        />
 
-                        <span className="h-[2px] w-8 bg-[var(--accent)]" />
-
-                        <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)]">
-                            Meet The Doctor
+                        <span
+                            className="
+                                text-xs
+                                font-bold
+                                uppercase
+                                tracking-[0.25em]
+                                text-[var(--accent)]
+                                transition-colors
+                                duration-500
+                            "
+                        >
+                            Meet Our Doctors
                         </span>
 
-                        <span className="h-[2px] w-8 bg-[var(--accent)]" />
-
+                        <span
+                            className="
+                                h-[2px]
+                                w-7
+                                bg-[var(--accent)]
+                                transition-colors
+                                duration-500
+                            "
+                        />
                     </div>
 
-                    <h2 className="text-3xl font-bold leading-tight text-[var(--doctor-text)] transition-colors duration-500 sm:text-4xl lg:text-5xl">
-
-                        Dedicated to Creating{" "}
-
+                    {/* Heading */}
+                    <h2
+                        className="
+                            text-3xl
+                            font-bold
+                            leading-tight
+                            text-[var(--doctor-text)]
+                            transition-colors
+                            duration-500
+                            sm:text-4xl
+                            lg:text-5xl
+                        "
+                    >
+                        Your Smile,
                         <span className="text-[var(--accent)]">
-                            Beautiful Smiles
+                            {" "}Our Expertise
                         </span>
-
                     </h2>
 
-                    <p className="mt-5 text-sm leading-7 text-[var(--doctor-muted)] transition-colors duration-500 sm:text-base">
-                        Compassionate care, advanced dental expertise and a
-                        personalized approach to help every patient achieve
-                        a healthier and more confident smile.
+                    {/* Description */}
+                    <p
+                        className="
+                            mx-auto
+                            mt-5
+                            max-w-2xl
+                            text-sm
+                            leading-7
+                            text-[var(--doctor-muted)]
+                            transition-colors
+                            duration-500
+                            sm:text-base
+                        "
+                    >
+                        Meet the dental professionals behind The
+                        SmileMax. With a patient-first approach, our
+                        doctors focus on comfortable care, personalized
+                        treatment and healthier smiles.
                     </p>
                 </motion.div>
 
-                {/* Doctor Content */}
-
-                <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
-                    {/* Doctor Image */}
-
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            x: -50,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                            amount: 0.2,
-                        }}
-                        transition={{
-                            duration: 0.8,
-                        }}
-                        className="relative mx-auto w-full max-w-[520px]"
-                    >
-
-                        {/* Image background */}
-
-                        <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-[2rem] bg-[var(--primary-light)] opacity-20" />
-
-                        {/* Main image */}
-
-                        <div className="relative z-10 overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--card-bg)]">
-
-                            <img
-                                src="/images/doctor.png"
-                                alt="Dental doctor"
-                                className="h-[480px] w-full object-cover sm:h-[560px]"
-                            />
-
-                        </div>
-
-                        {/* Experience Badge */}
-
-                        <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.8,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                            }}
-                            viewport={{
-                                once: true,
-                            }}
-                            transition={{
-                                duration: 0.6,
-                                delay: 0.3,
-                            }}
-                            className="absolute bottom-7 left-[-12px] z-20 rounded-2xl bg-[var(--accent)] px-5 py-4 shadow-xl sm:left-[-20px]"
-                        >
-                            <div className="flex items-center gap-3">
-
-                                <Award
-                                    size={28}
-                                    className="text-white"
-                                />
-
-                                <div>
-                                    <p className="text-xl font-bold text-white">
-                                        10+
-                                    </p>
-
-                                    <p className="text-[11px] text-white/80">
-                                        Years Experience
-                                    </p>
-                                </div>
-
-                            </div>
-                        </motion.div>
-
-                    </motion.div>
-
-                    {/* Doctor Details */}
-
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            x: 50,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                            amount: 0.2,
-                        }}
-                        transition={{
-                            duration: 0.8,
-                        }}
-                    >
-
-                        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">
-                            Dental Surgeon
-                        </p>
-
-                        <h3 className="mt-3 text-3xl font-bold text-[var(--doctor-text)] transition-colors duration-500 sm:text-4xl">
-                            Dr. Anay Kumar
-                        </h3>
-
-                        <p className="mt-2 text-sm text-[var(--doctor-muted)] transition-colors duration-500">
-                            BDS, MDS — Cosmetic & Restorative Dentistry
-                        </p>
-
-                        <p className="mt-6 text-sm leading-7 text-[var(--doctor-muted)] transition-colors duration-500 sm:text-base">
-                            With years of experience in modern dentistry, our
-                            approach focuses on providing comfortable,
-                            personalized and clinically effective dental care.
-                            Every treatment plan is designed around the
-                            individual needs and goals of the patient.
-                        </p>
-
-                        {/* Doctor Highlights */}
-
-                        <div className="mt-8 grid gap-5 sm:grid-cols-3">
-
-                            {/* Qualified */}
-
-                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-
-                                <GraduationCap
-                                    size={22}
-                                    className="text-[var(--accent)]"
-                                />
-
-                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
-                                    Qualified
-                                </p>
-
-                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
-                                    Advanced dental education
-                                </p>
-
-                            </div>
-
-                            {/* Experienced */}
-
-                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-
-                                <Award
-                                    size={22}
-                                    className="text-[var(--accent)]"
-                                />
-
-                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
-                                    Experienced
-                                </p>
-
-                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
-                                    Years of clinical practice
-                                </p>
-
-                            </div>
-
-                            {/* Patient First */}
-
-                            <div className="rounded-xl border border-[var(--border)] bg-[var(--doctor-card)] p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-
-                                <HeartPulse
-                                    size={22}
-                                    className="text-[var(--accent)]"
-                                />
-
-                                <p className="mt-3 text-sm font-semibold text-[var(--doctor-text)]">
-                                    Patient First
-                                </p>
-
-                                <p className="mt-1 text-xs leading-5 text-[var(--doctor-muted)]">
-                                    Personalized treatment
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        {/* CTA */}
-
-                        <a
-                            href="/contact"
-                            className="group mt-9 inline-flex items-center gap-2 rounded-md bg-[var(--primary)] px-6 py-3 text-sm font-semibold !text-white shadow-md transition-all duration-300 hover:bg-[var(--primary-light)]"
-                        >
-                            <span className="!text-white">
-                                Book Consultation
-                            </span>
-
-                            <ArrowRight
-                                size={17}
-                                className="!text-white transition-transform group-hover:translate-x-1"
-                            />
-
-                        </a>
-
-                    </motion.div>
-
+                {/* Doctor Cards */}
+                <div
+                    className="
+                        grid
+                        gap-8
+                        lg:grid-cols-2
+                        lg:gap-10
+                    "
+                >
+                    {doctors.map((doctor, index) => (
+                        <DoctorCard
+                            key={doctor.name}
+                            doctor={doctor}
+                            index={index}
+                        />
+                    ))}
                 </div>
 
+                {/* Bottom Trust Message */}
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 20,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    viewport={{
+                        once: true,
+                        amount: 0.2,
+                    }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.2,
+                    }}
+                    className="
+                        mx-auto
+                        mt-12
+                        flex
+                        max-w-2xl
+                        items-center
+                        justify-center
+                        gap-3
+                        text-center
+                    "
+                >
+                    <Sparkles
+                        size={18}
+                        className="
+                            shrink-0
+                            text-[var(--accent)]
+                        "
+                    />
+
+                    <p
+                        className="
+                            text-xs
+                            leading-5
+                            text-[var(--doctor-muted)]
+                            sm:text-sm
+                        "
+                    >
+                        Compassionate care. Modern dentistry.
+                        <span
+                            className="
+                                font-semibold
+                                text-[var(--doctor-text)]
+                            "
+                        >
+                            {" "}A smile you can trust.
+                        </span>
+                    </p>
+                </motion.div>
             </div>
         </section>
     );

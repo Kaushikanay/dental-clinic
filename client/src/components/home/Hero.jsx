@@ -82,7 +82,7 @@ const Hero = () => {
                             <span className="h-[2px] w-8 bg-[var(--accent)]" />
 
                             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
-                                Welcome to Dental Clinic Studio
+                                Welcome to The Smile Max Dentistry
                             </span>
 
                         </div>

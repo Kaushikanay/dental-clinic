@@ -271,7 +271,7 @@ const YoutubeSection = () => {
                                 group-hover:shadow-2xl
                             "
                         >
-                            {/* YouTube Video */}
+                            {/* Local MP4 Video */}
                             <div
                                 className="
                                     relative
@@ -281,29 +281,28 @@ const YoutubeSection = () => {
                                     bg-black
                                 "
                             >
-                                <iframe
+                                <video
                                     className="
                                         absolute
                                         inset-0
                                         h-full
                                         w-full
+                                        object-cover
                                     "
-                                    src="https://www.youtube-nocookie.com/embed/7cjVj1ZyzyE"
-                                    title="Dental Care Video"
-                                    loading="lazy"
-                                    allow="
-                                        accelerometer;
-                                        autoplay;
-                                        clipboard-write;
-                                        encrypted-media;
-                                        gyroscope;
-                                        picture-in-picture;
-                                        web-share
-                                    "
-                                    allowFullScreen
-                                />
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="/videos/dental-clinic.mp4"
+                                        type="video/mp4"
+                                    />
 
-                                {/* Hover Play Accent */}
+                                    Your browser does not support
+                                    the video tag.
+                                </video>
+
+                                {/* Play Accent */}
                                 <div
                                     className="
                                         pointer-events-none
@@ -342,7 +341,8 @@ const YoutubeSection = () => {
                                 text-[var(--doctor-muted)]
                             "
                         >
-                            Learn more about modern dental care
+                            Take a look inside The SmileMax
+                            Dentistry
                         </p>
                     </motion.div>
                 </div>
