@@ -22,9 +22,9 @@ const Footer = () => {
 
     const clinicInfo = {
         addressLine1:
-            "Juran Chapra Main Road, Above Satyanarayan Nursing Home",
-        addressLine2:
-            "Juran Chapra, Muzaffarpur, Bihar, India",
+            "Juran chapra Main Road, Satyanarayan Nursing Home, Muzaffarpur Bihar, India",
+        // addressLine2:
+        //     "Juran Chapra, Muzaffarpur, Bihar, India",
         phone: "+91 99050 30591",
         email: "dsmilemax@gmail.com",
     };
@@ -637,7 +637,7 @@ const Footer = () => {
 
                         {/* Appointment */}
 
-                        <Link
+                        {/* <Link
                             to="/contact"
                             className="
                 group
@@ -669,7 +669,7 @@ const Footer = () => {
                             />
 
                             Book Appointment
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
 

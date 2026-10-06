@@ -185,9 +185,9 @@ const Hero = () => {
                         <div className="absolute right-0 top-2 h-[360px] w-[360px] overflow-hidden rounded-full border-[14px] border-[#315f88] bg-[var(--primary-light)] shadow-2xl transition-colors duration-500 sm:h-[430px] sm:w-[430px] lg:h-[470px] lg:w-[470px]">
 
                             <img
-                                src="/images/hero-dental.png"
-                                alt="Dental treatment at Dental Clinic Studio"
-                                className="h-full w-full object-cover"
+                                src="/images/Dr. Nitesh Paul.PNG"
+                                alt="Dr. Nitesh Paul - Dental Surgeon"
+                                className="h-full w-full object-cover object-top"
                             />
 
                         </div>
@@ -211,9 +211,9 @@ const Hero = () => {
                         >
 
                             <img
-                                src="/images/dental-treatment.png"
-                                alt="Dental treatment"
-                                className="h-full w-full object-cover"
+                                src="/images/Dr. Aarya.PNG"
+                                alt="Dr. Aarya - Dental Surgeon"
+                                className="h-full w-full object-cover object-top"
                             />
 
                         </motion.div>

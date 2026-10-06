@@ -1537,12 +1537,12 @@ function DocumentationPage() {
                                 </p>
 
                                 <p className="mt-2 break-all text-lg font-semibold transition-colors duration-300 group-hover:text-[var(--accent)]">
-                                    dental-clinic-eight-teal.vercel.app
+                                    https://thesmilemax.vercel.app/
                                 </p>
                             </div>
 
                             <a
-                                href="https://dental-clinic-eight-teal.vercel.app"
+                                href="https://thesmilemax.vercel.app/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="

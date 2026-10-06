@@ -470,7 +470,7 @@ const ContactPage = () => {
                             <p>
                                 Juran Chapra Main Road
                                 <br />
-                                Above Satyanarayan Nursing Home.
+                                Satyanarayan Nursing Home.
                             </p>
                         </ContactCard>
 

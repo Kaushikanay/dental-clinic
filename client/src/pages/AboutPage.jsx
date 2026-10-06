@@ -163,7 +163,7 @@ const AboutPage = () => {
                                     duration-500
                                 "
                             >
-                                About Dental Clinic Studio
+                                About The Smile Max Dentistry
                             </p>
                         </div>
 
