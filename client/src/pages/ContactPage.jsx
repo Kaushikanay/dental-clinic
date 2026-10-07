@@ -18,8 +18,7 @@ import {
 |--------------------------------------------------------------------------
 */
 
-const API_URL =
-    import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 /*
 |--------------------------------------------------------------------------
@@ -54,10 +53,10 @@ const ContactPage = () => {
     const [showSubmitPopup, setShowSubmitPopup] = useState(false);
 
     /*
-    |--------------------------------------------------------------------------
-    | INPUT CHANGE
-    |--------------------------------------------------------------------------
-    */
+      |--------------------------------------------------------------------------
+      | INPUT CHANGE
+      |--------------------------------------------------------------------------
+      */
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -77,10 +76,10 @@ const ContactPage = () => {
     };
 
     /*
-    |--------------------------------------------------------------------------
-    | FORM VALIDATION
-    |--------------------------------------------------------------------------
-    */
+      |--------------------------------------------------------------------------
+      | FORM VALIDATION
+      |--------------------------------------------------------------------------
+      */
 
     const validateForm = () => {
         const name = formData.name.trim();
@@ -135,20 +134,20 @@ const ContactPage = () => {
     };
 
     /*
-    |--------------------------------------------------------------------------
-    | CLOSE POPUP
-    |--------------------------------------------------------------------------
-    */
+      |--------------------------------------------------------------------------
+      | CLOSE POPUP
+      |--------------------------------------------------------------------------
+      */
 
     const closeSubmitPopup = () => {
         setShowSubmitPopup(false);
     };
 
     /*
-    |--------------------------------------------------------------------------
-    | FORM SUBMIT
-    |--------------------------------------------------------------------------
-    */
+      |--------------------------------------------------------------------------
+      | FORM SUBMIT
+      |--------------------------------------------------------------------------
+      */
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -163,10 +162,10 @@ const ContactPage = () => {
         });
 
         /*
-        |--------------------------------------------------------------------------
-        | VALIDATION
-        |--------------------------------------------------------------------------
-        */
+            |--------------------------------------------------------------------------
+            | VALIDATION
+            |--------------------------------------------------------------------------
+            */
 
         const validationError = validateForm();
 
@@ -185,35 +184,32 @@ const ContactPage = () => {
 
         try {
             /*
-            |--------------------------------------------------------------------------
-            | SEND TO EXPRESS BACKEND
-            |--------------------------------------------------------------------------
-            */
+                  |--------------------------------------------------------------------------
+                  | SEND TO EXPRESS BACKEND
+                  |--------------------------------------------------------------------------
+                  */
 
-            const response = await fetch(
-                `${API_URL}/api/contact`,
-                {
-                    method: "POST",
+            const response = await fetch(`${API_URL}/api/contact`, {
+                method: "POST",
 
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                headers: {
+                    "Content-Type": "application/json",
+                },
 
-                    body: JSON.stringify({
-                        name: formData.name.trim(),
-                        phone: formData.phone.trim(),
-                        email: formData.email.trim(),
-                        subject: formData.subject.trim(),
-                        message: formData.message.trim(),
-                    }),
-                }
-            );
+                body: JSON.stringify({
+                    name: formData.name.trim(),
+                    phone: formData.phone.trim(),
+                    email: formData.email.trim(),
+                    subject: formData.subject.trim(),
+                    message: formData.message.trim(),
+                }),
+            });
 
             /*
-            |--------------------------------------------------------------------------
-            | RESPONSE
-            |--------------------------------------------------------------------------
-            */
+                  |--------------------------------------------------------------------------
+                  | RESPONSE
+                  |--------------------------------------------------------------------------
+                  */
 
             let data = {};
 
@@ -225,16 +221,15 @@ const ContactPage = () => {
 
             if (!response.ok) {
                 throw new Error(
-                    data.message ||
-                    "Unable to submit your message. Please try again."
+                    data.message || "Unable to submit your message. Please try again.",
                 );
             }
 
             /*
-            |--------------------------------------------------------------------------
-            | SUCCESS
-            |--------------------------------------------------------------------------
-            */
+                  |--------------------------------------------------------------------------
+                  | SUCCESS
+                  |--------------------------------------------------------------------------
+                  */
 
             setSubmitStatus({
                 type: "success",
@@ -246,23 +241,19 @@ const ContactPage = () => {
             setShowSubmitPopup(true);
 
             /*
-            |--------------------------------------------------------------------------
-            | RESET FORM
-            |--------------------------------------------------------------------------
-            */
+                  |--------------------------------------------------------------------------
+                  | RESET FORM
+                  |--------------------------------------------------------------------------
+                  */
 
             setFormData(initialFormData);
         } catch (error) {
-            console.error(
-                "Contact form submission error:",
-                error
-            );
+            console.error("Contact form submission error:", error);
 
             setSubmitStatus({
                 type: "error",
                 message:
-                    error.message ||
-                    "Something went wrong. Please try again later.",
+                    error.message || "Something went wrong. Please try again later.",
             });
 
             setShowSubmitPopup(true);
@@ -412,7 +403,6 @@ const ContactPage = () => {
                             "
                         >
                             Contact Our
-
                             <span
                                 className="
                                     block
@@ -437,9 +427,8 @@ const ContactPage = () => {
                                 sm:text-base
                             "
                         >
-                            Have a question or want to schedule a
-                            dental consultation? Get in touch with
-                            our team and we will be happy to help.
+                            Have a question or want to schedule a dental consultation? Get in
+                            touch with our team and we will be happy to help.
                         </p>
                     </motion.div>
                 </div>
@@ -460,13 +449,9 @@ const ContactPage = () => {
             >
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div className="grid gap-8 lg:grid-cols-3">
-
                         {/* Address */}
 
-                        <ContactCard
-                            icon={MapPin}
-                            title="Visit Our Clinic"
-                        >
+                        <ContactCard icon={MapPin} title="Visit Our Clinic">
                             <p>
                                 Juran Chapra Main Road
                                 <br />
@@ -476,10 +461,7 @@ const ContactPage = () => {
 
                         {/* Phone */}
 
-                        <ContactCard
-                            icon={Phone}
-                            title="Call Us"
-                        >
+                        <ContactCard icon={Phone} title="Call Us">
                             <a
                                 href="tel:+919905030591"
                                 className="
@@ -500,10 +482,7 @@ const ContactPage = () => {
 
                         {/* Email */}
 
-                        <ContactCard
-                            icon={Mail}
-                            title="Email Us"
-                        >
+                        <ContactCard icon={Mail} title="Email Us">
                             <a
                                 href="mailto:dsmilemax@gmail.com"
                                 className="
@@ -517,11 +496,9 @@ const ContactPage = () => {
                             </a>
 
                             <p className="mt-2">
-                                We usually respond within one
-                                business day.
+                                We usually respond within one business day.
                             </p>
                         </ContactCard>
-
                     </div>
                 </div>
             </section>
@@ -626,7 +603,6 @@ const ContactPage = () => {
                             "
                         >
                             We Would Love To
-
                             <span
                                 className="
                                     text-[var(--accent)]
@@ -650,9 +626,8 @@ const ContactPage = () => {
                                 duration-500
                             "
                         >
-                            Fill out the form and our team will
-                            contact you regarding your question or
-                            appointment request.
+                            Fill out the form and our team will contact you regarding your
+                            question or appointment request.
                         </p>
 
                         {/* Working Hours */}
@@ -764,17 +739,10 @@ const ContactPage = () => {
                         </div> */}
                         {/* Working Hours */}
 
-                        <ContactCard
-                            icon={Clock3}
-                            title="Working Hours"
-                        >
-                            <p>
-                                Monday - Saturday: 10:00 AM - 7:00 PM
-                            </p>
+                        <ContactCard icon={Clock3} title="Working Hours">
+                            <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
 
-                            <p>
-                                Sunday: 10:00 AM - 2:00 PM
-                            </p>
+                            <p>Sunday: 10:00 AM - 2:00 PM</p>
                         </ContactCard>
 
                         {/* Direct Contact */}
@@ -873,7 +841,6 @@ const ContactPage = () => {
                         {/* Name + Phone */}
 
                         <div className="grid gap-5 sm:grid-cols-2">
-
                             {/* Name */}
 
                             <div>
@@ -1156,22 +1123,15 @@ const ContactPage = () => {
                         >
                             {isSubmitting ? (
                                 <>
-                                    <Loader2
-                                        size={18}
-                                        className="animate-spin"
-                                    />
+                                    <Loader2 size={18} className="animate-spin" />
 
-                                    <span className="!text-white">
-                                        Sending...
-                                    </span>
+                                    <span className="!text-white">Sending...</span>
                                 </>
                             ) : (
                                 <>
                                     <Send size={17} />
 
-                                    <span className="!text-white">
-                                        Send Message
-                                    </span>
+                                    <span className="!text-white">Send Message</span>
                                 </>
                             )}
                         </button>
@@ -1187,8 +1147,8 @@ const ContactPage = () => {
                                 text-[var(--muted)]
                             "
                         >
-                            Your information is used only to respond
-                            to your enquiry or appointment request.
+                            Your information is used only to respond to your enquiry or
+                            appointment request.
                         </p>
                     </motion.form>
                 </div>
@@ -1220,7 +1180,6 @@ const ContactPage = () => {
             "
                     >
                         <div className="grid lg:grid-cols-[1.4fr_0.6fr]">
-
                             {/* =====================================================
                     GOOGLE MAP
                 ===================================================== */}
@@ -1275,10 +1234,7 @@ const ContactPage = () => {
                             hover:scale-105
                         "
                                 >
-                                    <MapPin
-                                        size={27}
-                                        className="text-[var(--accent)]"
-                                    />
+                                    <MapPin size={27} className="text-[var(--accent)]" />
                                 </div>
 
                                 {/* Heading */}
@@ -1307,8 +1263,8 @@ const ContactPage = () => {
                             text-[var(--muted)]
                         "
                                 >
-                                    Visit The SmileMax Dentistry for professional
-                                    dental care and a comfortable treatment experience.
+                                    Visit The SmileMax Dentistry for professional dental care and
+                                    a comfortable treatment experience.
                                 </p>
 
                                 {/* Address */}
@@ -1363,9 +1319,7 @@ const ContactPage = () => {
                                 >
                                     <MapPin size={17} />
 
-                                    <span className="!text-white">
-                                        Get Directions
-                                    </span>
+                                    <span className="!text-white">Get Directions</span>
                                 </a>
                             </div>
                         </div>
@@ -1418,9 +1372,7 @@ const ContactPage = () => {
                                 duration: 0.4,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            onClick={(event) =>
-                                event.stopPropagation()
-                            }
+                            onClick={(event) => event.stopPropagation()}
                             className="
                                 relative
                                 w-full
@@ -1496,23 +1448,16 @@ const ContactPage = () => {
                                     items-center
                                     justify-center
                                     rounded-full
-                                    ${submitStatus.type ===
-                                        "success"
+                                    ${submitStatus.type === "success"
                                         ? "bg-green-500/10 text-green-500"
                                         : "bg-red-500/10 text-red-500"
                                     }
                                 `}
                             >
                                 {submitStatus.type === "success" ? (
-                                    <CheckCircle2
-                                        size={44}
-                                        strokeWidth={1.8}
-                                    />
+                                    <CheckCircle2 size={44} strokeWidth={1.8} />
                                 ) : (
-                                    <AlertCircle
-                                        size={44}
-                                        strokeWidth={1.8}
-                                    />
+                                    <AlertCircle size={44} strokeWidth={1.8} />
                                 )}
                             </motion.div>
 
@@ -1600,10 +1545,8 @@ const ContactPage = () => {
                                         text-[var(--muted)]
                                     "
                                 >
-                                    Thank you for contacting us.
-                                    Our team will review your
-                                    enquiry and get back to you
-                                    shortly.
+                                    Thank you for contacting us. Our team will review your enquiry
+                                    and get back to you shortly.
                                 </motion.div>
                             )}
 
@@ -1645,9 +1588,7 @@ const ContactPage = () => {
                                     hover:shadow-xl
                                 "
                             >
-                                {submitStatus.type === "success"
-                                    ? "Done"
-                                    : "Try Again"}
+                                {submitStatus.type === "success" ? "Done" : "Try Again"}
                             </motion.button>
                         </motion.div>
                     </motion.div>
@@ -1663,11 +1604,7 @@ const ContactPage = () => {
 |--------------------------------------------------------------------------
 */
 
-const ContactCard = ({
-    icon: Icon,
-    title,
-    children,
-}) => {
+const ContactCard = ({ icon: Icon, title, children }) => {
     return (
         <motion.div
             initial={{

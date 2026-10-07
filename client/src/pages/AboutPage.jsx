@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-    Award,
-    HeartPulse,
-    ShieldCheck,
-    Users,
-} from "lucide-react";
+import { Award, HeartPulse, ShieldCheck, Users } from "lucide-react";
 
 const AboutPage = () => {
     const features = [
@@ -44,7 +39,6 @@ const AboutPage = () => {
                 duration-500
             "
         >
-
             {/* =====================================================
                 HERO
             ===================================================== */}
@@ -182,7 +176,6 @@ const AboutPage = () => {
                             "
                         >
                             Excellence in Dental
-
                             <span
                                 className="
                                     block
@@ -209,9 +202,9 @@ const AboutPage = () => {
                                 sm:text-base
                             "
                         >
-                            We are dedicated to creating healthy, confident
-                            smiles through personalized dental care, modern
-                            technology and a comfortable patient experience.
+                            We are dedicated to creating healthy, confident smiles through
+                            personalized dental care, modern technology and a comfortable
+                            patient experience.
                         </p>
                     </motion.div>
                 </div>
@@ -435,13 +428,13 @@ const AboutPage = () => {
                             "
                         >
                             Your Smile Is Our
-
                             <span
                                 className="
                                     text-[var(--accent)]
                                 "
                             >
-                                {" "}Commitment
+                                {" "}
+                                Commitment
                             </span>
                         </h2>
 
@@ -458,10 +451,9 @@ const AboutPage = () => {
                                 sm:text-base
                             "
                         >
-                            At The Smile Max Dentistry, we believe dental care
-                            should be comfortable, personalized and
-                            accessible. Our goal is not only to treat dental
-                            problems but also to help every patient maintain a
+                            At The Smile Max Dentistry, we believe dental care should be
+                            comfortable, personalized and accessible. Our goal is not only to
+                            treat dental problems but also to help every patient maintain a
                             healthy and confident smile.
                         </p>
 
@@ -476,16 +468,14 @@ const AboutPage = () => {
                                 sm:text-base
                             "
                         >
-                            From routine dental check-ups to advanced
-                            restorative and cosmetic treatments, our approach
-                            combines modern dentistry with genuine care for
-                            every patient.
+                            From routine dental check-ups to advanced restorative and cosmetic
+                            treatments, our approach combines modern dentistry with genuine
+                            care for every patient.
                         </p>
 
                         {/* Statistics */}
 
                         <div className="mt-8 grid grid-cols-2 gap-5">
-
                             {/* Patients */}
 
                             <div
@@ -567,7 +557,6 @@ const AboutPage = () => {
                                     Treatments
                                 </p>
                             </div>
-
                         </div>
                     </motion.div>
                 </div>
@@ -713,9 +702,8 @@ const AboutPage = () => {
                                 sm:text-base
                             "
                         >
-                            Our philosophy is simple — provide quality dental
-                            care while making every patient feel comfortable
-                            and respected.
+                            Our philosophy is simple — provide quality dental care while
+                            making every patient feel comfortable and respected.
                         </p>
                     </motion.div>
 
@@ -848,7 +836,6 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-
         </main>
     );
 };

@@ -630,7 +630,6 @@ const Footer = () => {
             BOTTOM FOOTER
         ======================================================= */}
 
-
                 <div className="py-6">
                     <div
                         className="
@@ -696,25 +695,25 @@ const Footer = () => {
                 aria-label="Back to top"
                 title="Back to top"
                 className="
-          group
-          absolute
-          bottom-6
-          right-6
-          flex
-          h-10
-          w-10
-          items-center
-          justify-center
-          rounded-xl
-          bg-[var(--accent)]
-          text-white
-          shadow-lg
-          transition-all
-          duration-500
-          hover:-translate-y-1
-          hover:bg-[var(--accent-light)]
-          hover:shadow-xl
-        "
+                    group
+                    absolute
+                    bottom-6
+                    right-6
+                    flex
+                    h-10
+                    w-10
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[var(--accent)]
+                    text-white
+                    shadow-lg
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    hover:bg-[var(--accent-light)]
+                    hover:shadow-xl
+                    "
             >
                 <ArrowUp
                     size={18}

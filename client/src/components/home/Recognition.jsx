@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
     Award,
     ArrowUpRight,
@@ -72,9 +74,7 @@ const Recognition = () => {
                     lg:py-28
                 "
             >
-                {/* =====================================================
-                    DECORATIVE BACKGROUND
-                ===================================================== */}
+                {/* Decorative Background */}
 
                 <div
                     className="
@@ -106,7 +106,16 @@ const Recognition = () => {
                     "
                 />
 
-                <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+                <div
+                    className="
+                        relative
+                        mx-auto
+                        max-w-7xl
+                        px-4
+                        sm:px-6
+                        lg:px-10
+                    "
+                >
                     {/* =================================================
                         SECTION HEADER
                     ================================================= */}
@@ -129,9 +138,10 @@ const Recognition = () => {
                         }}
                         className="
                             mx-auto
-                            mb-14
+                            mb-12
                             max-w-3xl
                             text-center
+                            sm:mb-14
                         "
                     >
                         {/* Section Label */}
@@ -221,10 +231,10 @@ const Recognition = () => {
                             flex
                             snap-x
                             snap-mandatory
-                            gap-5
+                            gap-4
                             overflow-x-auto
                             overscroll-x-contain
-                            pb-4
+                            pb-5
                             [scrollbar-width:none]
                             [&::-webkit-scrollbar]:hidden
 
@@ -259,7 +269,7 @@ const Recognition = () => {
                                 className="
                                     group
                                     relative
-                                    min-w-[86%]
+                                    min-w-[92%]
                                     snap-center
                                     overflow-hidden
                                     rounded-2xl
@@ -269,16 +279,17 @@ const Recognition = () => {
                                     shadow-sm
                                     transition-all
                                     duration-500
-                                    hover:-translate-y-2
-                                    hover:border-[var(--accent)]
-                                    hover:shadow-2xl
 
                                     sm:min-w-0
+
+                                    sm:hover:-translate-y-2
+                                    sm:hover:border-[var(--accent)]
+                                    sm:hover:shadow-2xl
                                 "
                             >
-                                {/* =====================================
+                                {/* =================================================
                                     CERTIFICATE IMAGE
-                                ===================================== */}
+                                ================================================= */}
 
                                 <button
                                     type="button"
@@ -293,100 +304,117 @@ const Recognition = () => {
                                     "
                                     aria-label={`View ${certificate.title}`}
                                 >
+                                    {/* Certificate Image Container */}
+
                                     <div
                                         className="
-        relative
-        flex
-        h-[360px]
-        w-full
-        items-center
-        justify-center
-        overflow-hidden
-        bg-white
-        sm:h-[380px]
-        lg:h-[390px]
-    "
+                                            relative
+                                            flex
+                                            h-[280px]
+                                            w-full
+                                            items-center
+                                            justify-center
+                                            overflow-hidden
+                                            bg-white
+                                            p-3
+
+                                            sm:h-[380px]
+                                            sm:p-0
+
+                                            lg:h-[390px]
+                                        "
                                     >
                                         <img
                                             src={certificate.image}
                                             alt={certificate.title}
+                                            loading="lazy"
                                             className="
-            block
-            h-full
-            w-full
-            object-contain
-        "
+                                                block
+                                                h-full
+                                                w-full
+                                                object-contain
+                                                object-center
+                                            "
                                         />
 
                                         {/* Hover Overlay */}
+
                                         <div
                                             className="
-            absolute
-            inset-0
-            flex
-            items-center
-            justify-center
-            bg-black/0
-            transition-all
-            duration-500
-            group-hover:bg-black/20
-        "
+                                                absolute
+                                                inset-0
+                                                flex
+                                                items-center
+                                                justify-center
+                                                bg-black/0
+                                                transition-all
+                                                duration-500
+
+                                                sm:group-hover:bg-black/20
+                                            "
                                         >
                                             <div
                                                 className="
-                flex
-                h-12
-                w-12
-                scale-75
-                items-center
-                justify-center
-                rounded-full
-                bg-white
-                text-[var(--primary)]
-                opacity-0
-                shadow-xl
-                transition-all
-                duration-500
-                group-hover:scale-100
-                group-hover:opacity-100
-            "
+                                                    flex
+                                                    h-12
+                                                    w-12
+                                                    scale-75
+                                                    items-center
+                                                    justify-center
+                                                    rounded-full
+                                                    bg-white
+                                                    text-[var(--primary)]
+                                                    opacity-0
+                                                    shadow-xl
+                                                    transition-all
+                                                    duration-500
+
+                                                    sm:group-hover:scale-100
+                                                    sm:group-hover:opacity-100
+                                                "
                                             >
                                                 <ArrowUpRight size={20} />
                                             </div>
                                         </div>
 
-                                        {/* Number */}
+                                        {/* Certificate Number */}
+
                                         <div
                                             className="
-            absolute
-            left-4
-            top-4
-            flex
-            h-9
-            w-9
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-white/30
-            bg-black/35
-            text-[10px]
-            font-bold
-            text-white
-            backdrop-blur-md
-        "
+                                                absolute
+                                                left-3
+                                                top-3
+                                                flex
+                                                h-9
+                                                w-9
+                                                items-center
+                                                justify-center
+                                                rounded-full
+                                                border
+                                                border-white/30
+                                                bg-black/35
+                                                text-[10px]
+                                                font-bold
+                                                text-white
+                                                backdrop-blur-md
+
+                                                sm:left-4
+                                                sm:top-4
+                                            "
                                         >
                                             0{index + 1}
                                         </div>
                                     </div>
                                 </button>
 
-                                {/* =====================================
+                                {/* =================================================
                                     CARD FOOTER
-                                ===================================== */}
+                                ================================================= */}
 
-                                <div className="p-5">
+                                <div className="p-4 sm:p-5">
                                     <div className="flex items-center gap-3">
+                                        {/* Award Icon */}
+
                                         <div
                                             className="
                                                 flex
@@ -400,14 +428,17 @@ const Recognition = () => {
                                                 text-white
                                                 transition-all
                                                 duration-300
-                                                group-hover:bg-[var(--accent)]
-                                                group-hover:scale-105
+
+                                                sm:group-hover:bg-[var(--accent)]
+                                                sm:group-hover:scale-105
                                             "
                                         >
                                             <Award size={18} className="text-white" />
                                         </div>
 
-                                        <div>
+                                        {/* Title */}
+
+                                        <div className="min-w-0">
                                             <p
                                                 className="
                                                     text-[10px]
@@ -482,9 +513,10 @@ const Recognition = () => {
                         }}
                         className="
                             mx-auto
-                            mt-12
+                            mt-10
                             max-w-2xl
                             text-center
+                            sm:mt-12
                         "
                     >
                         <p
@@ -533,26 +565,27 @@ const Recognition = () => {
                             items-center
                             justify-center
                             bg-black/85
-                            p-4
+                            p-3
                             backdrop-blur-md
+                            sm:p-4
                         "
                         onClick={closeCertificate}
                     >
-                        {/* =============================================
+                        {/* =================================================
                             CLOSE BUTTON
-                        ============================================= */}
+                        ================================================= */}
 
                         <button
                             type="button"
                             onClick={closeCertificate}
                             className="
                                 absolute
-                                right-5
-                                top-5
+                                right-3
+                                top-3
                                 z-20
                                 flex
-                                h-11
-                                w-11
+                                h-10
+                                w-10
                                 items-center
                                 justify-center
                                 rounded-full
@@ -562,15 +595,20 @@ const Recognition = () => {
                                 duration-300
                                 hover:scale-110
                                 hover:bg-[var(--accent)]
+
+                                sm:right-5
+                                sm:top-5
+                                sm:h-11
+                                sm:w-11
                             "
                             aria-label="Close certificate"
                         >
-                            <X size={22} />
+                            <X size={21} />
                         </button>
 
-                        {/* =============================================
+                        {/* =================================================
                             PREVIOUS BUTTON
-                        ============================================= */}
+                        ================================================= */}
 
                         <button
                             type="button"
@@ -580,11 +618,11 @@ const Recognition = () => {
                             }}
                             className="
                                 absolute
-                                left-3
+                                left-2
                                 z-20
                                 flex
-                                h-11
-                                w-11
+                                h-10
+                                w-10
                                 items-center
                                 justify-center
                                 rounded-full
@@ -594,16 +632,19 @@ const Recognition = () => {
                                 duration-300
                                 hover:scale-110
                                 hover:bg-[var(--accent)]
+
                                 sm:left-6
+                                sm:h-11
+                                sm:w-11
                             "
                             aria-label="Previous certificate"
                         >
-                            <ChevronLeft size={24} />
+                            <ChevronLeft size={22} />
                         </button>
 
-                        {/* =============================================
-                            IMAGE
-                        ============================================= */}
+                        {/* =================================================
+                            LIGHTBOX IMAGE
+                        ================================================= */}
 
                         <motion.div
                             key={selectedIndex}
@@ -624,12 +665,18 @@ const Recognition = () => {
                             }}
                             className="
                                 relative
-                                max-h-[90vh]
-                                max-w-[90vw]
+                                flex
+                                max-h-[88vh]
+                                max-w-[82vw]
+                                items-center
+                                justify-center
                                 overflow-hidden
                                 rounded-2xl
                                 bg-white
                                 shadow-2xl
+
+                                sm:max-h-[90vh]
+                                sm:max-w-[85vw]
                             "
                             onClick={(event) => event.stopPropagation()}
                         >
@@ -637,16 +684,20 @@ const Recognition = () => {
                                 src={certificates[selectedIndex].image}
                                 alt={certificates[selectedIndex].title}
                                 className="
-                                    max-h-[90vh]
-                                    max-w-[90vw]
+                                    block
+                                    max-h-[88vh]
+                                    max-w-[82vw]
                                     object-contain
+
+                                    sm:max-h-[90vh]
+                                    sm:max-w-[85vw]
                                 "
                             />
                         </motion.div>
 
-                        {/* =============================================
+                        {/* =================================================
                             NEXT BUTTON
-                        ============================================= */}
+                        ================================================= */}
 
                         <button
                             type="button"
@@ -656,11 +707,11 @@ const Recognition = () => {
                             }}
                             className="
                                 absolute
-                                right-3
+                                right-2
                                 z-20
                                 flex
-                                h-11
-                                w-11
+                                h-10
+                                w-10
                                 items-center
                                 justify-center
                                 rounded-full
@@ -670,21 +721,24 @@ const Recognition = () => {
                                 duration-300
                                 hover:scale-110
                                 hover:bg-[var(--accent)]
+
                                 sm:right-6
+                                sm:h-11
+                                sm:w-11
                             "
                             aria-label="Next certificate"
                         >
-                            <ChevronRight size={24} />
+                            <ChevronRight size={22} />
                         </button>
 
-                        {/* =============================================
+                        {/* =================================================
                             COUNTER
-                        ============================================= */}
+                        ================================================= */}
 
                         <div
                             className="
                                 absolute
-                                bottom-5
+                                bottom-4
                                 left-1/2
                                 -translate-x-1/2
                                 rounded-full

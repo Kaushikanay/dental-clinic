@@ -92,8 +92,7 @@ const Testimonials = () => {
 
     const testimonial = testimonials[activeIndex];
 
-    const currentImage =
-        `${testimonial.image}${imageExtensions[imageIndex]}`;
+    const currentImage = `${testimonial.image}${imageExtensions[imageIndex]}`;
 
     const handleImageError = () => {
         if (imageIndex < imageExtensions.length - 1) {
@@ -274,10 +273,7 @@ const Testimonials = () => {
               md:block
             "
                     >
-                        <ArrowLeft
-                            size={40}
-                            strokeWidth={1.3}
-                        />
+                        <ArrowLeft size={40} strokeWidth={1.3} />
                     </button>
 
                     {/* RIGHT ARROW */}
@@ -301,10 +297,7 @@ const Testimonials = () => {
               md:block
             "
                     >
-                        <ArrowRight
-                            size={40}
-                            strokeWidth={1.3}
-                        />
+                        <ArrowRight size={40} strokeWidth={1.3} />
                     </button>
 
                     {/* CENTER CONTENT */}
@@ -318,10 +311,7 @@ const Testimonials = () => {
               sm:px-12
             "
                     >
-                        <AnimatePresence
-                            mode="wait"
-                            custom={direction}
-                        >
+                        <AnimatePresence mode="wait" custom={direction}>
                             <motion.div
                                 key={activeIndex}
                                 custom={direction}
@@ -521,10 +511,7 @@ const Testimonials = () => {
               hover:text-[var(--accent)]
             "
                     >
-                        <ArrowLeft
-                            size={30}
-                            strokeWidth={1.4}
-                        />
+                        <ArrowLeft size={30} strokeWidth={1.4} />
                     </button>
 
                     <div className="flex items-center gap-2">
@@ -533,9 +520,7 @@ const Testimonials = () => {
                                 key={index}
                                 type="button"
                                 onClick={() => {
-                                    setDirection(
-                                        index > activeIndex ? 1 : -1,
-                                    );
+                                    setDirection(index > activeIndex ? 1 : -1);
 
                                     setActiveIndex(index);
                                 }}
@@ -565,10 +550,7 @@ const Testimonials = () => {
               hover:text-[var(--accent)]
             "
                     >
-                        <ArrowRight
-                            size={30}
-                            strokeWidth={1.4}
-                        />
+                        <ArrowRight size={30} strokeWidth={1.4} />
                     </button>
                 </div>
 
@@ -591,9 +573,7 @@ const Testimonials = () => {
                             key={index}
                             type="button"
                             onClick={() => {
-                                setDirection(
-                                    index > activeIndex ? 1 : -1,
-                                );
+                                setDirection(index > activeIndex ? 1 : -1);
 
                                 setActiveIndex(index);
                             }}
