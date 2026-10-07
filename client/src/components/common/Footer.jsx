@@ -247,10 +247,6 @@ const Footer = () => {
         text-xl
         font-bold
         text-[var(--accent)]
-        transition-colors
-        duration-300
-        dark:text-[var(--text)]
-        dark:group-hover:text-[var(--accent)]
     "
                                 >
                                     The SmileMax
@@ -264,7 +260,7 @@ const Footer = () => {
         uppercase
         tracking-[0.25em]
         text-[var(--accent-light)]
-      "
+    "
                                 >
                                     DENTISTRY
                                 </span>
