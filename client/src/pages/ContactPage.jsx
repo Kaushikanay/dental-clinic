@@ -1227,16 +1227,16 @@ const ContactPage = () => {
 
                             <div className="relative min-h-[350px] lg:min-h-[430px]">
                                 <iframe
-                                    title="The SmileMax Dentistry Location"
-                                    src="https://www.google.com/maps?q=Juran+Chapra+Main+Road,+Above+Satyanarayan+Nursing+Home,+Muzaffarpur,+Bihar&output=embed"
+                                    title="Smilemax Dental Clinic Location"
+                                    src="https://www.google.com/maps?q=Smilemax%2C%20Muzaffarpur%2C%20Bihar&ll=26.1277688,85.3752041&z=17&output=embed"
                                     className="
-                            absolute
-                            inset-0
-                            h-full
-                            w-full
-                            border-0
-                            grayscale-[10%]
-                        "
+            absolute
+            inset-0
+            h-full
+            w-full
+            border-0
+            grayscale-[10%]
+        "
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                 />
@@ -1336,7 +1336,6 @@ const ContactPage = () => {
                                 </div>
 
                                 {/* Get Directions */}
-
                                 <a
                                     href="https://www.google.com/maps/place/Smilemax/@26.1277688,85.3752041,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed10c1c8d216e7:0xc745afabff22598b!8m2!3d26.1277688!4d85.3752041!16s%2Fg%2F11g9qwxqnt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
                                     target="_blank"

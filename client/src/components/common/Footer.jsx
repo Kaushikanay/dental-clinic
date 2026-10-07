@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
 
-import {
-    Mail,
-    MapPin,
-    Phone,
-    ArrowUp,
-    CalendarCheck,
-} from "lucide-react";
+import { Mail, MapPin, Phone, ArrowUp, CalendarCheck } from "lucide-react";
 
 import {
     FaFacebookF,
@@ -119,7 +113,7 @@ const Footer = () => {
         },
         {
             name: "YouTube",
-            href: "https://www.youtube.com/",
+            href: "https://youtube.com/@smiilemax/",
             icon: FaYoutube,
         },
         {
@@ -276,9 +270,8 @@ const Footer = () => {
                 text-white/50
               "
                         >
-                            Providing personalized dental care with modern
-                            technology, experienced professionals and a
-                            patient-first approach.
+                            Providing personalized dental care with modern technology,
+                            experienced professionals and a patient-first approach.
                         </p>
 
                         {/* ==================================================
@@ -688,8 +681,7 @@ const Footer = () => {
             "
                     >
                         <p className="text-xs text-white/40">
-                            © {new Date().getFullYear()} The Smile Max.
-                            All rights reserved.
+                            © {new Date().getFullYear()} The Smile Max. All rights reserved.
                         </p>
 
                         <div
