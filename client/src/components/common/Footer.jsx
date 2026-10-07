@@ -263,12 +263,12 @@ const Footer = () => {
 
                         <p
                             className="
-                mt-6
-                max-w-xs
-                text-sm
-                leading-7
-                text-white/50
-              "
+        mt-6
+        max-w-xs
+        text-sm
+        leading-7
+        text-white
+    "
                         >
                             Providing personalized dental care with modern technology,
                             experienced professionals and a patient-first approach.
@@ -517,13 +517,12 @@ const Footer = () => {
 
                                 <p
                                     className="
-                    text-sm
-                    leading-6
-                    text-white/50
-                    transition-colors
-                    duration-300
-                    group-hover:text-white/80
-                  "
+        text-sm
+        leading-6
+        text-white
+        transition-colors
+        duration-300
+    "
                                 >
                                     {clinicInfo.addressLine1}
                                     <br />
@@ -631,20 +630,21 @@ const Footer = () => {
             BOTTOM FOOTER
         ======================================================= */}
 
-                <div className="border-t border-white/10 py-6">
+
+                <div className="py-6">
                     <div
                         className="
-              flex
-              flex-col
-              items-center
-              justify-between
-              gap-4
-              text-center
-              sm:flex-row
-              sm:text-left
-            "
+            flex
+            flex-col
+            items-center
+            justify-between
+            gap-4
+            text-center
+            sm:flex-row
+            sm:text-left
+        "
                     >
-                        <p className="text-xs text-white/40">
+                        <p className="text-xs text-white">
                             © {new Date().getFullYear()} The Smile Max. All rights reserved.
                         </p>
 
@@ -655,29 +655,16 @@ const Footer = () => {
                 items-center
                 justify-center
                 gap-5
-              "
+            "
                         >
-                            {/* <Link
-                                to="/documentation"
-                                className="
-                  text-xs
-                  text-white/40
-                  transition-all
-                  duration-300
-                  hover:text-[var(--accent-light)]
-                "
-                            >
-                                Documentation
-                            </Link> */}
-
                             <Link
                                 to="/privacy-policy"
                                 className="
-                  text-xs
-                  text-white/40
-                  transition-all
-                  duration-300
-                  hover:text-[var(--accent-light)]
+                    text-xs
+                    text-white/40
+                    transition-all
+                    duration-300
+                    hover:text-[var(--accent-light)]
                 "
                             >
                                 Privacy Policy
@@ -686,11 +673,11 @@ const Footer = () => {
                             <Link
                                 to="/terms-and-conditions"
                                 className="
-                  text-xs
-                  text-white/40
-                  transition-all
-                  duration-300
-                  hover:text-[var(--accent-light)]
+                    text-xs
+                    text-white/40
+                    transition-all
+                    duration-300
+                    hover:text-[var(--accent-light)]
                 "
                             >
                                 Terms & Conditions

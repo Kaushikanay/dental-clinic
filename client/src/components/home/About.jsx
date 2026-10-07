@@ -46,8 +46,8 @@ const About = () => {
 
                         <div className="relative z-10 overflow-hidden rounded-[2rem] bg-[var(--card-bg)] transition-colors duration-500">
                             <img
-                                src="/images/about-dental.jpg"
-                                alt="Dental Clinic Studio"
+                                src="/images/about-dental.jpeg"
+                                alt="The Smile Max Dentistry - About Us"
                                 className="h-[460px] w-full object-cover sm:h-[520px]"
                             />
                         </div>

@@ -11,21 +11,41 @@ const testimonials = [
             "The entire treatment experience was comfortable and professional. The doctor explained everything clearly and made me feel completely at ease.",
         image: "/images/testimonial-1",
     },
+
     {
         name: "Rahul Verma",
         role: "Dental Treatment Patient",
         title: "Excellent Experience",
         review:
             "I really appreciated the friendly environment and attention to detail. The treatment was smooth, and the overall experience was excellent.",
-        image: "/images/testimonial-1",
+        image: "/images/testimonial-2",
     },
+
     {
         name: "Neha Singh",
         role: "Smile Care Patient",
         title: "Highly Recommended",
         review:
             "The clinic has a very welcoming atmosphere. The team was supportive throughout the treatment and helped me feel confident about my smile.",
-        image: "/images/testimonial-1",
+        image: "/images/testimonial-3",
+    },
+
+    {
+        name: "Amit Patel",
+        role: "Dental Care Patient",
+        title: "Exceptional Service",
+        review:
+            "The level of care and professionalism exceeded my expectations. I felt well-informed and comfortable throughout the entire process.",
+        image: "/images/testimonial-4",
+    },
+
+    {
+        name: "Sneha Gupta",
+        role: "Dental Treatment Patient",
+        title: "Outstanding Results",
+        review:
+            "I am extremely satisfied with the results of my treatment. The staff went above and beyond to ensure I was comfortable and happy with the outcome.",
+        image: "/images/testimonial-5",
     },
 ];
 

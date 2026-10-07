@@ -44,13 +44,13 @@ const Recognition = () => {
 
     const showPrevious = () => {
         setSelectedIndex((current) =>
-            current === 0 ? certificates.length - 1 : current - 1
+            current === 0 ? certificates.length - 1 : current - 1,
         );
     };
 
     const showNext = () => {
         setSelectedIndex((current) =>
-            current === certificates.length - 1 ? 0 : current + 1
+            current === certificates.length - 1 ? 0 : current + 1,
         );
     };
 
@@ -188,10 +188,7 @@ const Recognition = () => {
                                 lg:text-5xl
                             "
                         >
-                            Our{" "}
-                            <span className="text-[var(--accent)]">
-                                Recognition
-                            </span>
+                            Our <span className="text-[var(--accent)]">Recognition</span>
                         </h2>
 
                         {/* Description */}
@@ -209,9 +206,8 @@ const Recognition = () => {
                                 sm:text-base
                             "
                         >
-                            A collection of professional certifications,
-                            achievements and recognitions reflecting our
-                            commitment to quality dental care and
+                            A collection of professional certifications, achievements and
+                            recognitions reflecting our commitment to quality dental care and
                             professional excellence.
                         </p>
                     </motion.div>
@@ -286,9 +282,7 @@ const Recognition = () => {
 
                                 <button
                                     type="button"
-                                    onClick={() =>
-                                        openCertificate(index)
-                                    }
+                                    onClick={() => openCertificate(index)}
                                     className="
                                         relative
                                         block
@@ -301,87 +295,86 @@ const Recognition = () => {
                                 >
                                     <div
                                         className="
-                                            relative
-                                            aspect-[3/4]
-                                            overflow-hidden
-                                            bg-white
-                                        "
+        relative
+        flex
+        h-[360px]
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        bg-white
+        sm:h-[380px]
+        lg:h-[390px]
+    "
                                     >
                                         <img
                                             src={certificate.image}
                                             alt={certificate.title}
                                             className="
-                                                h-full
-                                                w-full
-                                                object-cover
-                                                transition-transform
-                                                duration-700
-                                                ease-out
-                                                group-hover:scale-[1.04]
-                                            "
+            block
+            h-full
+            w-full
+            object-contain
+        "
                                         />
 
                                         {/* Hover Overlay */}
-
                                         <div
                                             className="
-                                                absolute
-                                                inset-0
-                                                flex
-                                                items-center
-                                                justify-center
-                                                bg-black/0
-                                                transition-all
-                                                duration-500
-                                                group-hover:bg-black/30
-                                            "
+            absolute
+            inset-0
+            flex
+            items-center
+            justify-center
+            bg-black/0
+            transition-all
+            duration-500
+            group-hover:bg-black/20
+        "
                                         >
                                             <div
                                                 className="
-                                                    flex
-                                                    h-12
-                                                    w-12
-                                                    scale-75
-                                                    items-center
-                                                    justify-center
-                                                    rounded-full
-                                                    bg-white
-                                                    text-[var(--primary)]
-                                                    opacity-0
-                                                    shadow-xl
-                                                    transition-all
-                                                    duration-500
-                                                    group-hover:scale-100
-                                                    group-hover:opacity-100
-                                                "
+                flex
+                h-12
+                w-12
+                scale-75
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+                text-[var(--primary)]
+                opacity-0
+                shadow-xl
+                transition-all
+                duration-500
+                group-hover:scale-100
+                group-hover:opacity-100
+            "
                                             >
-                                                <ArrowUpRight
-                                                    size={20}
-                                                />
+                                                <ArrowUpRight size={20} />
                                             </div>
                                         </div>
 
                                         {/* Number */}
-
                                         <div
                                             className="
-                                                absolute
-                                                left-4
-                                                top-4
-                                                flex
-                                                h-9
-                                                w-9
-                                                items-center
-                                                justify-center
-                                                rounded-full
-                                                border
-                                                border-white/30
-                                                bg-black/35
-                                                text-[10px]
-                                                font-bold
-                                                text-white
-                                                backdrop-blur-md
-                                            "
+            absolute
+            left-4
+            top-4
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-white/30
+            bg-black/35
+            text-[10px]
+            font-bold
+            text-white
+            backdrop-blur-md
+        "
                                         >
                                             0{index + 1}
                                         </div>
@@ -411,10 +404,7 @@ const Recognition = () => {
                                                 group-hover:scale-105
                                             "
                                         >
-                                            <Award
-                                                size={18}
-                                                className="text-white"
-                                            />
+                                            <Award size={18} className="text-white" />
                                         </div>
 
                                         <div>
@@ -463,19 +453,11 @@ const Recognition = () => {
                             sm:hidden
                         "
                     >
-                        <ChevronLeft
-                            size={14}
-                            className="text-[var(--accent)]"
-                        />
+                        <ChevronLeft size={14} className="text-[var(--accent)]" />
 
-                        <span>
-                            Swipe to view more
-                        </span>
+                        <span>Swipe to view more</span>
 
-                        <ChevronRight
-                            size={14}
-                            className="text-[var(--accent)]"
-                        />
+                        <ChevronRight size={14} className="text-[var(--accent)]" />
                     </div>
 
                     {/* =================================================
@@ -513,8 +495,7 @@ const Recognition = () => {
                                 sm:text-sm
                             "
                         >
-                            Professional recognition that reflects our
-                            dedication to{" "}
+                            Professional recognition that reflects our dedication to{" "}
                             <span
                                 className="
                                     font-semibold
@@ -650,19 +631,11 @@ const Recognition = () => {
                                 bg-white
                                 shadow-2xl
                             "
-                            onClick={(event) =>
-                                event.stopPropagation()
-                            }
+                            onClick={(event) => event.stopPropagation()}
                         >
                             <img
-                                src={
-                                    certificates[selectedIndex]
-                                        .image
-                                }
-                                alt={
-                                    certificates[selectedIndex]
-                                        .title
-                                }
+                                src={certificates[selectedIndex].image}
+                                alt={certificates[selectedIndex].title}
                                 className="
                                     max-h-[90vh]
                                     max-w-[90vw]
@@ -726,15 +699,8 @@ const Recognition = () => {
                                 backdrop-blur-md
                             "
                         >
-                            {String(selectedIndex + 1).padStart(
-                                2,
-                                "0"
-                            )}{" "}
-                            /{" "}
-                            {String(certificates.length).padStart(
-                                2,
-                                "0"
-                            )}
+                            {String(selectedIndex + 1).padStart(2, "0")} /{" "}
+                            {String(certificates.length).padStart(2, "0")}
                         </div>
                     </motion.div>
                 )}

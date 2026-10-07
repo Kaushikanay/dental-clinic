@@ -320,8 +320,8 @@ const AboutPage = () => {
                             "
                         >
                             <img
-                                src="/images/about-dental.jpg"
-                                alt="Dental Clinic Studio"
+                                src="/images/about-dental.jpeg"
+                                alt="The Smile Max Dentistry - About Us"
                                 className="
                                     h-[420px]
                                     w-full
