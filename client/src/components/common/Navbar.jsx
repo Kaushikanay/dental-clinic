@@ -125,28 +125,25 @@ const Navbar = () => {
                     <div className="leading-none">
                         <span
                             className="
-        block
-        whitespace-nowrap
-        text-xl
-        font-bold
-        text-[var(--accent)]
-        transition-colors
-        duration-300
-        dark:text-[var(--text)]
-        dark:group-hover:text-[var(--accent)]
-    "
+            block
+            whitespace-nowrap
+            text-xl
+            font-bold
+            text-[var(--accent)]
+        "
                         >
                             The SmileMax
                         </span>
+
                         <span
                             className="
-        mt-1
-        block
-        text-[9px]
-        uppercase
-        tracking-[0.25em]
-        text-[var(--accent-light)]
-      "
+            mt-1
+            block
+            text-[9px]
+            uppercase
+            tracking-[0.25em]
+            text-[var(--accent-light)]
+        "
                         >
                             DENTISTRY
                         </span>
