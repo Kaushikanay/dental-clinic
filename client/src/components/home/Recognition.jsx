@@ -56,6 +56,10 @@ const Recognition = () => {
 
     return (
         <>
+            {/* =========================================================
+                RECOGNITION SECTION
+            ========================================================= */}
+
             <section
                 className="
                     relative
@@ -68,7 +72,10 @@ const Recognition = () => {
                     lg:py-28
                 "
             >
-                {/* Decorative Background */}
+                {/* =====================================================
+                    DECORATIVE BACKGROUND
+                ===================================================== */}
+
                 <div
                     className="
                         pointer-events-none
@@ -100,8 +107,10 @@ const Recognition = () => {
                 />
 
                 <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+                    {/* =================================================
+                        SECTION HEADER
+                    ================================================= */}
 
-                    {/* Section Header */}
                     <motion.div
                         initial={{
                             opacity: 0,
@@ -125,7 +134,8 @@ const Recognition = () => {
                             text-center
                         "
                     >
-                        {/* Label */}
+                        {/* Section Label */}
+
                         <div
                             className="
                                 mb-4
@@ -165,6 +175,7 @@ const Recognition = () => {
                         </div>
 
                         {/* Heading */}
+
                         <h2
                             className="
                                 text-3xl
@@ -177,13 +188,14 @@ const Recognition = () => {
                                 lg:text-5xl
                             "
                         >
-                            Our
+                            Our{" "}
                             <span className="text-[var(--accent)]">
-                                {" "}Recognition
+                                Recognition
                             </span>
                         </h2>
 
                         {/* Description */}
+
                         <p
                             className="
                                 mx-auto
@@ -204,12 +216,28 @@ const Recognition = () => {
                         </p>
                     </motion.div>
 
-                    {/* Certificate Grid */}
+                    {/* =================================================
+                        CERTIFICATE GRID / MOBILE SLIDER
+                    ================================================= */}
+
                     <div
                         className="
-                            grid
-                            gap-6
+                            flex
+                            snap-x
+                            snap-mandatory
+                            gap-5
+                            overflow-x-auto
+                            overscroll-x-contain
+                            pb-4
+                            [scrollbar-width:none]
+                            [&::-webkit-scrollbar]:hidden
+
+                            sm:grid
                             sm:grid-cols-2
+                            sm:gap-6
+                            sm:overflow-visible
+                            sm:pb-0
+
                             lg:grid-cols-4
                         "
                     >
@@ -235,6 +263,8 @@ const Recognition = () => {
                                 className="
                                     group
                                     relative
+                                    min-w-[86%]
+                                    snap-center
                                     overflow-hidden
                                     rounded-2xl
                                     border
@@ -246,9 +276,14 @@ const Recognition = () => {
                                     hover:-translate-y-2
                                     hover:border-[var(--accent)]
                                     hover:shadow-2xl
+
+                                    sm:min-w-0
                                 "
                             >
-                                {/* Certificate Image */}
+                                {/* =====================================
+                                    CERTIFICATE IMAGE
+                                ===================================== */}
+
                                 <button
                                     type="button"
                                     onClick={() =>
@@ -287,6 +322,7 @@ const Recognition = () => {
                                         />
 
                                         {/* Hover Overlay */}
+
                                         <div
                                             className="
                                                 absolute
@@ -326,6 +362,7 @@ const Recognition = () => {
                                         </div>
 
                                         {/* Number */}
+
                                         <div
                                             className="
                                                 absolute
@@ -351,7 +388,10 @@ const Recognition = () => {
                                     </div>
                                 </button>
 
-                                {/* Card Footer */}
+                                {/* =====================================
+                                    CARD FOOTER
+                                ===================================== */}
+
                                 <div className="p-5">
                                     <div className="flex items-center gap-3">
                                         <div
@@ -407,7 +447,41 @@ const Recognition = () => {
                         ))}
                     </div>
 
-                    {/* Bottom Trust Line */}
+                    {/* =================================================
+                        MOBILE SWIPE HINT
+                    ================================================= */}
+
+                    <div
+                        className="
+                            mt-4
+                            flex
+                            items-center
+                            justify-center
+                            gap-2
+                            text-xs
+                            text-[var(--muted)]
+                            sm:hidden
+                        "
+                    >
+                        <ChevronLeft
+                            size={14}
+                            className="text-[var(--accent)]"
+                        />
+
+                        <span>
+                            Swipe to view more
+                        </span>
+
+                        <ChevronRight
+                            size={14}
+                            className="text-[var(--accent)]"
+                        />
+                    </div>
+
+                    {/* =================================================
+                        BOTTOM TRUST LINE
+                    ================================================= */}
+
                     <motion.div
                         initial={{
                             opacity: 0,
@@ -440,21 +514,24 @@ const Recognition = () => {
                             "
                         >
                             Professional recognition that reflects our
-                            dedication to
+                            dedication to{" "}
                             <span
                                 className="
                                     font-semibold
                                     text-[var(--text)]
                                 "
                             >
-                                {" "}quality, trust and excellence.
+                                quality, trust and excellence.
                             </span>
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Certificate Lightbox */}
+            {/* =========================================================
+                CERTIFICATE LIGHTBOX
+            ========================================================= */}
+
             <AnimatePresence>
                 {selectedIndex !== null && (
                     <motion.div
@@ -480,7 +557,10 @@ const Recognition = () => {
                         "
                         onClick={closeCertificate}
                     >
-                        {/* Close */}
+                        {/* =============================================
+                            CLOSE BUTTON
+                        ============================================= */}
+
                         <button
                             type="button"
                             onClick={closeCertificate}
@@ -507,7 +587,10 @@ const Recognition = () => {
                             <X size={22} />
                         </button>
 
-                        {/* Previous */}
+                        {/* =============================================
+                            PREVIOUS BUTTON
+                        ============================================= */}
+
                         <button
                             type="button"
                             onClick={(event) => {
@@ -537,7 +620,10 @@ const Recognition = () => {
                             <ChevronLeft size={24} />
                         </button>
 
-                        {/* Image */}
+                        {/* =============================================
+                            IMAGE
+                        ============================================= */}
+
                         <motion.div
                             key={selectedIndex}
                             initial={{
@@ -585,7 +671,10 @@ const Recognition = () => {
                             />
                         </motion.div>
 
-                        {/* Next */}
+                        {/* =============================================
+                            NEXT BUTTON
+                        ============================================= */}
+
                         <button
                             type="button"
                             onClick={(event) => {
@@ -615,7 +704,10 @@ const Recognition = () => {
                             <ChevronRight size={24} />
                         </button>
 
-                        {/* Counter */}
+                        {/* =============================================
+                            COUNTER
+                        ============================================= */}
+
                         <div
                             className="
                                 absolute

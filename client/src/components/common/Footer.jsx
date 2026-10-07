@@ -624,42 +624,6 @@ const Footer = () => {
                                 {clinicInfo.email}
                             </a>
                         </div>
-
-                        {/* Appointment */}
-
-                        {/* <Link
-                            to="/contact"
-                            className="
-                group
-                mt-7
-                inline-flex
-                items-center
-                gap-2
-                rounded-xl
-                bg-[var(--accent)]
-                px-5
-                py-3
-                text-xs
-                font-semibold
-                text-white
-                transition-all
-                duration-500
-                hover:-translate-y-1
-                hover:bg-[var(--accent-light)]
-                hover:shadow-lg
-              "
-                        >
-                            <CalendarCheck
-                                size={16}
-                                className="
-                  transition-transform
-                  duration-300
-                  group-hover:scale-110
-                "
-                            />
-
-                            Book Appointment
-                        </Link> */}
                     </div>
                 </div>
 
