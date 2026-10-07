@@ -657,7 +657,7 @@ const ContactPage = () => {
 
                         {/* Working Hours */}
 
-                        <div
+                        {/* <div
                             className="
                                 mt-8
                                 flex
@@ -726,7 +726,7 @@ const ContactPage = () => {
         "
                                 >
                                     <div className="flex justify-between gap-6">
-                                        <span>Monday</span>
+                                        <span>Monday-Saturday</span>
                                         <span>10:00 AM – 7:00 PM</span>
                                     </div>
 
@@ -761,7 +761,21 @@ const ContactPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+                        {/* Working Hours */}
+
+                        <ContactCard
+                            icon={Clock3}
+                            title="Working Hours"
+                        >
+                            <p>
+                                Monday - Saturday: 10:00 AM - 7:00 PM
+                            </p>
+
+                            <p>
+                                Sunday: 10:00 AM - 2:00 PM
+                            </p>
+                        </ContactCard>
 
                         {/* Direct Contact */}
 
@@ -1324,29 +1338,29 @@ const ContactPage = () => {
                                 {/* Get Directions */}
 
                                 <a
-                                    href="https://www.google.com/maps/search/?api=1&query=Juran+Chapra+Main+Road,+Above+Satyanarayan+Nursing+Home,+Muzaffarpur,+Bihar"
+                                    href="https://www.google.com/maps/place/Smilemax/@26.1277688,85.3752041,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed10c1c8d216e7:0xc745afabff22598b!8m2!3d26.1277688!4d85.3752041!16s%2Fg%2F11g9qwxqnt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="
-                            mt-7
-                            inline-flex
-                            w-fit
-                            items-center
-                            gap-2
-                            rounded-lg
-                            bg-[var(--primary)]
-                            px-6
-                            py-3
-                            text-sm
-                            font-semibold
-                            !text-white
-                            shadow-md
-                            transition-all
-                            duration-300
-                            hover:-translate-y-0.5
-                            hover:bg-[var(--accent)]
-                            hover:shadow-lg
-                        "
+        mt-7
+        inline-flex
+        w-fit
+        items-center
+        gap-2
+        rounded-lg
+        bg-[var(--primary)]
+        px-6
+        py-3
+        text-sm
+        font-semibold
+        !text-white
+        shadow-md
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
+        hover:bg-[var(--accent)]
+        hover:shadow-lg
+    "
                                 >
                                     <MapPin size={17} />
 

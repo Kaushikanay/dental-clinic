@@ -9,33 +9,8 @@ import {
 
 const doctors = [
     {
-        name: "Dr. Arya",
-        gender: "Female Dental Surgeon",
-        image: "/images/Dr. Aarya.PNG",
-        qualification: "Dental Surgeon",
-        description:
-            "Dedicated to providing gentle, personalized and comfortable dental care with a patient-first approach. Every treatment is planned with attention to individual needs and long-term oral health.",
-        highlights: [
-            {
-                icon: GraduationCap,
-                title: "Qualified",
-                description: "Professional dental care",
-            },
-            {
-                icon: Award,
-                title: "Experienced",
-                description: "Focused clinical approach",
-            },
-            {
-                icon: HeartPulse,
-                title: "Patient First",
-                description: "Comfort-focused treatment",
-            },
-        ],
-    },
-    {
         name: "Dr. Nitesh Paul",
-        gender: "Male Dental Surgeon",
+        gender: "Dental Surgeon",
         image: "/images/Dr. Nitesh Paul.PNG",
         qualification: "Dental Surgeon",
         description:
@@ -58,6 +33,32 @@ const doctors = [
             },
         ],
     },
+    {
+        name: "Dr. Arya",
+        gender: "Dental Surgeon",
+        image: "/images/Dr. Aarya.PNG",
+        qualification: "Dental Surgeon",
+        description:
+            "Dedicated to providing gentle, personalized and comfortable dental care with a patient-first approach. Every treatment is planned with attention to individual needs and long-term oral health.",
+        highlights: [
+            {
+                icon: GraduationCap,
+                title: "Qualified",
+                description: "Professional dental care",
+            },
+            {
+                icon: Award,
+                title: "Experienced",
+                description: "Focused clinical approach",
+            },
+            {
+                icon: HeartPulse,
+                title: "Patient First",
+                description: "Comfort-focused treatment",
+            },
+        ],
+    },
+
 ];
 
 const DoctorCard = ({ doctor, index }) => {

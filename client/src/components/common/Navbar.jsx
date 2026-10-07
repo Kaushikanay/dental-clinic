@@ -125,28 +125,28 @@ const Navbar = () => {
                     <div className="leading-none">
                         <span
                             className="
-      block
-      whitespace-nowrap
-      text-lg
-      font-bold
-      !text-white
-      transition-colors
-      duration-300
-      group-hover:!text-[var(--accent-light)]
+        block
+        whitespace-nowrap
+        text-xl
+        font-bold
+        text-[var(--accent)]
+        transition-colors
+        duration-300
+        dark:text-[var(--text)]
+        dark:group-hover:text-[var(--accent)]
     "
                         >
                             The SmileMax
                         </span>
-
                         <span
                             className="
-      mt-1
-      block
-      text-[8px]
-      uppercase
-      tracking-[0.25em]
-      !text-[var(--accent-light)]
-    "
+        mt-1
+        block
+        text-[9px]
+        uppercase
+        tracking-[0.25em]
+        text-[var(--accent-light)]
+      "
                         >
                             DENTISTRY
                         </span>
@@ -219,60 +219,58 @@ const Navbar = () => {
                         type="button"
                         onClick={toggleTheme}
                         aria-label={
-                            theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+                            theme === "light"
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
                         }
                         title={
-                            theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+                            theme === "light"
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
                         }
                         className="
-              relative
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              overflow-hidden
-              rounded-full
-              border
-              border-white/20
-              bg-white/10
-              !text-white
-              transition-all
-              duration-300
-              hover:border-[var(--accent)]
-              hover:bg-[var(--accent)]
-            "
+        relative
+        flex
+        h-10
+        w-10
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-full
+        border
+        border-white/20
+        bg-white/10
+        !text-white
+    "
                     >
-                        {/* Moon */}
+                        {/* Moon - Light Theme */}
 
                         <span
                             className={`
-                absolute
-                transition-all
-                duration-300
-                ${theme === "light"
+            absolute
+            text-[var(--accent)]
+            ${theme === "light"
                                     ? "scale-100 rotate-0 opacity-100"
                                     : "scale-0 rotate-90 opacity-0"
                                 }
-              `}
+        `}
                         >
-                            <Moon size={18} />
+                            <Moon size={18} strokeWidth={2} />
                         </span>
 
-                        {/* Sun */}
+                        {/* Sun - Dark Theme */}
 
                         <span
                             className={`
-                absolute
-                transition-all
-                duration-300
-                ${theme === "dark"
+            absolute
+            text-[var(--accent)]
+            ${theme === "dark"
                                     ? "scale-100 rotate-0 opacity-100"
                                     : "scale-0 -rotate-90 opacity-0"
                                 }
-              `}
+        `}
                         >
-                            <Sun size={19} />
+                            <Sun size={19} strokeWidth={2} />
                         </span>
                     </button>
 

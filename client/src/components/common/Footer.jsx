@@ -246,11 +246,12 @@ const Footer = () => {
         whitespace-nowrap
         text-xl
         font-bold
-        text-[var(--text)]
+        text-[var(--accent)]
         transition-colors
         duration-300
-        group-hover:text-[var(--accent)]
-      "
+        dark:text-[var(--text)]
+        dark:group-hover:text-[var(--accent)]
+    "
                                 >
                                     The SmileMax
                                 </span>
