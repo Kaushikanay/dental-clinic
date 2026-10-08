@@ -11,12 +11,14 @@ import DocumentationPage from "./pages/DocumentationPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsConditionsPage from "./pages/TermsConditionsPage";
 import ScrollToTop from "./components/ScrollToTop";
+import LocalBusinessSchema from "./components/SEO/LocalBusinessSchema";
 
 import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
     <ThemeProvider>
+      <LocalBusinessSchema />
       <BrowserRouter>
         <div
           className="
