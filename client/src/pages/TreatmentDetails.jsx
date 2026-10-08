@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO/SEO";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -16,9 +17,56 @@ import treatmentData from "../services/treatmentData";
 
 const TreatmentDetails = () => {
     const { slug } = useParams();
+
     const treatment = treatmentData[slug];
 
     const [openFaq, setOpenFaq] = useState(null);
+
+    /*
+    ============================================================
+    DYNAMIC SEO
+    ============================================================
+    */
+
+    const treatmentSEO = {
+        orthodontics: {
+            title: "Orthodontics Treatment | The SmileMax Dental Clinic",
+            description:
+                "Explore orthodontic treatment at The SmileMax Dental Clinic in Muzaffarpur, Bihar, for healthier alignment and a confident smile.",
+        },
+
+        pedodontics: {
+            title: "Pedodontics Treatment | The SmileMax Dental Clinic",
+            description:
+                "The SmileMax Dental Clinic provides professional pediatric dental care and pedodontic treatments for children in Muzaffarpur, Bihar.",
+        },
+
+        periodontics: {
+            title: "Periodontics Treatment | The SmileMax Dental Clinic",
+            description:
+                "Get professional periodontal care at The SmileMax Dental Clinic in Muzaffarpur, Bihar, for healthy gums and better oral health.",
+        },
+
+        "root-canal-treatment": {
+            title: "Root Canal Treatment | The SmileMax Dental Clinic",
+            description:
+                "Learn about root canal treatment at The SmileMax Dental Clinic in Muzaffarpur, Bihar, with professional dental care focused on comfort and oral health.",
+        },
+
+        "dental-implants": {
+            title: "Dental Implants | The SmileMax Dental Clinic",
+            description:
+                "Explore professional dental implant treatment at The SmileMax Dental Clinic in Muzaffarpur, Bihar, for restoring missing teeth and your smile.",
+        },
+
+        "teeth-whitening": {
+            title: "Teeth Whitening | The SmileMax Dental Clinic",
+            description:
+                "Discover professional teeth whitening treatment at The SmileMax Dental Clinic in Muzaffarpur, Bihar, for a brighter and more confident smile.",
+        },
+    };
+
+    const seo = treatmentSEO[slug];
 
     /*
     ============================================================
@@ -84,6 +132,17 @@ const TreatmentDetails = () => {
                 duration-500
             "
         >
+            <SEO
+                title={
+                    seo?.title ||
+                    `${treatment.title} | The SmileMax Dental Clinic`
+                }
+                description={
+                    seo?.description ||
+                    `${treatment.title} treatment at The SmileMax Dental Clinic in Muzaffarpur, Bihar. Explore professional dental care and treatment options.`
+                }
+                path={`/services/${slug}`}
+            />
             {/* =====================================================
                 HERO
             ====================================================== */}

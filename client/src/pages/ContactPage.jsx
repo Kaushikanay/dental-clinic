@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO/SEO";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Clock3,
@@ -272,6 +273,11 @@ const ContactPage = () => {
                 duration-500
             "
         >
+            <SEO
+                title="Contact The SmileMax Dental Clinic | Muzaffarpur"
+                description="Contact The SmileMax Dental Clinic in Muzaffarpur, Bihar, for dental consultations, appointments and professional dental care."
+                path="/contact"
+            />
             {/* =====================================================
                 HERO
             ===================================================== */}
@@ -749,7 +755,7 @@ const ContactPage = () => {
 
                         <div className="mt-6 flex flex-wrap gap-3">
                             <a
-                                href="tel:+9199905030591
+                                href="tel:+919905030591
 "
                                 className="
                                     inline-flex
@@ -776,8 +782,7 @@ const ContactPage = () => {
                             </a>
 
                             <a
-                                href="mailto: dsmilemax@gmail.com
-"
+                                href="mailto: dsmilemax@gmail.com"
                                 className="
                                     inline-flex
                                     items-center

@@ -1,4 +1,6 @@
+
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO/SEO";
 import {
     ShieldCheck,
     Database,
@@ -484,6 +486,11 @@ export default function PrivacyPolicyPage() {
         transition-colors duration-500
       "
         >
+            <SEO
+                title="Terms & Conditions | The SmileMax Dental Clinic"
+                description="Read the Terms & Conditions for using The SmileMax Dental Clinic website and its dental services, enquiries and online information."
+                path="/terms-and-conditions"
+            />
             {/* HERO */}
             <section
                 className="

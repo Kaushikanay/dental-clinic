@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO/SEO";
 import {
     ShieldCheck,
     Database,
@@ -27,7 +28,7 @@ const sections = [
         content: (
             <>
                 <p>
-                    Welcome to The Smile Max Dentistry. We respect your privacy and are
+                    Welcome to The SmileMax Dentistry. We respect your privacy and are
                     committed to handling information submitted through this website
                     responsibly.
                 </p>
@@ -426,6 +427,11 @@ export default function PrivacyPolicyPage() {
 
     return (
         <main className="min-h-screen bg-[var(--page-bg)] text-[var(--text)] transition-colors duration-500">
+            <SEO
+                title="Privacy Policy | The SmileMax Dental Clinic"
+                description="Read the Privacy Policy of The SmileMax Dental Clinic in Muzaffarpur, Bihar, covering information collection, usage, security, cookies, data retention and privacy choices."
+                path="/privacy-policy"
+            />
             {/* Hero */}
             <section className="relative overflow-hidden px-5 pb-14 pt-24 md:px-8 md:pb-20 md:pt-32">
                 <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[var(--accent)]/10 blur-3xl" />

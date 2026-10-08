@@ -1,3 +1,4 @@
+import SEO from "../components/SEO/SEO";
 import { motion } from "framer-motion";
 import { Award, HeartPulse, ShieldCheck, Users } from "lucide-react";
 
@@ -30,6 +31,7 @@ const AboutPage = () => {
     ];
 
     return (
+
         <main
             className="
                 min-h-screen
@@ -39,6 +41,11 @@ const AboutPage = () => {
                 duration-500
             "
         >
+            <SEO
+                title="About The SmileMax Dental Clinic | Muzaffarpur"
+                description="Learn about The SmileMax Dental Clinic in Muzaffarpur, Bihar, and our approach to providing professional, comfortable and patient-focused dental care."
+                path="/about"
+            />
             {/* =====================================================
                 HERO
             ===================================================== */}
