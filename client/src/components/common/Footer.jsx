@@ -644,7 +644,15 @@ const Footer = () => {
         "
                     >
                         <p className="text-xs text-white">
-                            © {new Date().getFullYear()} The Smile Max. All rights reserved.
+                            © 2026 The SmileMax. All rights reserved. | Developed by{" "}
+                            <a
+                                href="https://smithranjan.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white hover:text-[var(--accent-light)] transition-colors duration-300"
+                            >
+                                smithranjan07
+                            </a>
                         </p>
 
                         <div
