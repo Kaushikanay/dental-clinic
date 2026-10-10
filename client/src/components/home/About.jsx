@@ -47,7 +47,7 @@ const About = () => {
                         <div className="relative z-10 overflow-hidden rounded-[2rem] bg-[var(--card-bg)] transition-colors duration-500">
                             <img
                                 src="/images/about-dental.jpeg"
-                                alt="The Smile Max Dentistry - About Us"
+                                alt="Smile Max Dentistry - About Us"
                                 className="h-[460px] w-full object-cover sm:h-[520px]"
                             />
                         </div>
@@ -117,7 +117,7 @@ const About = () => {
                             <span className="h-[2px] w-8 bg-[var(--accent)]" />
 
                             <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)]">
-                                About The Smile Max Dentistry
+                                About SmileMax Dentistry
                             </span>
                         </div>
 
@@ -131,7 +131,7 @@ const About = () => {
                         {/* Description */}
 
                         <p className="mt-6 text-sm leading-7 text-[var(--muted)] transition-colors duration-500 sm:text-base">
-                            At The Smile Max Dentistry, we believe that exceptional dental care
+                            At SmileMax Dentistry, we believe that exceptional dental care
                             is about more than just treating teeth. Our approach combines
                             modern technology, clinical expertise and personalized attention
                             to create a comfortable experience for every patient.

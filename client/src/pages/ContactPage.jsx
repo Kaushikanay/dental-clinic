@@ -415,7 +415,7 @@ const ContactPage = () => {
                                     text-[var(--accent)]
                                 "
                             >
-                                The Smile Max Dentistry
+                                SmileMax Dentistry
                             </span>
                         </h1>
 
@@ -1537,21 +1537,21 @@ const ContactPage = () => {
                                         delay: 0.32,
                                         duration: 0.35,
                                     }}
-                                    className="
-                                        mt-5
-                                        rounded-xl
-                                        border
-                                        border-[var(--border)]
-                                        bg-[var(--page-bg)]
-                                        px-4
-                                        py-3
-                                        text-xs
-                                        leading-5
-                                        text-[var(--muted)]
-                                    "
+                                // className="
+                                //     mt-5
+                                //     rounded-xl
+                                //     border
+                                //     border-[var(--border)]
+                                //     bg-[var(--page-bg)]
+                                //     px-4
+                                //     py-3
+                                //     text-xs
+                                //     leading-5
+                                //     text-[var(--muted)]
+                                // "
                                 >
-                                    Thank you for contacting us. Our team will review your enquiry
-                                    and get back to you shortly.
+                                    {/* Thank you for contacting us. Our team will review your enquiry
+                                    and get back to you shortly. */}
                                 </motion.div>
                             )}
 

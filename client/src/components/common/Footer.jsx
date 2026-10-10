@@ -644,7 +644,7 @@ const Footer = () => {
         "
                     >
                         <p className="text-xs text-white">
-                            © 2026 The SmileMax. All rights reserved. | Developed by{" "}
+                            © 2026 SmileMax. All rights reserved. | Developed by{" "}
                             <a
                                 href="https://smithranjan.vercel.app/"
                                 target="_blank"

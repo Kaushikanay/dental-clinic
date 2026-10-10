@@ -513,7 +513,7 @@ const DoctorSection = () => {
                             sm:text-base
                         "
                     >
-                        Meet the dental professionals behind The
+                        Meet the dental professionals behind
                         SmileMax. With a patient-first approach, our
                         doctors focus on comfortable care, personalized
                         treatment and healthier smiles.
