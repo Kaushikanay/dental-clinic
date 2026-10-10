@@ -243,7 +243,7 @@ const Footer = () => {
         text-[var(--accent)]
     "
                                 >
-                                    The SmileMax
+                                    SmileMax
                                 </span>
 
                                 <span
