@@ -54,10 +54,10 @@ const ContactPage = () => {
     const [showSubmitPopup, setShowSubmitPopup] = useState(false);
 
     /*
-      |--------------------------------------------------------------------------
-      | INPUT CHANGE
-      |--------------------------------------------------------------------------
-      */
+        |--------------------------------------------------------------------------
+        | INPUT CHANGE
+        |--------------------------------------------------------------------------
+        */
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -77,10 +77,10 @@ const ContactPage = () => {
     };
 
     /*
-      |--------------------------------------------------------------------------
-      | FORM VALIDATION
-      |--------------------------------------------------------------------------
-      */
+        |--------------------------------------------------------------------------
+        | FORM VALIDATION
+        |--------------------------------------------------------------------------
+        */
 
     const validateForm = () => {
         const name = formData.name.trim();
@@ -135,20 +135,20 @@ const ContactPage = () => {
     };
 
     /*
-      |--------------------------------------------------------------------------
-      | CLOSE POPUP
-      |--------------------------------------------------------------------------
-      */
+        |--------------------------------------------------------------------------
+        | CLOSE POPUP
+        |--------------------------------------------------------------------------
+        */
 
     const closeSubmitPopup = () => {
         setShowSubmitPopup(false);
     };
 
     /*
-      |--------------------------------------------------------------------------
-      | FORM SUBMIT
-      |--------------------------------------------------------------------------
-      */
+        |--------------------------------------------------------------------------
+        | FORM SUBMIT
+        |--------------------------------------------------------------------------
+        */
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -163,10 +163,10 @@ const ContactPage = () => {
         });
 
         /*
-            |--------------------------------------------------------------------------
-            | VALIDATION
-            |--------------------------------------------------------------------------
-            */
+                |--------------------------------------------------------------------------
+                | VALIDATION
+                |--------------------------------------------------------------------------
+                */
 
         const validationError = validateForm();
 
@@ -185,10 +185,10 @@ const ContactPage = () => {
 
         try {
             /*
-                  |--------------------------------------------------------------------------
-                  | SEND TO EXPRESS BACKEND
-                  |--------------------------------------------------------------------------
-                  */
+                        |--------------------------------------------------------------------------
+                        | SEND TO EXPRESS BACKEND
+                        |--------------------------------------------------------------------------
+                        */
 
             const response = await fetch(`${API_URL}/api/contact`, {
                 method: "POST",
@@ -207,10 +207,10 @@ const ContactPage = () => {
             });
 
             /*
-                  |--------------------------------------------------------------------------
-                  | RESPONSE
-                  |--------------------------------------------------------------------------
-                  */
+                        |--------------------------------------------------------------------------
+                        | RESPONSE
+                        |--------------------------------------------------------------------------
+                        */
 
             let data = {};
 
@@ -227,10 +227,10 @@ const ContactPage = () => {
             }
 
             /*
-                  |--------------------------------------------------------------------------
-                  | SUCCESS
-                  |--------------------------------------------------------------------------
-                  */
+                        |--------------------------------------------------------------------------
+                        | SUCCESS
+                        |--------------------------------------------------------------------------
+                        */
 
             setSubmitStatus({
                 type: "success",
@@ -242,10 +242,10 @@ const ContactPage = () => {
             setShowSubmitPopup(true);
 
             /*
-                  |--------------------------------------------------------------------------
-                  | RESET FORM
-                  |--------------------------------------------------------------------------
-                  */
+                        |--------------------------------------------------------------------------
+                        | RESET FORM
+                        |--------------------------------------------------------------------------
+                        */
 
             setFormData(initialFormData);
         } catch (error) {
@@ -636,113 +636,6 @@ const ContactPage = () => {
                             question or appointment request.
                         </p>
 
-                        {/* Working Hours */}
-
-                        {/* <div
-                            className="
-                                mt-8
-                                flex
-                                gap-4
-                                rounded-2xl
-                                border
-                                border-[var(--border)]
-                                bg-[var(--card-bg)]
-                                p-6
-                                shadow-sm
-                                transition-all
-                                duration-500
-                                hover:-translate-y-1
-                                hover:shadow-lg
-                            "
-                        >
-                            <div
-                                className="
-                                    flex
-                                    h-14
-                                    w-14
-                                    shrink-0
-                                    items-center
-                                    justify-center
-                                    rounded-xl
-                                    bg-[var(--primary-light)]
-                                    opacity-90
-                                    transition-[background-color,transform]
-                                    duration-500
-                                    ease-[cubic-bezier(0.22,1,0.36,1)]
-                                    hover:scale-105
-                                    hover:bg-[var(--primary)]
-                                "
-                            >
-                                <Clock3
-                                    size={27}
-                                    strokeWidth={1.7}
-                                    className="
-                                        text-[var(--accent)]
-                                        transition-[color,transform]
-                                        duration-500
-                                        ease-out
-                                    "
-                                />
-                            </div>
-
-                            <div>
-                                <h3
-                                    className="
-            font-bold
-            text-[var(--text)]
-            transition-colors
-            duration-500
-        "
-                                >
-                                    Working Hours
-                                </h3>
-
-                                <div
-                                    className="
-            mt-3
-            space-y-1.5
-            text-sm
-            leading-6
-            text-[var(--muted)]
-        "
-                                >
-                                    <div className="flex justify-between gap-6">
-                                        <span>Monday-Saturday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Tuesday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Wednesday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Thursday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Friday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Saturday</span>
-                                        <span>10:00 AM – 7:00 PM</span>
-                                    </div>
-
-                                    <div className="flex justify-between gap-6">
-                                        <span>Sunday</span>
-                                        <span>10:00 AM – 2:00 PM</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                         {/* Working Hours */}
 
                         <ContactCard icon={Clock3} title="Working Hours">

@@ -46,47 +46,113 @@ const treatmentCards = [
 /* =========================================
    BEFORE / AFTER PAIRS
 ========================================= */
-
 const resultImages = [
     {
         pair: "01",
-
+        treatment: "Teeth Cleaning",
         before: {
             type: "Before Treatment",
-            image: "/images/professional-after-1.jpg",
+            image: "/images/teeth-cleaning-before.jpg",
         },
-
         after: {
             type: "After Treatment",
-            image: "/images/professional-before-1.jpg",
+            image: "/images/teeth-cleaning-after.jpg",
         },
     },
-
     {
         pair: "02",
-
+        treatment: "Braces & Teeth Alignment",
         before: {
             type: "Before Treatment",
-            image: "/images/professional-before-2.jpg",
+            image: "/images/braces-teeth-alignment-before.jpg",
         },
-
         after: {
             type: "After Treatment",
-            image: "/images/professional-after-2.jpg",
+            image: "/images/braces-teeth-alignment-after.jpg",
         },
     },
-
     {
         pair: "03",
-
+        treatment: "Zirconia Crowns",
         before: {
             type: "Before Treatment",
-            image: "/images/professional-before-3.jpg",
+            image: "/images/zirconia-crowns-before.jpg",
         },
-
         after: {
             type: "After Treatment",
-            image: "/images/professional-after-3.jpg",
+            image: "/images/zirconia-crowns-after.jpg",
+        },
+    },
+    {
+        pair: "04",
+        treatment: "Root Canal Treatment",
+        before: {
+            type: "Before Treatment",
+            image: "/images/root-canal-treatment-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/root-canal-treatment-after.jpg",
+        },
+    },
+    {
+        pair: "05",
+        treatment: "Dental Implants",
+        before: {
+            type: "Before Treatment",
+            image: "/images/dental-implants-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/dental-implants-after.jpg",
+        },
+    },
+    {
+        pair: "06",
+        treatment: "Wisdom Tooth Extraction",
+        before: {
+            type: "Before Treatment",
+            image: "/images/wisdom-tooth-extraction-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/wisdom-tooth-extraction-after.jpg",
+        },
+    },
+    {
+        pair: "07",
+        treatment: "Cosmetic Dentistry / Smile Makeover",
+        before: {
+            type: "Before Treatment",
+            image: "/images/cosmetic-dentistry-smile-makeover-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/cosmetic-dentistry-smile-makeover-after.jpg",
+        },
+    },
+    {
+        pair: "08",
+        treatment: "Tooth Extraction",
+        before: {
+            type: "Before Treatment",
+            image: "/images/tooth-extraction-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/tooth-extraction-after.jpg",
+        },
+    },
+    {
+        pair: "09",
+        treatment: "Gap Closure / Cosmetic Bonding",
+        before: {
+            type: "Before Treatment",
+            image: "/images/gap-closure-cosmetic-bonding-before.jpg",
+        },
+        after: {
+            type: "After Treatment",
+            image: "/images/gap-closure-cosmetic-bonding-after.jpg",
         },
     },
 ];
@@ -343,6 +409,58 @@ const ProfessionalResults = () => {
                   IMAGE CONTAINER
               ====================================== */}
 
+                            {/* Treatment Name Header */}
+                            <div className="relative z-30 flex w-full justify-center px-3">
+                                <div
+                                    className="
+      relative z-30
+      flex w-fit max-w-full
+      items-center justify-center
+      gap-2 sm:gap-3 md:gap-4
+      rounded-full
+      bg-gradient-to-r
+      from-violet-700
+      via-fuchsia-600
+      to-orange-500
+      px-4 py-2.5
+      sm:px-7 sm:py-3
+      md:px-9 md:py-4
+      text-center
+      text-[11px] sm:text-sm md:text-lg
+      font-extrabold
+      uppercase tracking-wide
+      text-white
+      shadow-lg shadow-fuchsia-500/30
+      break-words
+      transition-all duration-300
+      hover:shadow-xl hover:shadow-orange-500/40
+    "
+                                >
+                                    {/* Colorful Tooth Icon */}
+                                    <span
+                                        className="shrink-0 text-amber-200 drop-shadow-md"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            className="h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8"
+                                        >
+                                            <path d="M12 2.5c-2.1-1.3-5.8-1.1-7.8.9C1.5 6.1 3 10.8 4.2 14.2c.9 2.7 1.7 6.1 3.5 6.1 1.3 0 1.2-3.1 2.1-4.6.5-.8 1.5-.8 2 0 .9 1.5.8 4.6 2.1 4.6 1.8 0 2.6-3.4 3.5-6.1C18.5 10.8 20 6.1 17.8 3.4c-2-2-5.7-2.2-7.8-.9Z" />
+                                        </svg>
+                                    </span>
+
+                                    {/* Colorful Divider */}
+                                    <span className="h-6 w-px shrink-0 bg-gradient-to-b from-amber-200 via-white to-pink-200 sm:h-8 md:h-9" />
+
+                                    {/* Treatment Name */}
+                                    <span className="min-w-0 whitespace-normal leading-tight">
+                                        {currentResult.treatment}
+                                    </span>
+                                </div>
+                            </div>
+
                             <div
                                 className="
                   relative
@@ -354,6 +472,8 @@ const ProfessionalResults = () => {
                   shadow-xl
                 "
                             >
+
+
                                 {/* =================================
                     IMAGE GRID
                 ================================== */}
