@@ -410,7 +410,7 @@ const ProfessionalResults = () => {
               ====================================== */}
 
                             {/* Treatment Name Header */}
-                            <div className="relative z-30 flex w-full justify-center px-3">
+                            <div className="relative z-30 -translate-y-3 flex w-full justify-center px-3">
                                 <div
                                     className="
       relative z-30
